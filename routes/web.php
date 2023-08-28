@@ -22,3 +22,8 @@ Route::get('/store/index', 'App\Http\Controllers\StoreController@index')
     ->name("store.index");
 Route::get('/store/show/{id}', 'App\Http\Controllers\StoreController@show')
     ->name("store.show");
+Route::get('/admin', 'App\Http\Controllers\Admin\AdminStoreHomeController@index')
+    ->name("admin.home.index");
+Route::get('/admin/store', 'App\Http\Controllers\Admin\AdminStorePageController@index')
+    ->name("admin.store.index");
+    

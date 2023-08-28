@@ -204,7 +204,7 @@
                 <hr class="text-white-50">
             </div>
         </div>
-        <footer class="container-fluid" style="background-color: black ;">
+        <footer class="container-fluid" style="background-color: black">
             <div class="row">
                 <div class="col-12 text-white-50 text-center align-self-center">
                     &copy; Oranty Shinkai &nbsp; Author: Nguyễn Phúc Thịnh
