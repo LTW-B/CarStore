@@ -10,6 +10,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous">
     </script>
+    <link rel="stylesheet" href="{{ asset('plugins/font-awesome/css/all.min.css') }}">
     <title>@yield('title', 'Admin')</title>
 </head>
 
@@ -22,9 +23,10 @@
             </a>
             <hr>
             <ul class="nav flex-column">
-                <li><a href="{{ route('admin.home.index') }}"  class="nav-link text-white">Admin - Home</a></li>
-                <li><a href="#"  class="nav-link text-white">Admin - Products</a></li>
-                <li><a href="{{ route('home.AboutPage') }}"  class="mt-2 btn bg-primary text-white">Go back to the home page</a></li>
+                <li><a href="{{ route('admin.home.index') }}" class="nav-link text-white">Admin - Home</a></li>
+                <li><a href="#" class="nav-link text-white">Admin - Products</a></li>
+                <li><a href="{{ route('home.AboutPage') }}" class="mt-2 btn bg-primary text-white">Go back to the home
+                        page</a></li>
             </ul>
         </div>
 
