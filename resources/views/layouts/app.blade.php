@@ -118,7 +118,7 @@
             </div>
         </div>
     </nav>
-    <div class="container " style="height: 1000px">
+    <div class="container-fluid" style="padding: 0">
         @yield('sect1')
     </div>
     <div class="container" style="height: 1000px">
