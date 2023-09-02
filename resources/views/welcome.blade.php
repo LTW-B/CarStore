@@ -9,7 +9,7 @@
                     aria-label="Slide 2"></button>
                 <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2"
                     aria-label="Slide 3"></button>
-                    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3"
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3"
                     aria-label="Slide 4"></button>
             </div>
             <div class="carousel-inner text-white">
@@ -21,7 +21,8 @@
                     </div>
                 </div>
                 <div class="carousel-item" data-bs-interval="3000">
-                    <img src="{{ asset('img/2023-ferrari-499p-formula-one.jpg') }}" class="d-block w-100 img-fluid" alt="...">
+                    <img src="{{ asset('img/2023-ferrari-499p-formula-one.jpg') }}" class="d-block w-100 img-fluid"
+                        alt="...">
                     <div class="carousel-caption d-none d-md-block text-white">
                         <h5>Second slide label</h5>
                         <p>Some representative placeholder content for the second slide.</p>
@@ -35,7 +36,8 @@
                     </div>
                 </div>
                 <div class="carousel-item" data-bs-interval="3000">
-                    <img src="{{ asset('img/ferrari-499p-2023-red-beautiful-car.jpg') }}" class="d-block w-100 img-fluid" alt="...">
+                    <img src="{{ asset('img/ferrari-499p-2023-red-beautiful-car.jpg') }}" class="d-block w-100 img-fluid"
+                        alt="...">
                     <div class="carousel-caption d-none d-md-block text-white">
                         <h5>Fourth slide label</h5>
                         <p>Some representative placeholder content for the third slide.</p>
@@ -130,8 +132,68 @@
     </div>
 @endsection
 @section('sect2')
-    <div class="row bg-dark">
-        <Span>this is sect 2</Span>
+    {{-- <div class="container"> --}}
+    <div class="row row-cols-1 row-cols-md-2">
+        <div class="texts col col-md-4 col-lg-4 align-self-stretch">
+            <div class="row align-items-center">
+                <div class="col offset-1 offset-xl-2 no-gutters">
+                    <div class="texts-wrapper css-1v6uxg8">
+                        <h2 class="primary texts-block-title--primary"></h2>
+                        <h3 class="secondary texts-block-title--secondary">MENSWEAR AND ACCESSORIES COLLECTION</h3>
+                        <div>
+                            <p>The iconic features of the super sports cars reflected in the Menswear and Travel Collections
+                                marked by an informal style and contemporary taste.</p>
+                        </div>
+                        <div class="links d-block">
+                            <div class="row row-cols-1 row-cols-lg-1">
+                                <a href="#" class="col-12 sect1Links">link1</a>
+                                <a href="#" class="col-12 sect1Links">link1</a>
+                                <a href="#" class="col-12 sect1Links">link1</a>
+                                <a href="#" class="col-12 sect1Links">link1</a>
+                                <a href="#" class="col-12 sect1Links">link1</a>
+                            </div>
+                        </div>       
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col col-md-8 col-lg-8">
+            <svg width="100%" height="100%" viewBox="0 0 24 11" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink" class="clip-svg">
+                <defs>
+                    <clipPath id="clip-polygon--uid126">
+                        <polygon points="11 0, 11.1 0, 11.1 11, 0 11"></polygon>
+                        <rect x="11" y="0" width="13" height="11"></rect>
+                        {{-- <polygon points="15.9 0, 24 0, 16 11, 15.9 11"></polygon> --}}
+                    </clipPath>
+                </defs>
+                <g clip-path="url(#clip-polygon--uid126)">
+                    <image class="img-fluid" xlink:href="{{ asset('img/ferrari-499p-2023-red-beautiful-car.jpg') }}"
+                        alt="Ferrari logo image" width="100%" height="100%" x="0%" y="0%">
+                    </image>
+                </g>
+            </svg>
 
+        </div>
     </div>
+    {{-- </div> --}}
+@endsection
+@section('sect3')
+<div class="container">
+    <div class="radio-inputs">
+        <label class="radio">
+          <input type="radio" name="radio" checked="">
+          <span class="name">Mẫu xe</span>
+        </label>
+        <label class="radio">
+          <input type="radio" name="radio">
+          <span class="name">Kiểu loại</span>
+        </label>
+            
+        <label class="radio">
+          <input type="radio" name="radio">
+          <span class="name">Khác</span>
+        </label>
+      </div>
+</div>
 @endsection

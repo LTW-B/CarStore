@@ -11,7 +11,7 @@
     </script>
     <link rel="stylesheet" href="{{ asset('plugins/font-awesome/css/all.min.css') }}">
     <script src="script.js"></script>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="{{asset('css/style.css')}}" />
     <title>
         @yield('title')
     </title>
@@ -121,10 +121,10 @@
     <div class="container-fluid" style="padding: 0">
         @yield('sect1')
     </div>
-    <div class="container" style="height: 1000px">
+    <div class="container-fluid bg-white" style="padding:0">
         @yield('sect2')
     </div>
-    <div class="container">
+    <div class="container-fluid bg-light">
         @yield('sect3')
     </div>
     <div class="container">

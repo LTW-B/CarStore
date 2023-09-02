@@ -1,0 +1,80 @@
+.sect1Links {
+    font-size: 18px;
+    color: #222;
+    font-family: inherit;
+    font-weight: 800;
+    cursor: pointer;
+    position: relative;
+    border: none;
+    background: none;
+    text-transform: uppercase;
+    transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition-duration: 400ms;
+    transition-property: color;
+  }
+  
+  .sect1Links:focus,
+  .sect1Links:hover {
+    color: #222;
+  }
+  
+  .sect1Links:focus:after,
+  .sect1Links:hover:after {
+    width: 100%;
+    left: 0%;
+  }
+  
+  .sect1Links:after {
+    content: "";
+    pointer-events: none;
+    bottom: -2px;
+    left: 0%;
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background-color: red;
+    transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition-duration: 400ms;
+    transition-property: width, left;
+  }
+  a{
+    text-decoration: none;
+  }
+  .radio-inputs {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 0.5rem;
+    background-color: #EEE;
+    box-sizing: border-box;
+    box-shadow: 0 0 0px 1px rgba(0, 0, 0, 0.06);
+    padding: 0.25rem;
+    width: 300px;
+    font-size: 14px;
+  }
+  
+  .radio-inputs .radio {
+    flex: 1 1 auto;
+    text-align: center;
+  }
+  
+  .radio-inputs .radio input {
+    display: none;
+  }
+  
+  .radio-inputs .radio .name {
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.5rem;
+    border: none;
+    padding: .5rem 0;
+    color: rgba(51, 65, 85, 1);
+    transition: all .15s ease-in-out;
+  }
+  
+  .radio-inputs .radio input:checked + .name {
+    background-color: #fff;
+    font-weight: 600;
+  }
