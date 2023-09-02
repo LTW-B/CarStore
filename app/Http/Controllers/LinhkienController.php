@@ -16,7 +16,7 @@ class LinhkienController extends Controller
     }
     public function showImage($filename) 
     {
-        $path = storage_path('public/' . $filename);
+        $path = storage_path('app/upload/' . $filename);
         return response()->file($path);
     }
 }
