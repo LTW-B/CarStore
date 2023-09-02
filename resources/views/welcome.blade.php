@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('title',$homeData['title'])
 @section('sect1')
     <div class="position-relative">
         <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">

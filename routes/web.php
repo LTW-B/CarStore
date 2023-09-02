@@ -13,9 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'App\Http\Controllers\HomeController@home') 
+  -> name("home");
 Route::get('/about', 'App\Http\Controllers\HomeController@about')
     ->name("home.AboutPage");
 Route::get('/store/index', 'App\Http\Controllers\StoreController@index')

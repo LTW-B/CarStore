@@ -20,7 +20,7 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark py-4">
         <div class="container text-black-50">
-            <a href="" class="" data-event-module-slug="header"data-event-label="logo"><svg role="img"
+            <a href="{{ route('home') }}" class="" data-event-module-slug="header"data-event-label="logo"><svg role="img"
                     aria-labelledby="ferrari-logo-svg-title" viewBox="0 0 162 224" style="height: 62px; width:41px;">
                     <title>Ferrari logo</title>
                     <path fill="#ffffff"
