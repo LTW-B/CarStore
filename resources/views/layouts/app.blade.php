@@ -11,7 +11,7 @@
     </script>
     <link rel="stylesheet" href="{{ asset('plugins/font-awesome/css/all.min.css') }}">
     <script src="script.js"></script>
-    <link rel="stylesheet" href="{{asset('css/style.css')}}" />
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}" />
     <title>
         @yield('title', 'Car Store')
     </title>
@@ -20,8 +20,9 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark py-4">
         <div class="container text-black-50">
-            <a href="{{ route('home') }}" class="" data-event-module-slug="header"data-event-label="logo"><svg role="img"
-                    aria-labelledby="ferrari-logo-svg-title" viewBox="0 0 162 224" style="height: 62px; width:41px;">
+            <a href="{{ route('home') }}" class="" data-event-module-slug="header"data-event-label="logo"><svg
+                    role="img" aria-labelledby="ferrari-logo-svg-title" viewBox="0 0 162 224"
+                    style="height: 62px; width:41px;">
                     <title>Ferrari logo</title>
                     <path fill="#ffffff"
                         d="M76.6 5.5c.8.4 1.1.7 1.9.9.7.2 1.7.7 1.9.1.3-.6-.1-1.4-.6-2.1-.8-1.3-1.2-1.6-2.3-3.4-.2-.4-.4-.8-.8-.8 0 0-.1 1.3-.5 2.1-.3.7-1.1 1.2-1 1.7.1.5.6 1.1 1.4 1.5z">
@@ -102,17 +103,43 @@
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="UserDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-regular fa-user"></i></a>
-                        <ul class="dropdown-menu" aria-labelledby="UserDropdown">
-                            <li>
-                                <a class="dropdown-item" href=""><i class="fa-solid fa-user-gear"></i>
-                                    Setting</a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="#"><i
-                                        class="fa-solid fa-right-from-bracket"></i> Log out</a>
-                            </li>
-                        </ul>
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fa-regular fa-user"></i>
+                        </a>
+
+                        @guest
+                            <ul class="dropdown-menu" aria-labelledby="UserDropdown">
+                                <li>
+                                    <a class="dropdown-item" href="{{ route('login') }}"><i
+                                            class="fa-solid fa-user-gear"></i>
+                                        Đăng nhập</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="{{ route('register') }}"><i
+                                            class="fa-solid fa-right-from-bracket"></i>Tạo tài khoản</a>
+                                </li>
+                            </ul>
+                        @else
+                            <ul class="dropdown-menu" aria-labelledby="UserDropdown">
+                                <li>
+                                    <a class="dropdown-item" href="">
+                                        <i class="fa-solid fa-user-gear"></i>
+                                        Cài đặt
+                                    </a>
+                                </li>
+                                <li>
+                                    <form id="logout" action="{{ route('logout') }}" method="POST">
+                                        <a class="dropdown-item" role="button"
+                                            onclick="document.getElementById('logout').submit();">
+                                            <i class="fa-solid fa-right-from-bracket"></i> Đăng xuất
+                                        </a>
+                                        @csrf
+                                    </form>
+
+                                </li>
+                            </ul>
+                        @endguest
+
                     </li>
                 </ul>
             </div>
@@ -128,9 +155,9 @@
         @yield('sect3')
     </div>
     <div class="container">
-        <div class="row"> 
-        @yield('sect4')
-    </div>
+        <div class="row">
+            @yield('sect4')
+        </div>
     </div>
     <div class="container">
         @yield('sect5')
@@ -223,7 +250,7 @@
         </div>
 
     </section>
-   
+
     <style>
         .corner-button {
             position: fixed;

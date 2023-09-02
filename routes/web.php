@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,3 +33,7 @@ Route::get('/linhkien', 'App\Http\Controllers\LinhkienController@index')
 
     Route::get('/linhkien/upload/{filename}', 'App\Http\Controllers\LinhkienController@showImage')
     ->name("upload.show");
+
+Auth::routes();
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'home'])->name('home');
+
