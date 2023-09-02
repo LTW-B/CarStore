@@ -128,7 +128,9 @@
         @yield('sect3')
     </div>
     <div class="container">
+        <div class="row"> 
         @yield('sect4')
+    </div>
     </div>
     <div class="container">
         @yield('sect5')
@@ -221,18 +223,7 @@
         </div>
 
     </section>
-    <footer class="container-fluid text-center text-uppercase" style="background-color: #7d7c83">
-        <div class="justify-content-center">
-            <span> &copy; Oranty Shinkai &nbsp; Author: Nguyễn Phúc Thịnh <br />
-                22-0-20838</span>
-        </div>
-        <div class="align-self-end position-static" style="right: 0; padding-right: 10px; z-index: 2;">
-            <a href="#top" class="btn scroll-to-top text-white justify-content-end corner-button"
-                style="background-color: black" role="button" title="Scroll to Top">
-                <i class="fa fa-arrow-up text-white-50"></i>
-            </a>
-        </div>
-    </footer>
+   
     <style>
         .corner-button {
             position: fixed;

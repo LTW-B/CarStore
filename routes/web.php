@@ -30,3 +30,6 @@ Route::get('/admin/store', 'App\Http\Controllers\Admin\AdminStorePageController@
 
 Route::get('/linhkien', 'App\Http\Controllers\LinhkienController@index')
     ->name("home.linhkien");
+
+    Route::get('/linhkien/upload/{filename}', 'App\Http\Controllers\LinhkienController@showImage')
+    ->name("upload.show");
