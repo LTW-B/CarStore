@@ -9,26 +9,35 @@
                     aria-label="Slide 2"></button>
                 <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2"
                     aria-label="Slide 3"></button>
+                    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3"
+                    aria-label="Slide 4"></button>
             </div>
             <div class="carousel-inner text-white">
-                <div class="carousel-item active" data-bs-interval="10000">
-                    <img src="{{ asset('img/sect1.jpg') }}" class="d-block w-100 img-fluid" alt="...">
+                <div class="carousel-item active" data-bs-interval="3000">
+                    <img src="{{ asset('img/horse-ferrari-logo.jpg') }}" class="d-block w-100 img-fluid" alt="...">
                     <div class="carousel-caption d-none d-md-block text-white">
                         <h5>First slide label</h5>
                         <p>Some representative placeholder content for the first slide.</p>
                     </div>
                 </div>
-                <div class="carousel-item" data-bs-interval="2000">
-                    <img src="{{ asset('img/223215.jpg') }}" class="d-block w-100 img-fluid" alt="...">
+                <div class="carousel-item" data-bs-interval="3000">
+                    <img src="{{ asset('img/2023-ferrari-499p-formula-one.jpg') }}" class="d-block w-100 img-fluid" alt="...">
                     <div class="carousel-caption d-none d-md-block text-white">
                         <h5>Second slide label</h5>
                         <p>Some representative placeholder content for the second slide.</p>
                     </div>
                 </div>
-                <div class="carousel-item">
-                    <img src="{{ asset('img/wp1863668.jpg') }}" class="d-block w-100 img-fluid" alt="...">
+                <div class="carousel-item" data-bs-interval="3000">
+                    <img src="{{ asset('img/2023-ferrari-499p-red.jpg') }}" class="d-block w-100 img-fluid" alt="...">
                     <div class="carousel-caption d-none d-md-block text-white">
                         <h5>Third slide label</h5>
+                        <p>Some representative placeholder content for the third slide.</p>
+                    </div>
+                </div>
+                <div class="carousel-item" data-bs-interval="3000">
+                    <img src="{{ asset('img/ferrari-499p-2023-red-beautiful-car.jpg') }}" class="d-block w-100 img-fluid" alt="...">
+                    <div class="carousel-caption d-none d-md-block text-white">
+                        <h5>Fourth slide label</h5>
                         <p>Some representative placeholder content for the third slide.</p>
                     </div>
                 </div>
