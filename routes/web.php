@@ -26,4 +26,7 @@ Route::get('/admin', 'App\Http\Controllers\Admin\AdminStoreHomeController@index'
     ->name("admin.home.index");
 Route::get('/admin/store', 'App\Http\Controllers\Admin\AdminStorePageController@index')
     ->name("admin.store.index");
-    
+
+
+Route::get('/linhkien', 'App\Http\Controllers\LinhkienController@index')
+    ->name("home.linhkien");

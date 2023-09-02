@@ -13,7 +13,7 @@
     <script src="script.js"></script>
     <link rel="stylesheet" href="{{asset('css/style.css')}}" />
     <title>
-        @yield('title')
+        @yield('title', 'Car Store')
     </title>
 </head>
 
@@ -56,7 +56,7 @@
                         <a class="nav-link" href="#">Collections</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Experices</a>
+                        <a class="nav-link" href="{{ route('home.linhkien') }}">Linh kiện</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('home.AboutPage') }}">About Us</a>
