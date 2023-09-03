@@ -135,8 +135,8 @@
                         </span>
                     @enderror
                 </div>
-                <div class="row mb-3">
-                    <div class="col offset-md-4">
+                <div class="row input_container">
+                    <div class="col">
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox" name="remember" id="remember"
                                 {{ old('remember') ? 'checked' : '' }}>
