@@ -27,6 +27,14 @@ Route::middleware('admin')->group(function () {
         ->name("admin.home.index");
     Route::get('/admin/store', 'App\Http\Controllers\Admin\AdminStorePageController@index')
         ->name("admin.store.index");
+    Route::post('/admin/store/create', 'App\Http\Controllers\Admin\AdminStorePageController@CreateNewStore')
+        ->name("admin.store.create");
+    Route::delete('admin/store/{id}/delete', 'App\Http\Controllers\Admin\AdminStorePageController@deleteStore')
+        ->name("admin.store.delete");
+    Route::get('admin/store/{id}/edit', 'App\Http\Controllers\Admin\AdminStorePageController@editStore')
+        ->name("admin.store.edit");
+    Route::put('admin/store/{id}/update', 'App\Http\Controllers\Admin\AdminStorePageController@updateStore')
+        ->name("admin.store.update");
 });
 
 Route::get('/linhkien', 'App\Http\Controllers\LinhkienController@index')
