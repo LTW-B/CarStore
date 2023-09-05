@@ -22,6 +22,12 @@ class StoreController extends Controller
         $storeData["title"] = $storeItem->getName();
         $storeData["subtitle"] = $storeItem->getName() . " information";
         $storeData["storeItem"] = $storeItem;
+        $storeData['image'] = $storeItem->getImage();
         return view('Store.show')->with("storeData", $storeData);
+    }
+    public function showImage($filename) 
+    {
+        $path = storage_path('app/StoreImage/' . $filename);
+        return response()->file($path);
     }
 }

@@ -129,6 +129,12 @@
                                     </a>
                                 </li>
                                 <li>
+                                    <a class="dropdown-item" href="{{ route('cart.index') }}">
+                                        <i class="fa-solid fa-cart-shopping"></i>
+                                        Đơn hàng
+                                    </a>
+                                </li>
+                                <li>
                                     <form id="logout" action="{{ route('logout') }}" method="POST">
                                         <a class="dropdown-item" role="button"
                                             onclick="document.getElementById('logout').submit();">
@@ -146,27 +152,27 @@
             </div>
         </div>
     </nav>
-    <div class="container-fluid" style="padding: 0">
+    <div class="container-fluid" style="padding: 0; margin-top: 80px">
         @yield('sect1')
     </div>
-    <div class="container-fluid bg-white" style="padding:0">
+    <div class="container-fluid bg-white" style="padding:0; margin-top: 80px">
         @yield('sect2')
     </div>
-    <div class="container-fluid bg-light">
+    <div class="container-fluid bg-light" style="margin-top: 80px">
         @yield('sect3')
     </div>
-    <div class="container">
+    <div class="container" style="margin-top: 80px">
         <div class="row">
             @yield('sect4')
         </div>
     </div>
-    <div class="container">
+    <div class="container-fluid bg-dark-subtle">
         @yield('sect5')
     </div>
     <section>
 
     </section>
-    <section class="container-fluid bg-dark text-white">
+    <section class="container-fluid bg-dark text-white d-none d-lg-blo">
         <nav class="container bg-dark text-light navbar-collapse ">
             <div class="row row-cols-md-3 row-cols-lg-5 d-none d-md-flex mt-3 ">
                 <div class="col nav-item">

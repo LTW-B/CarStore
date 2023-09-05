@@ -64,4 +64,12 @@ class Store extends Model
     {
         $this->attributes['updated_at'] = $updatedAt;
     }
+    public static function sumCarsByQuantity($stores, $CarsInSession)
+    {
+        $total = 0;
+        foreach ($stores as $store) {
+            $total = $total + ($store->getPrice() * $CarsInSession[$store->getId()]);
+        }
+        return $total;
+    }
 }
