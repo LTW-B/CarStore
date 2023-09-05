@@ -32,9 +32,14 @@ Route::get('/cart', 'App\Http\Controllers\CartController@index')
     ->name('cart.index');
 Route::get('/cart/delete', 'App\Http\Controllers\CartController@delete')
     ->name('cart.delete');
-Route::get('/cart/add/{id}', 'App\Http\Controllers\CartController@add')
+Route::post('/cart/add/{id}', 'App\Http\Controllers\CartController@add')
     ->name('cart.add');
-
+Route::middleware('auth')->group(function (){
+    Route::get('/cart/purchase', 'App\Http\Controllers\CartController@purchase')
+        ->name('cart.purchase');
+    Route::get('/cart/my-account/orders', 'App\Http\Controllers\MyAccountController@orders')
+        ->name('my-account.orders');
+});
 //admin routes
 Route::middleware('admin')->group(function () {
     Route::get('/admin', 'App\Http\Controllers\Admin\AdminStoreHomeController@index')

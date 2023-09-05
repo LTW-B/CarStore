@@ -135,6 +135,12 @@
                                     </a>
                                 </li>
                                 <li>
+                                    <a class="dropdown-item" href="{{ route('my-account.orders') }}">
+                                        <i class="fa-solid fa-file-invoice-dollar"></i>
+                                      Danh sách hóa đơn
+                                    </a>
+                                </li>
+                                <li>
                                     <form id="logout" action="{{ route('logout') }}" method="POST">
                                         <a class="dropdown-item" role="button"
                                             onclick="document.getElementById('logout').submit();">

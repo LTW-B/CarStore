@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Item;
 
 class Store extends Model
 {
@@ -71,5 +72,17 @@ class Store extends Model
             $total = $total + ($store->getPrice() * $CarsInSession[$store->getId()]);
         }
         return $total;
+    }
+    public function items()
+    {
+        return $this->hasMany(Item::class);
+    }
+    public function getItems()
+    {
+        return $this->items;
+    }
+    public function setItems($items)
+    {
+        $this->items = $items;
     }
 }
