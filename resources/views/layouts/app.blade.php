@@ -100,50 +100,63 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#"><i class="fa-regular fa-comments"></i></a>
                     </li>
+
+
+
+
                     <li class="nav-item">
                         <form action="{{ route('search') }}" method="GET" class="nav-link">
                             <input type="text" name="SearchValue" id="SearchInput">
-                            <ul id="suggestionList" class="bg-warning"></ul>
-
+                            <ul id="suggestionList" class="bg-warning" style="display: none;"></ul>
+                    
                             <script lang="Javascript">
+                                var searchInput = document.getElementById('SearchInput');
+                                var suggestionList = document.getElementById('suggestionList');
+                    
                                 // Lắng nghe sự kiện khi người dùng nhập vào input
-                                document.getElementById('SearchInput').addEventListener('input', function() {
+                                searchInput.addEventListener('input', function() {
                                     var query = this.value;
-
-                                    // Gửi yêu cầu AJAX để lấy các gợi ý
-                                    if (query.length > 0) {
-                                        $.ajax({
-                                            url: {{ route('store.suggest') }},
-                                            method: 'GET',
-                                            data: {
-                                                query: query
-                                            },
-                                            success: function(response) {
-                                                var suggestionList = document.getElementById('suggestionList');
-                                                suggestionList.innerHTML = '';
-
-                                                // Hiển thị các gợi ý trong danh sách
-                                                response.forEach(function(store) {
-                                                    var listItem = document.createElement('li');
-                                                    listItem.textContent = store.name;
-                                                    suggestionList.appendChild(listItem);
-                                                });
-                                            }
-                                        });
-                                    } else {
-                                        // Xóa danh sách gợi ý khi người dùng xóa hết truy vấn
-                                        var suggestionList = document.getElementById('suggestionList');
-                                        suggestionList.innerHTML = '';
+                    
+                                    // Ẩn danh sách gợi ý khi không có kết quả hoặc query trống
+                                    if (query.length === 0) {
+                                        suggestionList.style.display = 'none';
+                                        return;
                                     }
+                    
+                                    // Gửi yêu cầu AJAX để lấy các gợi ý
+                                    $.ajax({
+                                        url: "{{ route('store.suggest') }}",
+                                        method: 'GET',
+                                        data: {
+                                            query: query
+                                        },
+                                        success: function(response) {
+                                            suggestionList.innerHTML = '';
+                    
+                                            // Hiển thị danh sách gợi ý và hiển thị nó
+                                            response.forEach(function(store) {
+                                                var listItem = document.createElement('li');
+                                                listItem.textContent = store.name;
+                                                suggestionList.appendChild(listItem);
+                                            });
+                    
+                                            suggestionList.style.display = 'block';
+                                        }
+                                    });
                                 });
                             </script>
                             <button type="submit">
                                 <i class="fa-solid fa-magnifying-glass"></i>
                             </button>
                         </form>
-
-                        {{-- <a class="nav-link" href="#"></a> --}}
                     </li>
+                    
+
+
+
+
+
+
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="UserDropdown" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
@@ -197,6 +210,11 @@
 
                     </li>
                 </ul>
+
+
+
+
+
             </div>
         </div>
 
