@@ -26,7 +26,11 @@ Route::get('/store/show/{id}', 'App\Http\Controllers\StoreController@show')
 //get images
 Route::get('/store/showItem/{filename}', 'App\Http\Controllers\StoreController@showImage')
     ->name('store.showImage');
-
+//search 
+Route::get('search', [
+    'as'=>'search',
+    'uses'=> 'App\Http\Controllers\StoreController@getSearch'
+]);
 //Cart routes
 Route::get('/cart', 'App\Http\Controllers\CartController@index')
     ->name('cart.index');

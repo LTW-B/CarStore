@@ -30,4 +30,12 @@ class StoreController extends Controller
         $path = storage_path('app/StoreImage/' . $filename);
         return response()->file($path);
     }
+
+    public function getSearch(Request $request)
+    {
+        $store = Store::where('name', 'like', '%'.$request->SearchValue.'%')
+                        ->orWhere('price', $request->SearchValue)
+                        ->get();
+        return view('Store.Search')->with('store', $store);
+    }
 }

@@ -99,7 +99,13 @@
                         <a class="nav-link" href="#"><i class="fa-regular fa-comments"></i></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+                        <form action="{{route('search')}}" method="GET" class="nav-link">
+                            <input type="text" name="SearchValue" id="SearchValue">
+                            <button type="submit">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                            </button>
+                        </form>
+                        {{-- <a class="nav-link" href="#"></a> --}}
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="UserDropdown" role="button"
