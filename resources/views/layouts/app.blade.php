@@ -20,10 +20,15 @@
 </head>
 
 <body>
+  
+
+   
+
+
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container text-black-50">
-            <a href="{{ route('home') }}" class="" data-event-module-slug="header"data-event-label="logo"><svg
-                    role="img" aria-labelledby="ferrari-logo-svg-title" viewBox="0 0 162 224"
+            <a href="{{ route('home') }}" class="" data-event-module-slug="header"data-event-label="logo">
+                <svg role="img" aria-labelledby="ferrari-logo-svg-title" viewBox="0 0 162 224"
                     style="height: 62px; width:41px;">
                     <title>Ferrari logo</title>
                     <path fill="#ffffff"
@@ -49,21 +54,21 @@
 
                 <!-- Nav right -->
                 <ul class="navbar-nav me-auto text-uppercase ">
-                    <li class="nav-item">
+                    {{-- <li class="nav-item">
                         <a class="nav-link" href="#">Racing</a>
-                    </li>
-                    <li class="nav-item">
+                    </li> --}}
+                    {{-- <li class="nav-item">
                         <a class="nav-link" href="{{ route('home.AboutPage') }}">Sports Cars</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Collections</a>
-                    </li>
+                    </li> --}}
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('home.linhkien') }}">Linh kiện</a>
                     </li>
-                    <li class="nav-item">
+                    {{-- <li class="nav-item">
                         <a class="nav-link" href="{{ route('home.AboutPage') }}">About Us</a>
-                    </li>
+                    </li> --}}
                     <!-- Dropdown menu -->
                 </ul>
                 <!-- /nav left -->
@@ -108,21 +113,21 @@
                         <form action="{{ route('search') }}" method="GET" class="nav-link">
                             <input type="text" name="SearchValue" id="SearchInput">
                             <ul id="suggestionList" class="bg-warning" style="display: none;"></ul>
-                    
+
                             <script lang="Javascript">
                                 var searchInput = document.getElementById('SearchInput');
                                 var suggestionList = document.getElementById('suggestionList');
-                    
+
                                 // Lắng nghe sự kiện khi người dùng nhập vào input
                                 searchInput.addEventListener('input', function() {
                                     var query = this.value;
-                    
+
                                     // Ẩn danh sách gợi ý khi không có kết quả hoặc query trống
                                     if (query.length === 0) {
                                         suggestionList.style.display = 'none';
                                         return;
                                     }
-                    
+
                                     // Gửi yêu cầu AJAX để lấy các gợi ý
                                     $.ajax({
                                         url: "{{ route('store.suggest') }}",
@@ -132,14 +137,14 @@
                                         },
                                         success: function(response) {
                                             suggestionList.innerHTML = '';
-                    
+
                                             // Hiển thị danh sách gợi ý và hiển thị nó
                                             response.forEach(function(store) {
                                                 var listItem = document.createElement('li');
                                                 listItem.textContent = store.name;
                                                 suggestionList.appendChild(listItem);
                                             });
-                    
+
                                             suggestionList.style.display = 'block';
                                         }
                                     });
@@ -150,11 +155,6 @@
                             </button>
                         </form>
                     </li>
-                    
-
-
-
-
 
 
                     <li class="nav-item dropdown">

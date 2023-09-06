@@ -83,6 +83,7 @@
                 }
             </style>
         </div>
+
         {{-- <img src="{{ asset('img/sect1.jpg') }}" alt="sect1_logo" class="img-fluid position-relative"> --}}
         <div class="position-absolute top-0 left-0 d-flex pt-3  text-uppercase ">
             <b class="bg-dark p-2" style=" clip-path: polygon(0px 0px, 100% 0px, calc(100% - 15px) 100%, 0% 100%);">
@@ -132,6 +133,7 @@
         </div>
     </div>
 @endsection
+
 @section('sect2')
     {{-- <div class="container"> --}}
     <div class="row row-cols-1 row-cols-md-2">
@@ -199,6 +201,13 @@
     </div>
 @endsection --}}
 
+
+
+
+
+{{-- Phần đang làm ... --}}
+
+{{-- 
 @section('sect5')
     <ul class="nav nav-tabs" id="myTab" role="tablist">
         <li class="nav-item" role="presentation">
@@ -260,4 +269,4 @@
         <div class="tab-pane fade" id="child1" role="tabpanel" aria-labelledby="child1-tab">Child 1</div>
         <div class="tab-pane fade" id="child2" role="tabpanel" aria-labelledby="child2-tab">Child 2</div>
     </div>
-@endsection
+@endsection --}}
