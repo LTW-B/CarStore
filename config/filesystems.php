@@ -56,9 +56,9 @@ return [
             'throw' => false,
         ],
 
-        'StoreImage' => [
+        'upload' => [
             'driver' => 'local',
-            'root' => storage_path('app/StoreImage'), // Thay đổi đường dẫn tùy theo nhu cầu
+            'root' => storage_path('app/upload'), // Thay đổi đường dẫn tùy theo nhu cầu
             'url' => env('APP_URL').'/storage',
             'visibility' => 'public',
         ],
