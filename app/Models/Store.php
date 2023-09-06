@@ -49,6 +49,12 @@ class Store extends Model
     {
         $this->attributes['price'] = $price;
     }
+    public function getQuantity(){
+        return $this->attributes['quantity'];
+    }
+    public function setQuantity($quantity){
+        $this->attributes['quantity'] = $quantity;
+    }
     public function getCreatedAt()
     {
         return $this->attributes['created_at'];

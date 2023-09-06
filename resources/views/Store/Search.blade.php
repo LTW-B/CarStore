@@ -2,7 +2,7 @@
 @section('sect5')
 <h1>Tìm thấy {{count($store)}} sản phẩm</h1>
 @foreach ($store as $storeData)
-<div class="row ms-2 g-0 mb-3">
+<div class="row ms-2 g-0 mb">
     <div class="col-md-4">
         <img src="{{ route('store.showImage', ['filename' => $storeData['image']]) }}" class="img-fluid rounded-start">
     </div>
@@ -26,7 +26,7 @@
                             <div class="input-group">
                                 <div class="input-group-text decrease-quantity">-</div>
                                 <input type="number" name="quantity" min="1" max="20"
-                                    class="form-control quantity-input" value="1" style="width: 50px">
+                                    class="form-control quantity-input text-center" value="1" style="width: 50px">
                                 <div class="input-group-text increase-quantity">+</div>
                             </div>
                         </div>

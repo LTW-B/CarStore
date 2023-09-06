@@ -38,4 +38,10 @@ class StoreController extends Controller
                         ->get();
         return view('Store.Search')->with('store', $store);
     }
+
+    public function suggest(Request $request){
+        $query =$request->input('SearchInput');
+        $suggestedStores = Store::where('name', 'like', '%'.$query.'%')->limit(7)->get();
+        return response()->json($suggestedStores);
+    }
 }

@@ -45,6 +45,11 @@
                                                     <input name="price" value="{{ old('price') }}" type="number"
                                                         class="form-control">
                                                 </div>
+                                                <label class="col-lg-2 col-md-6 col-sm-12 col-form-label">Số lượng:</label>
+                                                <div class="col-lg-10 col-md-6 col-sm-12">
+                                                    <input name="quantity" value="{{ old('quantity') }}" type="number"
+                                                        class="form-control">
+                                                </div>
                                                 <label class="col-lg-2 col-md-6 col-sm-12 col-form-label">Hình ảnh:</label>
                                                 <div class="col-lg-10 col-md-6 col-sm-12">
                                                     <input class="form-control" type="file" name="image">
@@ -78,6 +83,7 @@
                         <th scope="col">STT</th>
                         <th scope="col">ID</th>
                         <th scope="col">Tên</th>
+                        <th scope="col">Số lượng</th>
                         <th scope="col">Sửa</th>
                         <th scope="col">Xóa</th>
                     </tr>
@@ -91,6 +97,7 @@
                             <td>{{ $counter }}</td>
                             <td>{{ $store->getId() }}</td>
                             <td>{{ $store->getname() }}</td>
+                            <td>{{ $store->getQuantity() }}</td>
                             <td>
                                 <a class="btn btn-primary"
                                     href="{{ route('admin.store.edit', ['id' => $store->getId()]) }}">

@@ -44,7 +44,12 @@
                         </div>
                     </div>
                     <div class="col">
-                        &nbsp;
+                        <div class="mb-3 row">
+                            <label class="col-lg-2 col-md-6 col-sm-12 col-form-label">Quantity</label>
+                            <div class="col-lg-10 col-md-6 col-sm-12">
+                                <input name="price" value="{{ $storeData['store']->getQuantity() }}" type="number" class="form-control">
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="mb-3">

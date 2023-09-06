@@ -51,17 +51,13 @@
                 <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
               </li> --}}
                 </ul>
-                <div class="custom-container" role="button" ondragenter="">
-                    <input type="text" name="text" class="custom-input" required="" placeholder="Type to search...">
-                    <div class="custom-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="custom-ionicon" viewBox="0 0 512 512">
-                            <title>Search</title>
-                            <path d="M221.09 64a157.09 157.09 0 10157.09 157.09A157.1 157.1 0 00221.09 64z" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32"></path>
-                            <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="32" d="M338.29 338.29L448 448"></path>
-                        </svg>
-                    </div>
-                </div>
-                
+                <form action="{{ route('search') }}" method="get">
+                    <input type="text" name="SearchValue" id="SearchInput">
+                    <button type="submit">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </form>
+
                 {{-- <form class="d-flex">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                     <button class="btn btn-outline-success" type="submit">Search</button>
@@ -84,54 +80,53 @@
 </body> --}}
     <style>
         .custom-container {
-  position: relative;
-  --size-button: 40px;
-  color: white;
-}
+            position: relative;
+            --size-button: 40px;
+            color: white;
+        }
 
-.custom-input {
-  padding-left: var(--size-button);
-  height: var(--size-button);
-  font-size: 15px;
-  border: none;
-  color: #fff;
-  outline: none;
-  width: var(--size-button);
-  transition: all ease 0.3s;
-  background-color: #191A1E;
-  box-shadow: 1.5px 1.5px 3px #0e0e0e, -1.5px -1.5px 3px rgb(95 94 94 / 25%), inset 0px 0px 0px #0e0e0e, inset 0px -0px 0px #5f5e5e;
-  border-radius: 50px;
-  cursor: pointer;
-}
+        .custom-input {
+            padding-left: var(--size-button);
+            height: var(--size-button);
+            font-size: 15px;
+            border: none;
+            color: #fff;
+            outline: none;
+            width: var(--size-button);
+            transition: all ease 0.3s;
+            background-color: #191A1E;
+            box-shadow: 1.5px 1.5px 3px #0e0e0e, -1.5px -1.5px 3px rgb(95 94 94 / 25%), inset 0px 0px 0px #0e0e0e, inset 0px -0px 0px #5f5e5e;
+            border-radius: 50px;
+            cursor: pointer;
+        }
 
-.custom-input:focus,
-.custom-input:not(:invalid) {
-  width: 200px;
-  cursor: text;
-  box-shadow: 0px 0px 0px #0e0e0e, 0px 0px 0px rgb(95 94 94 / 25%), inset 1.5px 1.5px 3px #0e0e0e, inset -1.5px -1.5px 3px #5f5e5e;
-}
+        .custom-input:focus,
+        .custom-input:not(:invalid) {
+            width: 200px;
+            cursor: text;
+            box-shadow: 0px 0px 0px #0e0e0e, 0px 0px 0px rgb(95 94 94 / 25%), inset 1.5px 1.5px 3px #0e0e0e, inset -1.5px -1.5px 3px #5f5e5e;
+        }
 
-.custom-input:focus + .custom-icon,
-.custom-input:not(:invalid) + .custom-icon {
-  pointer-events: all;
-  cursor: pointer;
-}
+        .custom-input:focus+.custom-icon,
+        .custom-input:not(:invalid)+.custom-icon {
+            pointer-events: all;
+            cursor: pointer;
+        }
 
-.custom-container .custom-icon {
-  position: absolute;
-  width: var(--size-button);
-  height: var(--size-button);
-  top: 0;
-  left: 0;
-  padding: 8px;
-  pointer-events: none;
-}
+        .custom-container .custom-icon {
+            position: absolute;
+            width: var(--size-button);
+            height: var(--size-button);
+            top: 0;
+            left: 0;
+            padding: 8px;
+            pointer-events: none;
+        }
 
-.custom-container .custom-icon svg {
-  width: 100%;
-  height: 100%;
-}
-
+        .custom-container .custom-icon svg {
+            width: 100%;
+            height: 100%;
+        }
     </style>
 
 </html>

@@ -9,12 +9,14 @@
     <script src="{{ asset('plugins/bootstrap/js/bootstrap.bundle.js') }}"></script>
     <script src="{{ asset('plugins/bootstrap/js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bao gồm CSS của Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.5.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <title>
         @yield('title', 'Car Store')
     </title>
+
 </head>
 
 <body>
@@ -99,12 +101,47 @@
                         <a class="nav-link" href="#"><i class="fa-regular fa-comments"></i></a>
                     </li>
                     <li class="nav-item">
-                        <form action="{{route('search')}}" method="GET" class="nav-link">
-                            <input type="text" name="SearchValue" id="SearchValue">
+                        <form action="{{ route('search') }}" method="GET" class="nav-link">
+                            <input type="text" name="SearchValue" id="SearchInput">
+                            <ul id="suggestionList" class="bg-warning"></ul>
+
+                            <script lang="Javascript">
+                                // Lắng nghe sự kiện khi người dùng nhập vào input
+                                document.getElementById('SearchInput').addEventListener('input', function() {
+                                    var query = this.value;
+
+                                    // Gửi yêu cầu AJAX để lấy các gợi ý
+                                    if (query.length > 0) {
+                                        $.ajax({
+                                            url: {{ route('store.suggest') }},
+                                            method: 'GET',
+                                            data: {
+                                                query: query
+                                            },
+                                            success: function(response) {
+                                                var suggestionList = document.getElementById('suggestionList');
+                                                suggestionList.innerHTML = '';
+
+                                                // Hiển thị các gợi ý trong danh sách
+                                                response.forEach(function(store) {
+                                                    var listItem = document.createElement('li');
+                                                    listItem.textContent = store.name;
+                                                    suggestionList.appendChild(listItem);
+                                                });
+                                            }
+                                        });
+                                    } else {
+                                        // Xóa danh sách gợi ý khi người dùng xóa hết truy vấn
+                                        var suggestionList = document.getElementById('suggestionList');
+                                        suggestionList.innerHTML = '';
+                                    }
+                                });
+                            </script>
                             <button type="submit">
                                 <i class="fa-solid fa-magnifying-glass"></i>
                             </button>
                         </form>
+
                         {{-- <a class="nav-link" href="#"></a> --}}
                     </li>
                     <li class="nav-item dropdown">
@@ -142,7 +179,7 @@
                                 <li>
                                     <a class="dropdown-item" href="{{ route('my-account.orders') }}">
                                         <i class="fa-solid fa-file-invoice-dollar"></i>
-                                      Danh sách hóa đơn
+                                        Danh sách hóa đơn
                                     </a>
                                 </li>
                                 <li>
@@ -162,9 +199,13 @@
                 </ul>
             </div>
         </div>
+
     </nav>
+
     <div class="container-fluid" style="padding: 0; margin-top: 80px">
         @yield('sect1')
+    </div>
+    <div class="container">
     </div>
     <div class="container-fluid bg-white" style="padding:0; margin-top: 80px">
         @yield('sect2')
@@ -179,6 +220,10 @@
     </div>
     <div class="container-fluid bg-dark-subtle">
         @yield('sect5')
+    </div>
+    <div class="container">
+
+
     </div>
     <section>
 

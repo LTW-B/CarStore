@@ -20,12 +20,14 @@ class AdminStorePageController extends Controller
             'name' => 'required | max: 255',
             'description' => 'required',
             'price' => 'required|numeric|gt:0',
+            'quantity'=>'required|numeric|gt:0',
             'image' => 'image',
         ]);
         $newStore = new Store();
         $newStore->setName($request->input('name'));
         $newStore->setDescription($request->input('description'));
         $newStore->setPrice($request->input('price'));
+        $newStore->setQuantity($request->input('quantity'));
         $newStore->setImage('store.png');
         $newStore->save();
         if ($request->hasFile('image')) {
@@ -54,12 +56,14 @@ class AdminStorePageController extends Controller
             'name' => 'required | max: 255',
             'description' => 'required',
             'price' => 'required|numeric|gt:0',
+            'quantity'=>'required|numeric|gt:0',
             'image' => 'image',
         ]);
         $updateStore = Store::findOrFail($id);
         $updateStore->setName($request->input('name'));
         $updateStore->setDescription($request->input('description'));
         $updateStore->setPrice($request->input('price'));
+        $updateStore->setQuantity($request->input('quantity'));
         if ($request->hasFile('image')) {
             $imageName = $updateStore->getId(). '.' . $request->file('image')->extension();
             Storage::disk('StoreImage')->put(

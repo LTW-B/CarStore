@@ -31,6 +31,8 @@ Route::get('search', [
     'as'=>'search',
     'uses'=> 'App\Http\Controllers\StoreController@getSearch'
 ]);
+//suggest
+Route::get('suggest', 'App\Http\Controllers\StoreController@suggest')->name('store.suggest');
 //Cart routes
 Route::get('/cart', 'App\Http\Controllers\CartController@index')
     ->name('cart.index');

@@ -23,8 +23,8 @@
                                 <label for="quantity">số lượng</label>
                                 <div class="input-group">
                                     <div class="input-group-text decrease-quantity">-</div>
-                                    <input type="number" name="quantity" min="1" max="20"
-                                        class="form-control quantity-input" value="1" style="width: 50px">
+                                    <input type="number" name="quantity" min="1" max="20" id="quantity"
+                                        class="form-control quantity-input text-center" value="1" style="width: 50px">
                                     <div class="input-group-text increase-quantity">+</div>
                                 </div>
                             </div>
@@ -35,17 +35,17 @@
                                     $(".decrease-quantity").click(function() {
                                         var input = $(this).siblings(".quantity-input");
                                         var currentValue = parseInt(input.val(), 10);
-
+    
                                         if (currentValue > 1) {
                                             input.val(currentValue - 1);
                                         }
                                     });
-
+    
                                     // Bắt sự kiện khi nút "+" được nhấn
                                     $(".increase-quantity").click(function() {
                                         var input = $(this).siblings(".quantity-input");
                                         var currentValue = parseInt(input.val(), 10);
-
+    
                                         if (currentValue < 20) {
                                             input.val(currentValue + 1);
                                         }
