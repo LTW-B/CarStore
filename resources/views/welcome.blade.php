@@ -169,7 +169,7 @@
                     </clipPath>
                 </defs>
                 <g clip-path="url(#clip-polygon--uid126)">
-                    <image class="img-fluid" xlink:href="{{ asset('img/ferrari-499p-2023-red-beautiful-car.jpg') }}"
+                    <image class="img-fluid" xlink:href="{{ asset('img/submarine.png') }}"
                         alt="Ferrari logo image" width="100%" height="100%" x="0%" y="0%">
                     </image>
                 </g>
@@ -179,7 +179,7 @@
     </div>
     {{-- </div> --}}
 @endsection
-@section('sect3')
+{{-- @section('sect3')
     <div class="container">
         <div class="radio-inputs">
             <label class="radio">
@@ -197,7 +197,7 @@
             </label>
         </div>
     </div>
-@endsection
+@endsection --}}
 
 @section('sect5')
     <ul class="nav nav-tabs" id="myTab" role="tablist">

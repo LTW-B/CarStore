@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="{{ asset('plugins/font-awesome/css/all.min.css') }}">
     <link rel="stylesheet" href="{{ asset('plugins/bootstrap/css/bootstrap.min.css') }}">
     <script src="{{ asset('plugins/bootstrap/js/bootstrap.bundle.js') }}"></script>
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}" />
     <script src="{{ asset('plugins/bootstrap/js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">

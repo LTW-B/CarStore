@@ -79,6 +79,7 @@
     </div>
 @endsection --}}
 @section('sect2')
+<link rel="stylesheet" href="{{ asset('css/style.css') }}" />
     <div class="container">
         <form class="form_container" action="{{ route('login') }}" method="POST">
             @csrf
