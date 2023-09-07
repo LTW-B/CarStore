@@ -15,14 +15,14 @@
             </div>
             <div class="carousel-inner text-white">
                 <div class="carousel-item active" data-bs-interval="3000">
-                    <img src="{{ asset('img/horse-ferrari-logo.jpg') }}" class="d-block w-100 img-fluid" alt="...">
+                    <img src="https://wallpapersmug.com/download/1600x900/58ee22/horse-ferrari-logo.jpg" class="d-block w-100 img-fluid" alt="...">
                     <div class="carousel-caption d-none d-md-block text-white">
                         <h5>First slide label</h5>
                         <p>Some representative placeholder content for the first slide.</p>
                     </div>
                 </div>
                 <div class="carousel-item" data-bs-interval="3000">
-                    <img src="{{ asset('img/2023-ferrari-499p-formula-one.jpg') }}" class="d-block w-100 img-fluid"
+                    <img src="https://wallpapersmug.com/download/1600x900/d095c4/the-crew-pagani-huayra-and-ferrari-laferrari-face-off.jpg" class="d-block w-100 img-fluid"
                         alt="...">
                     <div class="carousel-caption d-none d-md-block text-white">
                         <h5>Second slide label</h5>
@@ -30,14 +30,14 @@
                     </div>
                 </div>
                 <div class="carousel-item" data-bs-interval="3000">
-                    <img src="{{ asset('img/2023-ferrari-499p-red.jpg') }}" class="d-block w-100 img-fluid" alt="...">
+                    <img src="https://wallpapersmug.com/download/1600x900/1f9944/sports-car-red-ferrari-laferrari.jpg" class="d-block w-100 img-fluid" alt="...">
                     <div class="carousel-caption d-none d-md-block text-white">
                         <h5>Third slide label</h5>
                         <p>Some representative placeholder content for the third slide.</p>
                     </div>
                 </div>
                 <div class="carousel-item" data-bs-interval="3000">
-                    <img src="{{ asset('img/ferrari-499p-2023-red-beautiful-car.jpg') }}" class="d-block w-100 img-fluid"
+                    <img src="https://wallpapersmug.com/download/1600x900/9c4d8f/la-ferrari-in-rain-4k.jpg" class="d-block w-100 img-fluid"
                         alt="...">
                     <div class="carousel-caption d-none d-md-block text-white">
                         <h5>Fourth slide label</h5>
@@ -163,9 +163,8 @@
                                 <hr>
                             </div>
                         </div>
-                        
+
                         <style>
-                          
                             .row hr {
                                 height: 2px;
                                 background-color: transparent;
@@ -174,21 +173,23 @@
                                 transition: background-color 0.3s ease-in-out;
                             }
 
-                    
+
                             .row a:hover+hr::before {
                                 content: "";
                                 position: absolute;
                                 top: 0;
-                                left: 0;
                                 width: 0;
                                 /* Ban đầu bề rộng là 0 */
-                                height: 100%;
-                                background: #000;
                                 /* Màu nền đen khi hover */
-                                transition: width 0.3s ease-in-out;
                                 /* Hiệu ứng chuyển màu */
                                 z-index: -1;
-                                /* Đặt phía sau nội dung */
+                                pointer-events: none;
+                                left: 0;
+                                height: 2px;
+                                background: red;
+                                transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+                                transition-duration: 400ms;
+                                transition-property: width, left;
                             }
 
                             /* CSS cho hover out */

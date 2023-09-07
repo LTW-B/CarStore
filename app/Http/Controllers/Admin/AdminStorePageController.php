@@ -56,7 +56,7 @@ class AdminStorePageController extends Controller
             'name' => 'required | max: 255',
             'description' => 'required',
             'price' => 'required|numeric|gt:0',
-            'quantity'=>'required|numeric|gt:0',
+            'quantity'=>'gt:0',
             'image' => 'image',
         ]);
         $updateStore = Store::findOrFail($id);

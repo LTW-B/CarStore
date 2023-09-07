@@ -51,8 +51,44 @@
                 <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
               </li> --}}
                 </ul>
-                <form action="{{ route('search') }}" method="get">
-                    <input type="text" name="SearchValue" id="SearchInput">
+                <form action="{{ route('search') }}" method="GET" class="nav-link">
+                    @csrf
+                    <input type="text" name="SearchValue" id="SearchInput" autocomplete="off">
+                    <ul id="searchResult" class="List-group position-absolute" style="display: block; z-index:100"></ul>
+
+                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+                    <script type="text/javascript">
+                        $(document).ready(function() {
+                            $('#SearchInput').keyup(function() {
+                                var input = $(this).val();
+                                if (input != '') {
+                                    $.ajax({
+                                        url: '{{ route('suggest_ajax') }}', // Đường dẫn đã đăng ký trong route
+                                        method: 'get',
+                                        data: {
+                                            SearchInput: input
+                                        }, // Gửi dữ liệu từ input
+                                        success: function(data) {
+                                            // Xóa nội dung hiện tại của div searchResult
+                                            $('#searchResult').empty();
+
+                                            // Đưa dữ liệu từ controller vào div searchResult
+                                            $('#searchResult').html(data);
+                                        }
+                                    });
+                                } else {
+                                    $('#searchResult').empty(); // Xóa nội dung div searchResult nếu không có input
+                                    $('#searchResult').css('display', 'none');
+                                }
+                            });
+                        });
+                        $('#searchResult').on('click', 'li', function() {
+                            var selectedText = $(this).text();
+                            var redirectUrl = '{{ route('search') }}?SearchValue=' + encodeURIComponent(selectedText);
+                            window.location.href = redirectUrl;
+                        });
+                    </script>
+
                     <button type="submit">
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </button>

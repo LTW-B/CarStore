@@ -25,7 +25,7 @@ class StoreController extends Controller
         $storeData['image'] = $storeItem->getImage();
         return view('Store.show')->with("storeData", $storeData);
     }
-    public function showImage($filename) 
+    public function showImage($filename)
     {
         $path = storage_path('app/upload/' . $filename);
         return response()->file($path);
@@ -33,25 +33,28 @@ class StoreController extends Controller
 
     public function getSearch(Request $request)
     {
-        $store = Store::where('name', 'like', '%'.$request->SearchValue.'%')
-                        ->orWhere('price', $request->SearchValue)
-                        ->get();
+        $store = Store::where('name', 'like', '%' . $request->SearchValue . '%')
+            ->orWhere('price', $request->SearchValue)
+            ->get();
         return view('Store.Search')->with('store', $store);
     }
 
-    public function suggest_ajax(Request $request){
-        $data = $request->all();
-        if($data['query']){
-            $suggestedStores = Store::where('name', 'like', '%'.$data['query'].'%')->limit(7)->get();
-            $output = '<ul class="dropdown-menu" style="display:block; position:relative">';
-            foreach($suggestedStores as $key){
-                $output .= '
-                <li><a href="#">'.$key->name.'</a></li>
-                ';
+    public function suggest_ajax(Request $request)
+    {
+        if ($request->ajax()) {
+            $data = Store::where('name', 'like', '%' . $request->input('SearchInput') . '%')
+                ->orWhere('price', $request->input('SearchInput'))
+                ->get();
+
+            if (count($data) > 0) {
+                $output = '';
+                foreach ($data as $row) {
+                    $output .= '<li class="list-group-item">' . $row->name . '</li>';
+                }
+            } else {
+                $output = '<li class="list-group-item">No data found</li>';
             }
-            $output .= '</ul>';
-            echo $output;
-        };
-        return response()->json($output);
+            return $output;
+        }
     }
 }

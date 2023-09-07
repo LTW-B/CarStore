@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="{{ asset('plugins/font-awesome/css/all.min.css') }}">
     <link rel="stylesheet" href="{{ asset('plugins/bootstrap/css/bootstrap.min.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <script src="{{ asset('plugins/bootstrap/js/bootstrap.bundle.js') }}"></script>
     <script src="{{ asset('plugins/bootstrap/js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
@@ -20,9 +22,9 @@
 </head>
 
 <body>
-  
 
-   
+
+
 
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
@@ -111,49 +113,49 @@
 
                     <li class="nav-item">
                         <form action="{{ route('search') }}" method="GET" class="nav-link">
-                            <input type="text" name="SearchValue" id="SearchInput">
-                            <ul id="suggestionList" class="bg-warning" style="display: none;"></ul>
+                            @csrf
+                            <input type="text" name="SearchValue" id="SearchInput" autocomplete="off">
+                            <ul id="searchResult" class="List-group position-absolute bg-light text-dark"
+                                style="display: block; z-index:100; padding:0; width:189px"></ul>
 
-                            <script lang="Javascript">
-                                var searchInput = document.getElementById('SearchInput');
-                                var suggestionList = document.getElementById('suggestionList');
+                            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+                            <script type="text/javascript">
+                                $(document).ready(function() {
+                                    $('#SearchInput').keyup(function() {
+                                        var input = $(this).val();
+                                        if (input != '') {
+                                            $.ajax({
+                                                url: '{{ route('suggest_ajax') }}', // Đường dẫn đã đăng ký trong route
+                                                method: 'get',
+                                                data: {
+                                                    SearchInput: input
+                                                }, // Gửi dữ liệu từ input
+                                                success: function(data) {
+                                                    // Xóa nội dung hiện tại của div searchResult
+                                                    $('#searchResult').empty();
 
-                                // Lắng nghe sự kiện khi người dùng nhập vào input
-                                searchInput.addEventListener('input', function() {
-                                    var query = this.value;
-
-                                    // Ẩn danh sách gợi ý khi không có kết quả hoặc query trống
-                                    if (query.length === 0) {
-                                        suggestionList.style.display = 'none';
-                                        return;
-                                    }
-
-                                    // Gửi yêu cầu AJAX để lấy các gợi ý
-                                    $.ajax({
-                                        url: "{{ route('store.suggest') }}",
-                                        method: 'GET',
-                                        data: {
-                                            query: query
-                                        },
-                                        success: function(response) {
-                                            suggestionList.innerHTML = '';
-
-                                            // Hiển thị danh sách gợi ý và hiển thị nó
-                                            response.forEach(function(store) {
-                                                var listItem = document.createElement('li');
-                                                listItem.textContent = store.name;
-                                                suggestionList.appendChild(listItem);
+                                                    // Đưa dữ liệu từ controller vào div searchResult
+                                                    $('#searchResult').html(data);
+                                                }
                                             });
-
-                                            suggestionList.style.display = 'block';
+                                        } else {
+                                            $('#searchResult').empty(); // Xóa nội dung div searchResult nếu không có input
+                                            $('#searchResult').css('display', 'none');
                                         }
                                     });
                                 });
+                                $('#searchResult').on('click', 'li', function() {
+                                    var selectedText = $(this).text();
+                                    var redirectUrl = '{{ route('search') }}?SearchValue=' + encodeURIComponent(selectedText);
+                                    window.location.href = redirectUrl;
+                                });
                             </script>
+
                             <button type="submit">
                                 <i class="fa-solid fa-magnifying-glass"></i>
                             </button>
                         </form>
+
                     </li>
 
 
@@ -217,8 +219,14 @@
 
             </div>
         </div>
+
     </nav>
 
+    <div class="container" style="padding: 0; margin-top: 80px">
+        {{-- <div id="searchResult">
+
+        </div> --}}
+    </div>
     <div class="container-fluid" style="padding: 0; margin-top: 80px">
         @yield('sect1')
     </div>
