@@ -33,11 +33,20 @@ class StoreController extends Controller
 
     public function getSearch(Request $request)
     {
-        $store = Store::where('name', 'like', '%' . $request->SearchValue . '%')
-            ->orWhere('price', $request->SearchValue)
-            ->get();
+        $searchValue = $request->input('SearchValue');
+
+        if ($searchValue !== null && $searchValue !== '') {
+            $store = Store::where('name', 'like', '%' . $searchValue . '%')
+                ->orWhere('price', $searchValue)
+                ->get();
+        } else {
+            // Trường hợp SearchValue rỗng, trả về kết quả mặc định "Không có kết quả"
+            $store = ['Không có kết quả'];
+        }
+
         return view('Store.Search')->with('store', $store);
     }
+
 
     public function suggest_ajax(Request $request)
     {

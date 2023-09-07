@@ -121,9 +121,9 @@
                             <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
                             <script type="text/javascript">
                                 $(document).ready(function() {
-                                    $('#SearchInput').keyup(function() {
+                                    $('#SearchInput').on('keyup input', function() {
                                         var input = $(this).val();
-                                        if (input != '') {
+                                        if (input != null) {
                                             $.ajax({
                                                 url: '{{ route('suggest_ajax') }}', // Đường dẫn đã đăng ký trong route
                                                 method: 'get',
@@ -143,11 +143,12 @@
                                             $('#searchResult').css('display', 'none');
                                         }
                                     });
-                                });
-                                $('#searchResult').on('click', 'li', function() {
-                                    var selectedText = $(this).text();
-                                    var redirectUrl = '{{ route('search') }}?SearchValue=' + encodeURIComponent(selectedText);
-                                    window.location.href = redirectUrl;
+
+                                    $('#searchResult').on('click', 'li', function() {
+                                        var selectedText = $(this).text();
+                                        var redirectUrl = '{{ route('search') }}?SearchValue=' + encodeURIComponent(selectedText);
+                                        window.location.href = redirectUrl;
+                                    });
                                 });
                             </script>
 
