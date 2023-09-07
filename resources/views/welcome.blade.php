@@ -83,6 +83,7 @@
                 }
             </style>
         </div>
+
         {{-- <img src="{{ asset('img/sect1.jpg') }}" alt="sect1_logo" class="img-fluid position-relative"> --}}
         <div class="position-absolute top-0 left-0 d-flex pt-3  text-uppercase ">
             <b class="bg-dark p-2" style=" clip-path: polygon(0px 0px, 100% 0px, calc(100% - 15px) 100%, 0% 100%);">
@@ -132,6 +133,7 @@
         </div>
     </div>
 @endsection
+
 @section('sect2')
     {{-- <div class="container"> --}}
     <div class="row row-cols-1 row-cols-md-2">
@@ -140,20 +142,70 @@
                 <div class="col offset-1 offset-xl-2 no-gutters">
                     <div class="texts-wrapper css-1v6uxg8">
                         <h2 class="primary texts-block-title--primary"></h2>
-                        <h3 class="secondary texts-block-title--secondary">MENSWEAR AND ACCESSORIES COLLECTION</h3>
+                        <h3 class="secondary texts-block-title--secondary">Tên Xe [Đừng có gắn mấy chữ tào lao =)) ] </h3>
                         <div>
-                            <p>The iconic features of the super sports cars reflected in the Menswear and Travel Collections
-                                marked by an informal style and contemporary taste.</p>
+                            <p>[Tên xe ] mẫu xe tiện ích , mang đến sự sang trọng, tính thể
+                                thao và hiệu suất tuyệt vời , sự thoải mái và tính linh hoạt. Nó mang đến động học lái tốt
+                                nhất
+                                trong phân khúc, cùng với thiết kế không thể nhầm lẫn. Đây hiện thân cho những đặc điểm của
+                                nhiều linh hồn: thể thao, lịch lãm và off-road, và có tính phù hợp cho việc lái hàng ngày
+                                trong nhiều môi trường khác nhau. Với âm thanh động cơ độc đáo đầy bất ngờ, kết hợp với hiệu
+                                suất cao,[Tên xe] đảm bảo sẽ đem đến cho bạn trải nghiệm tuyệt vời , vượt ngoài cả mong đợi
+                                .</p>
                         </div>
                         <div class="links d-block">
                             <div class="row row-cols-1 row-cols-lg-1">
-                                <a href="#" class="col-12 sect1Links">link1</a>
-                                <a href="#" class="col-12 sect1Links">link1</a>
-                                <a href="#" class="col-12 sect1Links">link1</a>
-                                <a href="#" class="col-12 sect1Links">link1</a>
-                                <a href="#" class="col-12 sect1Links">link1</a>
+                                <a href="#" class="col-12 text-decoration-none fs-5">Thông số</a>
+                                <hr>
+                                <a href="#" class="col-12 text-decoration-none fs-5">Liên hệ</a>
+                                <hr>
+                                <a href="#" class="col-12 text-decoration-none fs-5">Chi Tiết</a>
+                                <hr>
                             </div>
                         </div>
+                        
+                        <style>
+                          
+                            .row hr {
+                                height: 2px;
+                                background-color: transparent;
+                                position: relative;
+                                border: none;
+                                transition: background-color 0.3s ease-in-out;
+                            }
+
+                    
+                            .row a:hover+hr::before {
+                                content: "";
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                width: 0;
+                                /* Ban đầu bề rộng là 0 */
+                                height: 100%;
+                                background: #000;
+                                /* Màu nền đen khi hover */
+                                transition: width 0.3s ease-in-out;
+                                /* Hiệu ứng chuyển màu */
+                                z-index: -1;
+                                /* Đặt phía sau nội dung */
+                            }
+
+                            /* CSS cho hover out */
+                            .row a:hover+hr::before {
+                                width: 100%;
+                                /* Khi hover out, thanh sẽ chuyển màu lại từ trái sang phải */
+                            }
+                        </style>
+
+
+
+
+
+
+
+
+
                     </div>
                 </div>
             </div>
@@ -169,8 +221,8 @@
                     </clipPath>
                 </defs>
                 <g clip-path="url(#clip-polygon--uid126)">
-                    <image class="img-fluid" xlink:href="{{ asset('img/submarine.png') }}"
-                        alt="Ferrari logo image" width="100%" height="100%" x="0%" y="0%">
+                    <image class="img-fluid" xlink:href="{{ asset('img/car1.jpg') }}" alt="Ferrari logo image"
+                        width="100%" height="100%" x="0%" y="0%">
                     </image>
                 </g>
             </svg>
@@ -199,6 +251,13 @@
     </div>
 @endsection --}}
 
+
+
+
+
+{{-- Phần đang làm ... --}}
+
+{{-- 
 @section('sect5')
     <ul class="nav nav-tabs" id="myTab" role="tablist">
         <li class="nav-item" role="presentation">
@@ -260,4 +319,4 @@
         <div class="tab-pane fade" id="child1" role="tabpanel" aria-labelledby="child1-tab">Child 1</div>
         <div class="tab-pane fade" id="child2" role="tabpanel" aria-labelledby="child2-tab">Child 2</div>
     </div>
-@endsection
+@endsection --}}

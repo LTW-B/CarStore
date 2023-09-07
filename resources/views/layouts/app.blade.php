@@ -20,10 +20,15 @@
 </head>
 
 <body>
+  
+
+   
+
+
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container text-black-50">
-            <a href="{{ route('home') }}" class="" data-event-module-slug="header"data-event-label="logo"><svg
-                    role="img" aria-labelledby="ferrari-logo-svg-title" viewBox="0 0 162 224"
+            <a href="{{ route('home') }}" class="" data-event-module-slug="header"data-event-label="logo">
+                <svg role="img" aria-labelledby="ferrari-logo-svg-title" viewBox="0 0 162 224"
                     style="height: 62px; width:41px;">
                     <title>Ferrari logo</title>
                     <path fill="#ffffff"
@@ -49,21 +54,21 @@
 
                 <!-- Nav right -->
                 <ul class="navbar-nav me-auto text-uppercase ">
-                    <li class="nav-item">
+                    {{-- <li class="nav-item">
                         <a class="nav-link" href="#">Racing</a>
-                    </li>
-                    <li class="nav-item">
+                    </li> --}}
+                    {{-- <li class="nav-item">
                         <a class="nav-link" href="{{ route('home.AboutPage') }}">Sports Cars</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Collections</a>
-                    </li>
+                    </li> --}}
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('home.linhkien') }}">Linh kiện</a>
                     </li>
-                    <li class="nav-item">
+                    {{-- <li class="nav-item">
                         <a class="nav-link" href="{{ route('home.AboutPage') }}">About Us</a>
-                    </li>
+                    </li> --}}
                     <!-- Dropdown menu -->
                 </ul>
                 <!-- /nav left -->
@@ -100,107 +105,58 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#"><i class="fa-regular fa-comments"></i></a>
                     </li>
+
+
+
+
                     <li class="nav-item">
-                        <form action="{{ route('search') }}" method="GET" class="nav-link d-flex">
-                            <input type="text" name="SearchValue" id="SearchInput"
-                                ata-placeholder="Search any thing..." class="form-select">
-                            <div id="suggest"></div>
+                        <form action="{{ route('search') }}" method="GET" class="nav-link">
+                            <input type="text" name="SearchValue" id="SearchInput">
+                            <ul id="suggestionList" class="bg-warning" style="display: none;"></ul>
 
-                            <script lang="Javascript" type="text/javascript">
-                                $(document).ready(function() {
-                                    var options = [{
-                                            id: 1,
-                                            text: 'Tùy chọn 1'
+                            <script lang="Javascript">
+                                var searchInput = document.getElementById('SearchInput');
+                                var suggestionList = document.getElementById('suggestionList');
+
+                                // Lắng nghe sự kiện khi người dùng nhập vào input
+                                searchInput.addEventListener('input', function() {
+                                    var query = this.value;
+
+                                    // Ẩn danh sách gợi ý khi không có kết quả hoặc query trống
+                                    if (query.length === 0) {
+                                        suggestionList.style.display = 'none';
+                                        return;
+                                    }
+
+                                    // Gửi yêu cầu AJAX để lấy các gợi ý
+                                    $.ajax({
+                                        url: "{{ route('store.suggest') }}",
+                                        method: 'GET',
+                                        data: {
+                                            query: query
                                         },
-                                        {
-                                            id: 2,
-                                            text: 'Tùy chọn 2'
-                                        },
-                                        {
-                                            id: 3,
-                                            text: 'Tùy chọn 3'
-                                        },
-                                        // Thêm các tùy chọn khác tại đây
-                                    ];
-                                    $('#SearchInput').select2({
-                                        // allowClear: true, // Cho phép xóa lựa chọn
-                                        // minimumInputLength: 2, // Số ký tự tối thiểu trước khi tìm kiếm
-                                        // Thêm các tùy chọn khác tại đây
-                                        data: options,
-                                        theme: "bootstrap-5",
-                                        width: $(this).data('width') ? $(this).data('width') : $(this).hasClass('w-100') ? '100%' :
-                                            'style',
-                                        placeholder: $(this).data('placeholder'),
-                                        selectionCssClass: 'select2--small',
-                                        dropdownCssClass: 'select2--small',
+                                        success: function(response) {
+                                            suggestionList.innerHTML = '';
 
-                                    });
-                                    $('#SearchInput').val(2).trigger('change');
-                                });
-                                // $('#SearchInput').keyup(function() {
-                                //     var query = $(this).val();
-                                //     if (query != '') {
-                                //         var _token = $('input[name="_token"]').val(); // Điều chỉnh tên của trường token
-                                //         $.ajax({
-                                //             url: '{{ route('store.suggest') }}',
-                                //             method: 'POST',
-                                //             data: {
-                                //                 query: query,
-                                //                 _token: _token
-                                //             }, // Sửa cú pháp dữ liệu
-                                //             success: function(data) {
-                                //                 $('#suggest').fadeIn();
-                                //                 $('#suggest').html(data);
-                                //             }
-                                //         });
-                                //     } else {
-                                //         $('#suggest').fadeOut();
-                                //     }
-                                // });
+                                            // Hiển thị danh sách gợi ý và hiển thị nó
+                                            response.forEach(function(store) {
+                                                var listItem = document.createElement('li');
+                                                listItem.textContent = store.name;
+                                                suggestionList.appendChild(listItem);
+                                            });
 
-                                // $(document).on('click', 'li', function() { // Thêm dấu ngoặc đơn sau 'function'
-                                //     $('#SearchInput').val($(this).text()); // Sửa #SearchValue thành #SearchInput
-                                //     $('#suggest').fadeOut();
-                                // });
-                            </script>
-                            {{-- 
-                            <input type="text" name="SearchValue" id="SearchInput"> --}}
-                            {{-- <ul id="suggestionList" class="bg-warning"></ul> --}}
-                            {{-- <div id="suggest"></div> --}}
-
-                            {{-- <script lang="Javascript" type="text/javascript">
-                                $('#SearchInput').keyup(
-                                        function() {
-                                            var query = $(this).val();
-                                            if (query != '') {
-                                                var _token = $('input[name="SearchValue"]').val();
-                                                $.ajax({
-                                                    url: '{{ route('store.suggest') }}',
-                                                    method: 'POST',
-                                                    data: query: query,
-                                                    _token: _token,
-                                                    success: function(data) {
-                                                        $('#suggest').fadeIn();
-                                                        $('#suggest').html(data);
-                                                    }
-                                                });
-                                            } else {
-                                                $('#suggest').fadeOut();
-                                            }
-
+                                            suggestionList.style.display = 'block';
                                         }
-                                        $(document).on('click', 'li', function {
-                                            $('#SearchValue').val($(this).text());
-                                            $('#SearchValue').fadeOut();
-                                        });
-                            </script> --}}
+                                    });
+                                });
+                            </script>
                             <button type="submit">
                                 <i class="fa-solid fa-magnifying-glass"></i>
                             </button>
                         </form>
-
-                        {{-- <a class="nav-link" href="#"></a> --}}
                     </li>
+
+
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="UserDropdown" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
@@ -254,6 +210,11 @@
 
                     </li>
                 </ul>
+
+
+
+
+
             </div>
         </div>
     </nav>

@@ -1,1 +1,8 @@
-@import "~select2/dist/css/select2.min.css";
+/* styles.css */
+.loading-icon {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+}
