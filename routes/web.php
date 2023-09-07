@@ -32,7 +32,8 @@ Route::get('search', [
     'uses'=> 'App\Http\Controllers\StoreController@getSearch'
 ]);
 //suggest
-Route::get('suggest', 'App\Http\Controllers\StoreController@suggest')->name('store.suggest');
+Route::post('autoSuggest', 'App\Http\Controllers\StoreController@suggest_ajax')->name('store.suggest');
+
 //Cart routes
 Route::get('/cart', 'App\Http\Controllers\CartController@index')
     ->name('cart.index');

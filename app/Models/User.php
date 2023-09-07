@@ -89,6 +89,12 @@ class User extends Authenticatable
     {
         $this->attributes['balance'] = $balance;
     }
+    public function getAvatar(){
+        return $this->attributes['avatar'];
+    }
+    public function setAvatar($avatar){
+        $this->attributes['avatar'] = $avatar;
+    }
     public function getCreatedAt()
     {
         return $this->attributes['created_at'];
@@ -117,4 +123,5 @@ class User extends Authenticatable
     {
         $this->orders = $orders;
     }
+    
 }

@@ -39,9 +39,19 @@ class StoreController extends Controller
         return view('Store.Search')->with('store', $store);
     }
 
-    public function suggest(Request $request){
-        $query =$request->input('SearchInput');
-        $suggestedStores = Store::where('name', 'like', '%'.$query.'%')->limit(7)->get();
-        return response()->json($suggestedStores);
+    public function suggest_ajax(Request $request){
+        $data = $request->all();
+        if($data['query']){
+            $suggestedStores = Store::where('name', 'like', '%'.$data['query'].'%')->limit(7)->get();
+            $output = '<ul class="dropdown-menu" style="display:block; position:relative">';
+            foreach($suggestedStores as $key){
+                $output .= '
+                <li><a href="#">'.$key->name.'</a></li>
+                ';
+            }
+            $output .= '</ul>';
+            echo $output;
+        };
+        return response()->json($output);
     }
 }
