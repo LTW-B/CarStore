@@ -7,7 +7,7 @@
             <div class="card">
                 {{-- Set a fixed height for the image container --}}
                 <div class="image-container" style="height: 200px; overflow: hidden;">
-                    <img src="{{ route('upload.show', ['filename' => $product['hinhanh']]) }}" alt="image" class="card-img-top img-card">
+                    <img src="{{ route('upload.show', ['filename' => $product['image']]) }}" alt="image" class="card-img-top img-card">
                 </div>
                 <div class="card-body text-center">
                     <a href="#" class="btn btn-primary text-white">

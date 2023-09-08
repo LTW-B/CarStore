@@ -19,19 +19,19 @@ class Sanpham extends Model
     }
     public function getName()
     {
-        return $this->attributes['tensp'];
+        return $this->attributes['name'];
     }
-    public function setName($tensp)
+    public function setName($name)
     {
-        $this->attributes['tensp'] = $tensp;
+        $this->attributes['name'] = $name;
     }
 
     public function getImage()
     {
-        return $this->attributes['hinhanh'];
+        return $this->attributes['image'];
     }
-    public function setImage($hinhanh)
+    public function setImage($image)
     {
-        $this->attributes['hinhanh'] = $hinhanh;
+        $this->attributes['image'] = $image;
     }
 }
