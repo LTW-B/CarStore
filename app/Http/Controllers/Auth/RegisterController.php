@@ -8,6 +8,7 @@ use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Storage;
 
 class RegisterController extends Controller
 {
@@ -53,6 +54,7 @@ class RegisterController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'avatar' => ['required', 'file',],
         ]);
     }
 
@@ -64,11 +66,24 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        $avatarName = null;
+
+        if (isset($data['avatar'])) {
+            $avatar = $data['avatar'];
+
+            // Đặt tên cho ảnh dựa trên user id và đuôi mở rộng
+            $avatarName = $data['name'] . '.' . $avatar->Extension();
+
+            // Lưu ảnh vào thư mục storage/app/avatars
+            Storage::disk('avatars')->put($avatarName, file_get_contents($avatar));
+        }
+
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
             'balance' => 5000,
+            'avatar' => $avatarName,
         ]);
     }
 }

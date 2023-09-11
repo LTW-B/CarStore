@@ -5,8 +5,11 @@
     <div class="col-4" style="background-color: #a365f3">
         <div class="card-block text-center text-white">
             <div class="m-b-25">
-                <img src="https://img.icons8.com/bubbles/100/000000/user.png" class="img-radius"
-                    alt="User-Profile-Image">
+                {{-- <img src="{{ route('store.showImage', ['filename' => $storeData['image']]) }}" class="img-fluid rounded-start"> --}}
+                {{-- <img src="{{ route('avatars', ['filename'=> $myProfile['profile']->avatar]) }}" class="img-fluid rounded-start"
+                    alt="User-Profile-Image"> --}}
+                    <img src="{{ asset('app/avatars/' . auth()->user()->avatar) }}" alt="Avatar">
+
             </div>
             <h6 class="f-w-600">{{ $myProfile['profile']->getName() }}</h6>
             <p>{{ $myProfile['profile']->getRole() }}</p>
@@ -15,7 +18,7 @@
     </div>
     <div class="col-8">
         <div class="card-block">
-            <h6 class="m-b-20 p-b-5 b-b-default f-w-600">Information</h6>
+            <h6 class="m-b-20 p-b-5 b-b-default f-w-600">Thông tin</h6>
             <div class="row">
                 <div class="col-sm-6">
                     <p class="m-b-10 f-w-600">Email</p>
@@ -33,7 +36,7 @@
                     <h6 class="text-muted f-w-400">{{ $myProfile['profile']->getBalance() }}</h6>
                 </div>
                 <div class="col-sm-6">
-                    <p class="m-b-10 f-w-600">Số đơn hàng</p>
+                    <p class="m-b-10 f-w-600"><a href="{{ route('my-account.orders') }}" class="text-decoration-none text-dark"> Số đơn hàng</a></p>
                     <h6 class="text-muted f-w-400">{{ count($myProfile["orders"]) }}</h6>
                 </div>
             </div>

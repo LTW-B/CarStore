@@ -62,6 +62,12 @@ return [
             'url' => env('APP_URL').'/storage',
             'visibility' => 'public',
         ],
+        'avatars' => [
+            'driver' => 'local',
+            'root' => storage_path('app/avatars'), // Thay đổi đường dẫn tùy theo nhu cầu
+            'url' => env('APP_URL').'/storage',
+            'visibility' => 'public',
+        ],
     ],
 
     /*

@@ -28,8 +28,8 @@ Route::get('/store/showItem/{filename}', 'App\Http\Controllers\StoreController@s
     ->name('store.showImage');
 //search 
 Route::get('search', [
-    'as'=>'search',
-    'uses'=> 'App\Http\Controllers\StoreController@getSearch'
+    'as' => 'search',
+    'uses' => 'App\Http\Controllers\StoreController@getSearch'
 ]);
 //suggest
 Route::get('/suggest', 'App\Http\Controllers\StoreController@suggest_ajax')->name('suggest_ajax');
@@ -41,13 +41,15 @@ Route::get('/cart/delete', 'App\Http\Controllers\CartController@delete')
     ->name('cart.delete');
 Route::post('/cart/add/{id}', 'App\Http\Controllers\CartController@add')
     ->name('cart.add');
-Route::middleware('auth')->group(function (){
+Route::middleware('auth')->group(function () {
     Route::get('/cart/purchase', 'App\Http\Controllers\CartController@purchase')
         ->name('cart.purchase');
     Route::get('/cart/my-account/orders', 'App\Http\Controllers\MyAccountController@orders')
         ->name('my-account.orders');
     Route::get('/myProfile', 'App\Http\Controllers\MyAccountController@MyProfile')
         ->name('myProfile');
+    Route::get('/profile/avatars/{filename}', 'App\http\Http\Controllers\MyAccountController@showImage')
+        ->name('avatars');
 });
 //admin routes
 Route::middleware('admin')->group(function () {
@@ -72,4 +74,7 @@ Route::get('/linhkien/upload/{filename}', 'App\Http\Controllers\LinhkienControll
     ->name("upload.show");
 
 Auth::routes();
+Route::post('/register', 'App\Http\Controllers\Auth\RegisterController@register')->name('register');
+
+
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'home'])->name('home');

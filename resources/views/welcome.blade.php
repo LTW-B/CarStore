@@ -230,6 +230,8 @@
 
         </div>
     </div>
+
+    <img src="{{ asset('storage/app/avatars/user.png')}}" alt="Avatar">
     {{-- </div> --}}
 @endsection
 {{-- @section('sect3')

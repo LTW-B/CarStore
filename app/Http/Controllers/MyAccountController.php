@@ -16,29 +16,22 @@ class MyAccountController extends Controller
         $myOrder = [];
         $myOrder["title"] = "My Orders - Online Store";
         $myOrder["subtitle"] = "My Orders";
-        $myOrder["orders"] = Order::with(['items.store'])->where('user_id', Auth::user()->getId())->get();
+        $myOrder["orders"] = Order::with(['items.store'])->where('user_id', Auth::user()->id)->get();
         return view('my-account.orders')->with("myOrder", $myOrder);
     }
     public function MyProfile()
     {
         $myProfile = [];
+        $profile = Auth::user();
         $myProfile["title"] = "My profile - Online Store";
         $myProfile["subtitle"] = "My Orders";
-        $myProfile['profile'] = Auth::user();
-        $myProfile["orders"] = Order::with(['items.store'])->where('user_id', Auth::user()->getId())->get();
+        $myProfile['profile'] = $profile;
+        $myProfile["orders"] = Order::with(['items.store'])->where('user_id', Auth::user()->id)->get();
         return view('my-account.profile')->with("myProfile", $myProfile);
     }
-    public function showImage($filename)
+    public function showImage($filename) 
     {
-        $path = storage_path('app/upload/avatar' . $filename);
+        $path = storage_path('app/avatars/' . $filename);
         return response()->file($path);
-    }
-    public function setAvatar(USer $user)
-    {
-        $avatar = new Avatar();
-        $avatar->create($user->name)->save(storage_path('app/public/avatars/' . $user->id . '.png'));
-        $user->avatar = 'avatars/' . $user->id . '.png';
-        $user->save();
-        return response()->file($avatar);
     }
 }
