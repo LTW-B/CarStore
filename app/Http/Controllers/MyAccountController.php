@@ -22,6 +22,11 @@ class MyAccountController extends Controller
     public function MyProfile()
     {
         $myProfile = [];
+        $myProfile["title"] = "My profile - Online Store";
+        $myProfile["subtitle"] = "My Orders";
+        $myProfile['profile'] = Auth::user();
+        $myProfile["orders"] = Order::with(['items.store'])->where('user_id', Auth::user()->getId())->get();
+        return view('my-account.profile')->with("myProfile", $myProfile);
     }
     public function showImage($filename)
     {

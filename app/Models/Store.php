@@ -55,6 +55,12 @@ class Store extends Model
     public function setQuantity($quantity){
         $this->attributes['quantity'] = $quantity;
     }
+    public function getCategory(){
+        return $this->attributes['category'];
+    }
+    public function setCategory($category){
+        $this->attributes['category'] = $category;
+    }
     public function getCreatedAt()
     {
         return $this->attributes['created_at'];

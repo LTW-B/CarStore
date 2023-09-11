@@ -68,9 +68,13 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('home.linhkien') }}">Linh kiện</a>
                     </li>
-                    {{-- <li class="nav-item">
-                        <a class="nav-link" href="{{ route('home.AboutPage') }}">About Us</a>
-                    </li> --}}
+                    @if (auth()->check() && auth()->user()->isAdmin())
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="{{ route('admin.home.index') }}">Admin</a>
+                    </li>
+                    {{-- @else --}}
+                        
+                    @endif
                     <!-- Dropdown menu -->
                 </ul>
                 <!-- /nav left -->
@@ -94,13 +98,13 @@
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="StoreDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">Store</a>
+                            data-bs-toggle="dropdown" aria-expanded="false">Cửa hàng</a>
                         <ul class="dropdown-menu" aria-labelledby="StoreDropdown">
                             <li>
-                                <a class="dropdown-item" href="{{ route('store.index') }}">Car</a>
+                                <a class="dropdown-item" href="{{ route('store.index') }}">Xe oto</a>
                             </li>
                             <li>
-                                <a class="dropdown-item" href="#">Spare Parts</a>
+                                <a class="dropdown-item" href="{{ route('home.linhkien') }}">Linh Kiện</a>
                             </li>
                         </ul>
                     </li>
@@ -181,7 +185,7 @@
                         @else
                             <ul class="dropdown-menu" aria-labelledby="UserDropdown">
                                 <li>
-                                    <a class="dropdown-item" href="">
+                                    <a class="dropdown-item" href="{{ route('myProfile') }}">
                                         <i class="fa-solid fa-user-gear"></i>
                                         Cài đặt
                                     </a>
@@ -254,7 +258,7 @@
     <section>
 
     </section>
-    <section class="container-fluid bg-dark text-white d-none d-lg-blo">
+    <section class="container-fluid bg-dark text-white d-none d-lg-block">
         <nav class="container bg-dark text-light navbar-collapse ">
             <div class="row row-cols-md-3 row-cols-lg-5 d-none d-md-flex mt-3 ">
                 <div class="col nav-item">

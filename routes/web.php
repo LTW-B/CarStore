@@ -46,6 +46,8 @@ Route::middleware('auth')->group(function (){
         ->name('cart.purchase');
     Route::get('/cart/my-account/orders', 'App\Http\Controllers\MyAccountController@orders')
         ->name('my-account.orders');
+    Route::get('/myProfile', 'App\Http\Controllers\MyAccountController@MyProfile')
+        ->name('myProfile');
 });
 //admin routes
 Route::middleware('admin')->group(function () {

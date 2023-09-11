@@ -89,10 +89,12 @@ class User extends Authenticatable
     {
         $this->attributes['balance'] = $balance;
     }
-    public function getAvatar(){
+    public function getAvatar()
+    {
         return $this->attributes['avatar'];
     }
-    public function setAvatar($avatar){
+    public function setAvatar($avatar)
+    {
         $this->attributes['avatar'] = $avatar;
     }
     public function getCreatedAt()
@@ -123,5 +125,8 @@ class User extends Authenticatable
     {
         $this->orders = $orders;
     }
-    
+    public function isAdmin()
+    {
+        return $this->role === 'admin'; // Ví dụ: kiểm tra xem người dùng có vai trò là 'admin' hay không
+    }
 }

@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 @section('title', $viewAdminData['title'])
 @section('content')
-    <div class="card" >
+    <div class="card">
         <div class="card-header">
             <div class="container">
                 <div class="row">
@@ -38,6 +38,11 @@
                                                 <label class="col-lg-2 col-md-6 col-sm-12 col-form-label">Tên:</label>
                                                 <div class="col-lg-10 col-md-6 col-sm-12">
                                                     <input name="name" value="{{ old('name') }}" type="text"
+                                                        class="form-control">
+                                                </div>
+                                                <label class="col-lg-2 col-md-6 col-sm-12 col-form-label">Loại:</label>
+                                                <div class="col-lg-10 col-md-6 col-sm-12">
+                                                    <input name="name" value="{{ old('category') }}" type="text"
                                                         class="form-control">
                                                 </div>
                                                 <label class="col-lg-2 col-md-6 col-sm-12 col-form-label">Giá:</label>
@@ -83,6 +88,7 @@
                         <th scope="col">STT</th>
                         <th scope="col">ID</th>
                         <th scope="col">Tên</th>
+                        <th scope="col">Loại</th>
                         <th scope="col">Số lượng</th>
                         <th scope="col">Sửa</th>
                         <th scope="col">Xóa</th>
@@ -95,8 +101,13 @@
                     @foreach ($viewAdminData['stores'] as $store)
                         <tr>
                             <td>{{ $counter }}</td>
-                            <td>{{ $store->getId() }}</td>
+                            <td>
+                                <a href="{{ route('store.show', ['id' => $store->getId()]) }}" class="text-capitalize text-decoration-none">
+                                    {{ $store->getId() }}
+                                </a>
+                            </td>
                             <td>{{ $store->getname() }}</td>
+                            <td>{{ $store->getCategory() }}</td>
                             <td>{{ $store->getQuantity() }}</td>
                             <td>
                                 <a class="btn btn-primary"
