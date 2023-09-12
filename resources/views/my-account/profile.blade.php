@@ -6,12 +6,15 @@
         <div class="card-block text-center text-white">
             <div class="m-b-25">
                 {{-- <img src="{{ route('store.showImage', ['filename' => $storeData['image']]) }}" class="img-fluid rounded-start"> --}}
-                {{-- <img src="{{ route('avatars', ['filename'=> $myProfile['profile']->avatar]) }}" class="img-fluid rounded-start"
+                {{-- <img src="{{ route('showAvatar', ['filename'=> $myProfile['profile']]) }}" class="img-fluid rounded-start"
                     alt="User-Profile-Image"> --}}
-                    <img src="{{ asset('app/avatars/' . auth()->user()->avatar) }}" alt="Avatar">
+                    <img src="{{ route('showAvatar', ['filename' => $myProfile['profile']->avatar]) }}" alt="Avatar" class="img-fluid rounded-start">
+                    {{-- <img src="{{ $myProfile['avatarUrl'] }}" alt="Avatar" class="img-fluid rounded-start"> --}}
+
+                <span>{{  $myProfile['profile']->avatar }}</span>
 
             </div>
-            <h6 class="f-w-600">{{ $myProfile['profile']->getName() }}</h6>
+            <h6 class="f-w-600">{{ $myProfile['profile']->name }}</h6>
             <p>{{ $myProfile['profile']->getRole() }}</p>
             <i class=" mdi mdi-square-edit-outline feather icon-edit m-t-10 f-16"></i>
         </div>

@@ -3,7 +3,7 @@
     <div class="container">
         <div style="right: 2em; position:fixed; ">
             <select name="cate" id="cate">
-                <option value="">Loại</option>
+                <option value="car">Loại</option>
                 <option value="car">Xe oto</option>
                 <option value="linhkien">Linh Kiện</option>
             </select>

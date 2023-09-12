@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\Admin;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -48,9 +50,10 @@ Route::middleware('auth')->group(function () {
         ->name('my-account.orders');
     Route::get('/myProfile', 'App\Http\Controllers\MyAccountController@MyProfile')
         ->name('myProfile');
-    Route::get('/profile/avatars/{filename}', 'App\http\Http\Controllers\MyAccountController@showImage')
-        ->name('avatars');
+    
 });
+Route::get('/profile/avatar/{filename}', 'App\http\Http\Controllers\MyAccountController@showImage')
+        ->name('showAvatar');
 //admin routes
 Route::middleware('admin')->group(function () {
     Route::get('/admin', 'App\Http\Controllers\Admin\AdminStoreHomeController@index')
@@ -78,3 +81,16 @@ Route::post('/register', 'App\Http\Controllers\Auth\RegisterController@register'
 
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'home'])->name('home');
+
+
+Route::group(['prefix'=>'admin', 'middleware'=>['isAdmin','auth']], function(){
+    Route::get('dashboard', [AdminController::class, 'index'])->name('admin.dashboard');
+    Route::get('profile', [AdminController::class, 'profile'])->name('admin.profile');
+    Route::get('settings', [AdminController::class, 'settings'])->name('admin.settings');
+});
+
+Route::group(['prefix'=>'user', 'middleware'=>['isUser','auth']], function(){
+    Route::get('dashboard', [UserController::class, 'index'])->name('user.dashboard');
+    Route::get('profile', [UserController::class, 'profile'])->name('user.profile');
+    Route::get('settings', [UserController::class, 'settings'])->name('user.settings');
+});

@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Storage;
@@ -54,7 +55,7 @@ class RegisterController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
-            'avatar' => ['required', 'file',],
+            'avatar' => ['required', 'file'],
         ]);
     }
 
@@ -63,6 +64,7 @@ class RegisterController extends Controller
      *
      * @param  array  $data
      * @return \App\Models\User
+     * @return \Illuminate\Support\Facades\Storage
      */
     protected function create(array $data)
     {
@@ -72,18 +74,47 @@ class RegisterController extends Controller
             $avatar = $data['avatar'];
 
             // Đặt tên cho ảnh dựa trên user id và đuôi mở rộng
-            $avatarName = $data['name'] . '.' . $avatar->Extension();
+            $avatarName = $data['email'] . '.' . $avatar->getClientOriginalExtension();
 
             // Lưu ảnh vào thư mục storage/app/avatars
-            Storage::disk('avatars')->put($avatarName, file_get_contents($avatar));
+            Storage::disk('upload')->put($avatarName, file_get_contents($avatar));
         }
-
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
             'balance' => 5000,
-            'avatar' => $avatarName,
+            'role' => 2,
+            'avatar'=> $avatarName,
         ]);
     }
+
+    // function register(Request $request)
+    // {
+    //     $request->validate([
+    //         'name' => ['required', 'string', 'max:255'],
+    //         'email' => ['required', 'email', 'max:255', 'unique:users'],
+    //         'password' => ['required', 'string', 'min:8', 'confirmed'],
+    //     ]);
+
+    //     $path = 'users/images/';
+    //     $fontPath = public_path('fonts/State Secret.ttf');
+    //     $char = strtoupper($request->name[0]);
+    //     $newAvatarName = rand(12,34353).time().'_avatar.png';
+    //     $dest = $path.$newAvatarName;
+    //     $createAvatar = makeAvatar($fontPath, $dest, $char);
+    //     $avatar = $createAvatar == true ? $newAvatarName : '';
+        
+    //     $user = new User();
+    //     $user->name = $request->name;
+    //     $user->email = $request->email;
+    //     $user->role = 'client';
+    //     $user->avatar = $avatar;
+    //     $user->password = Hash::make($request->password);
+    //     if ( $user->save()){
+    //         return redirect()->back() -> with('success', 'Tạo tài khoản thành công');
+    //     }else {
+    //         return redirect()->back() -> with('error', 'Tạo tài khoản thất bại');
+    //     }
+    // }
 }
