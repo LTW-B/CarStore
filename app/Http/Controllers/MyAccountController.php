@@ -11,6 +11,11 @@ use Illuminate\Support\Facades\Storage;
 
 class MyAccountController extends Controller
 {
+    public function showImage($filename)
+    {
+        $path = storage_path('app/avatars/').$filename;
+        return response()->file($path);
+    }
     public function orders()
     {
         $myOrder = [];
@@ -27,11 +32,7 @@ class MyAccountController extends Controller
         $myProfile["subtitle"] = "My Orders";
         $myProfile['profile'] = $profile;
         $myProfile["orders"] = Order::with(['items.store'])->where('user_id', Auth::user()->id)->get();
+        // $myProfile['avatarUrl'] = route('showAvatar', ['filename' => $profile->avatar]);
         return view('my-account.profile')->with("myProfile", $myProfile);
-    }
-    public function showImage($filename) 
-    {
-        $path = storage_path('app/avatars/' . $filename);
-        return response()->file($path);
     }
 }

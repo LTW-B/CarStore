@@ -54,7 +54,7 @@ class RegisterController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
-            'avatar' => ['required', 'file',],
+            'avatar' => ['required', 'file'],
         ]);
     }
 
@@ -72,18 +72,17 @@ class RegisterController extends Controller
             $avatar = $data['avatar'];
 
             // Đặt tên cho ảnh dựa trên user id và đuôi mở rộng
-            $avatarName = $data['name'] . '.' . $avatar->Extension();
+            $avatarName = $data['email'] . '.' . $avatar->getClientOriginalExtension();
 
             // Lưu ảnh vào thư mục storage/app/avatars
             Storage::disk('avatars')->put($avatarName, file_get_contents($avatar));
         }
-
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
             'balance' => 5000,
-            'avatar' => $avatarName,
+            'avatar'=> $avatarName,
         ]);
     }
 }

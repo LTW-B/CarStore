@@ -48,9 +48,10 @@ Route::middleware('auth')->group(function () {
         ->name('my-account.orders');
     Route::get('/myProfile', 'App\Http\Controllers\MyAccountController@MyProfile')
         ->name('myProfile');
-    Route::get('/profile/avatars/{filename}', 'App\http\Http\Controllers\MyAccountController@showImage')
-        ->name('avatars');
+    
 });
+Route::get('/profile/avatar/{filename}', 'App\http\Http\Controllers\MyAccountController@showImage')
+        ->name('showAvatar');
 //admin routes
 Route::middleware('admin')->group(function () {
     Route::get('/admin', 'App\Http\Controllers\Admin\AdminStoreHomeController@index')
