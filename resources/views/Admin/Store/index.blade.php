@@ -42,7 +42,7 @@
                                                 </div>
                                                 <label class="col-lg-2 col-md-6 col-sm-12 col-form-label">Loại:</label>
                                                 <div class="col-lg-10 col-md-6 col-sm-12">
-                                                    <input name="name" value="{{ old('category') }}" type="text"
+                                                    <input name="category" value="{{ old('category') }}" type="text"
                                                         class="form-control">
                                                 </div>
                                                 <label class="col-lg-2 col-md-6 col-sm-12 col-form-label">Giá:</label>

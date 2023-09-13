@@ -29,7 +29,8 @@ class CartController extends Controller
     public function add(Request $request, $id)
     {
         $stores = $request->session()->get("stores");
-        $stores[$id] = $request->input('quantity');
+        $quantity = $request->input('quantity') ?? 1;
+        $stores[$id] = $quantity;
         $request->session()->put("stores", $stores);
         return redirect()->route('cart.index');
     }

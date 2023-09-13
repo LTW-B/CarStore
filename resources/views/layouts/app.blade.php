@@ -6,6 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="{{ asset('plugins/font-awesome/css/all.min.css') }}">
     <link rel="stylesheet" href="{{ asset('plugins/bootstrap/css/bootstrap.min.css') }}">
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@600;700&family=Ubuntu:wght@400;500&display=swap" rel="stylesheet"> 
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="{{asset('lib/animate/animate.min.css')}}"rel="stylesheet">
+    <link href="{{asset('lib/owlcarousel/assets/owl.carousel.min.css')}}"rel="stylesheet">
+    <link href="{{asset('lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css')}}"rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <script src="{{ asset('plugins/bootstrap/js/bootstrap.bundle.js') }}"></script>
@@ -13,6 +28,7 @@
     <script src="{{ asset('plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href='{{asset('css/style.css')}}'>
     <!-- Bao gồm CSS của Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.5.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <title>
@@ -22,10 +38,6 @@
 </head>
 
 <body>
-
-
-
-
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container text-black-50">
@@ -80,7 +92,7 @@
                 <!-- /nav left -->
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button"
+                        <a class="nav-link dropdown-toggle active" href="#" id="servicesDropdown" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
                             Museum
                         </a>
@@ -97,7 +109,7 @@
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="StoreDropdown" role="button"
+                        <a class="nav-link dropdown-toggle active" href="#" id="StoreDropdown" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">Cửa hàng</a>
                         <ul class="dropdown-menu" aria-labelledby="StoreDropdown">
                             <li>
@@ -232,11 +244,13 @@
 
         </div> --}}
     </div>
+    <section>
+        @yield('beta')
+    </section>
     <div class="container-fluid" style="padding: 0; margin-top: 80px">
         @yield('sect1')
     </div>
-    <div class="container">
-    </div>
+
     <div class="container-fluid bg-white" style="padding:0; margin-top: 80px">
         @yield('sect2')
     </div>
@@ -256,95 +270,78 @@
 
     </div>
     <section>
+        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
 
     </section>
-    <section class="container-fluid bg-dark text-white d-none d-lg-block">
-        <nav class="container bg-dark text-light navbar-collapse ">
-            <div class="row row-cols-md-3 row-cols-lg-5 d-none d-md-flex mt-3 ">
-                <div class="col nav-item">
-                    <ul class="navbar-nav">
-                        <li class="nav-item"><a href="#" class="text-uppercase nav-link">Racing</a></li>
-                        <li class="nav-item">Charles Leclerc</li>
-                        <li class="nav-item">Carlos Sainz</li>
-                        <li class="nav-item">Hypercar</li>
-                        <li class="nav-item">Esports</li>
-                    </ul>
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-light mb-4">Address</h4>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>123 Street, New York, USA</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+012 345 67890</p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@example.com</p>
+                    <div class="d-flex pt-2">
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
+                    </div>
                 </div>
-                <div class="col nav-items">
-                    <ul class="navbar-nav">
-                        <li class="nav-item"><a href="#" class="text-uppercase nav-link">Sports Cars</a></li>
-                        <li class="nav-item">Range</li>
-                        <li class="nav-item">Configure your Ferrari</li>
-                        <li class="nav-item">Owners</li>
-                        <li class="nav-item">MyFerrari</li>
-                    </ul>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-light mb-4">Opening Hours</h4>
+                    <h6 class="text-light">Monday - Friday:</h6>
+                    <p class="mb-4">09.00 AM - 09.00 PM</p>
+                    <h6 class="text-light">Saturday - Sunday:</h6>
+                    <p class="mb-0">09.00 AM - 12.00 PM</p>
                 </div>
-                <div class=" col nav-items">
-                    <ul class="navbar-nav">
-                        <li class="nav-item"><a href="#" class="text-uppercase nav-link">Collections</a></li>
-                        <li class="nav-item">Men</li>
-                        <li class="nav-item">Women</li>
-                        <li class="nav-item">Kids</li>
-                        <li class="nav-item">Shoes</li>
-                    </ul>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-light mb-4">Services</h4>
+                    <a class="btn btn-link" href="">Diagnostic Test</a>
+                    <a class="btn btn-link" href="">Engine Servicing</a>
+                    <a class="btn btn-link" href="">Tires Replacement</a>
+                    <a class="btn btn-link" href="">Oil Changing</a>
+                    <a class="btn btn-link" href="">Vacuam Cleaning</a>
                 </div>
-                <div class="col nav-items">
-                    <ul class="navbar-nav">
-                        <li class="nav-item"><a href="#" class="text-uppercase nav-link">Experiences</a></li>
-                        <li class="nav-item">Corse Clienti</li>
-                        <li class="nav-item">Ferrari Esports Series</li>
-                        <li class="nav-item">Ferrari Museums</li>
-                        <li class="nav-item">Ferrari Land Barcelona</li>
-                    </ul>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-light mb-4">Newsletter</h4>
+                    <p>Dolor amet sit justo amet elitr clita ipsum elitr est.</p>
+                    <div class="position-relative mx-auto" style="max-width: 400px;">
+                        <input class="form-control border-0 w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
+                        <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
+                    </div>
                 </div>
-                <div class="col nav-items">
-                    <ul class="navbar-nav">
-                        <li class="nav-item"><a href="#" class="text-uppercase nav-link">About Us</a></li>
-                        <li class="nav-item">Corporate</li>
-                        <li class="nav-item">Media Centre</li>
-                        <li class="nav-item">News</li>
-                        <li class="nav-item">Magazine</li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-        <hr>
-        <nav class="container bg-dark text-light navbar-collapse">
-            <div class="row row-cols-md-3 row-cols-lg-3 d-none d-md-flex mt-3 text-uppercase">
-                <div class="col nav-item py-3"><i class="pe-2 fa-brands fa-square-facebook"></i>Facebook</div>
-                <div class="col nav-item py-3"><i class="pe-2 fa-brands fa-square-instagram"></i>Intagram</div>
-                <div class="col nav-item py-3"><i class="pe-2 fa-brands fa-tiktok"></i>Tiktok</div>
-                <div class="col nav-item py-3"><i class="pe-2 fa-brands fa-twitch"></i>Twitch</div>
-                <div class="col nav-item py-3"><i class="pe-2 fa-brands fa-twitter"></i>Twitter</div>
-                <div class="col nav-item py-3"><i class="pe-2 fa-brands fa-youtube"></i>Youtube</div>
-            </div>
-        </nav>
-        <hr>
-        <div class="container text-center justify-center text-white-50">
-            <div class="row ps-5 pe-5 pb-5">
-                <div class="col-1 ps-5 pe-5"></div>
-                <div class="col">
-                    <span>Ferrari N.V. - Holding company - A company under Dutch law, having its official seat in
-                        Amsterdam,
-                        the Netherlands and its corporate address at Via Abetone Inferiore No. 4, I-41053 Maranello
-                        (MO),
-                        Italy, registered with the Dutch trade register under number 64060977</span>
-                    <span><br></span>
-                    <span>Ferrari S.p.A. - A company under Italian law, having its registered office at Via Emilia Est
-                        No.
-                        1163, Modena, Italy, Companies' Register of Modena, VAT and Tax number 00159560366 and share
-                        capital
-                        of Euro 20,260,000</span>
-                    <span><br></span>
-                    <span>Copyright 2023 - All rights reserved</span>
-                </div>
-                <div class="col-1 ps-5 pe-5"></div>
             </div>
         </div>
+        <div class="container">
+            <div class="copyright">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        &copy; <a class="border-bottom" href="#">Your Site Name</a>, All Right Reserved.
 
-    </section>
+                        <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
+                        Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a>
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <div class="footer-menu">
+                            <a href="">Home</a>
+                            <a href="">Cookies</a>
+                            <a href="">Help</a>
+                            <a href="">FQAs</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
 
-    <style>
+
+    <!-- Back to Top -->
+
+
+    {{-- <style>
         .corner-button {
             position: fixed;
             bottom: 0;
@@ -352,7 +349,21 @@
             z-index: 2;
             /* Để nút nổi lên trên phần tử chứa */
         }
-    </style>
+    </style> --}}
+        <!-- JavaScript Libraries -->
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="{{asset('lib/wow/wow.min.js')}}"></script>
+        <script src="{{asset('lib/easing/easing.min.js')}}"></script>
+        <script src="{{asset('lib/waypoints/waypoints.min.js')}}"></script>
+        <script src="{{asset('lib/counterup/counterup.min.js')}}"></script>
+        <script src="{{asset('lib/owlcarousel/owl.carousel.min.js')}}"></script>
+        <script src="{{asset('lib/tempusdominus/js/moment.min.js')}}"></script>
+        <script src="{{asset('lib/tempusdominus/js/moment-timezone.min.js')}}"></script>
+        <script src="{{asset('lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js')}}"></script>
+    
+        <!-- Template Javascript -->
+        <script src="{{asset('js/main.js')}}"></script>
 </body>
 
 </html>

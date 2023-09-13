@@ -13,7 +13,7 @@ class MyAccountController extends Controller
 {
     public function showImage($filename)
     {
-        $path = storage_path('app/upload/').$filename;
+        $path = storage_path('app/avatars/'.$filename);
         return response()->file($path);
     }
     public function orders()
