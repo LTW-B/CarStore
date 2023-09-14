@@ -94,29 +94,51 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle active" href="#" id="servicesDropdown" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
-                            Museum
+                            <i class="fa-regular fa-bookmark me-2" ></i>Thư viện
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
                             <li>
-                                <a class="dropdown-item" href="#">Service 1</a>
+                                <a class="dropdown-item" href="{{ route('home') }}">
+                                    <i class="fa-solid fa-house  me-2" style="color: #171212;"></i>Home
+                                </a>
                             </li>
                             <li>
-                                <a class="dropdown-item" href="#">Service 2</a>
+                                <a class="dropdown-item" href="{{route('home.about')}}">
+                                    <i class="fa-solid fa-address-card  me-2"></i>About us
+                                </a>
                             </li>
                             <li>
-                                <a class="dropdown-item" href="#">Service 3</a>
+                                <a class="dropdown-item" href="{{route('home.team')}}">
+                                    <i class="fa-solid fa-users  me-2"></i>Team
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="{{route('home.testimonial')}}">
+                                    <i class="fa-solid fa-meteor  me-2"></i>Testimonial
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="{{route('home.service')}}">
+                                    <i class="fa-brands fa-servicestack  me-2"></i>Services
+                                </a>
                             </li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle active" href="#" id="StoreDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">Cửa hàng</a>
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fa-solid fa-warehouse me-2"></i>Cửa hàng
+                        </a>
                         <ul class="dropdown-menu" aria-labelledby="StoreDropdown">
                             <li>
-                                <a class="dropdown-item" href="{{ route('store.index') }}">Xe oto</a>
+                                <a class="dropdown-item" href="{{ route('store.index') }}">
+                                    <i class="fa-solid fa-car me-2"></i>Xe oto
+                                </a>
                             </li>
                             <li>
-                                <a class="dropdown-item" href="{{ route('home.linhkien') }}">Linh Kiện</a>
+                                <a class="dropdown-item" href="{{ route('home.linhkien') }}">
+                                    <i class="fa-solid fa-screwdriver-wrench me-2"></i>Linh Kiện
+                                </a>
                             </li>
                         </ul>
                     </li>

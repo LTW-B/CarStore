@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use app\Models\User;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -14,5 +16,19 @@ class HomeController extends Controller
         $homeData =[] ;
         $homeData['title'] = 'Best Car Website';
         return view('welcome')->with('homeData', $homeData);
+    }
+    public function about(){
+        return view('home.about');
+    }
+    public function service(){
+        return view('home.service');
+    }
+    public function team(){
+        $users =[];
+        $users['account'] = Auth::user();
+        return view('home.team')->with('users',$users);
+    }
+    public function testimonial(){
+        return view('home.testimonial');
     }
 }

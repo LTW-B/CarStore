@@ -79,3 +79,10 @@ Route::post('/register', 'App\Http\Controllers\Auth\RegisterController@register'
 
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'home'])->name('home');
+
+//home controller chuyển trang
+
+Route::get('/home/about', 'App\Http\Controllers\HomeController@about')->name('home.about');
+Route::get('/home/testimonial', 'App\Http\Controllers\HomeController@testimonial')->name('home.testimonial');
+Route::get('/home/service', 'App\Http\Controllers\HomeController@service')->name('home.service');
+Route::get('/home/team', 'App\Http\Controllers\HomeController@team')->name('home.team');

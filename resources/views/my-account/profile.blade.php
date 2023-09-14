@@ -1,6 +1,7 @@
 @extends('layouts.app')
 @section('sect5')
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/3.6.95/css/materialdesignicons.css">
+{{-- <img src="{{ asset('upload/' .$myProfile['profile']->avatar) }}" alt=""> --}}
 <div class="row">
     <div class="col-4" style="background-color: #a365f3">
         <div class="card-block text-center text-white">
@@ -8,6 +9,7 @@
                 {{-- <img src="{{ route('store.showImage', ['filename' => $storeData['image']]) }}" class="img-fluid rounded-start"> --}}
                 {{-- <img src="{{ route('showAvatar', ['filename'=> $myProfile['profile']]) }}" class="img-fluid rounded-start"
                     alt="User-Profile-Image"> --}}
+                    {{-- <img src="{{ asset('app/upload/' .$myProfile['profile']->avatar) }}" alt="" class="img-fluid rounded-start" style="height: 50px" width="50px"> --}}
                     <img src="{{ route('showAvatar', ['filename' => $myProfile['profile']->avatar]) }}" alt="Avatar" class="img-fluid rounded-start">
                     {{-- <img src="{{ $myProfile['avatarUrl'] }}" alt="Avatar" class="img-fluid rounded-start"> --}}
 
