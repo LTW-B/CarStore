@@ -67,7 +67,7 @@
                 <ul class="navbar-nav me-auto text-uppercase ">
 
                     <li class="nav-item">
-                        <a class="nav-link active" href="{{ route('home') }}">LexuZ </a>
+                        <a class="nav-link active" href="{{ route('home') }}">LexuZ</a>
                     </li>
 
                     <li class="nav-item dropdown">
@@ -89,15 +89,17 @@
                         </ul>
                     </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link active" href="{{ route('home.about') }}">
-                            <i class="fa-solid fa-phone me-2"></i>Liên hệ
-                        </a>
-                    </li>
+                 
 
                     <li class="nav-item">
                         <a class="nav-link active" href="{{ route('home.about') }}">
                             <i class="fa-solid fa-address-card  me-2"></i>Giới thiệu
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#contact">
+                            <i class="fa-solid fa-phone me-2"></i>Liên hệ
                         </a>
                     </li>
 
@@ -137,14 +139,19 @@
                         </ul>
                     </li>
 
-
-
                     <li class="nav-item">
-                        <form action="{{ route('search') }}" method="GET" class="nav-link">
+
+                        <form action="{{ route('search') }}" method="GET" class="nav-link search">
                             @csrf
-                            <input type="text" name="SearchValue" id="SearchInput" autocomplete="off" class="">
-                            <ul id="searchResult" class="List-group position-absolute bg-light text-dark"
-                                style="display: block; z-index:100; padding:0; width:189px"></ul>
+              
+                                <input type="text" name="SearchValue" id="SearchInput" autocomplete="off"
+                                    class="input rounded form-control-sm" style="background-color: white" placeholder="Search...">
+                                <ul id="searchResult" class="List-group position-absolute bg-light text-dark"
+                                    style="display: block; z-index:100; padding:0; width:189px"></ul>
+                                <button type="submit" class="bg-transparent border-0">
+                                    <i class="fa-solid fa-magnifying-glass" style="color: #ffffff;"></i>
+                                </button>
+                       
 
                             <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
                             <script type="text/javascript">
@@ -180,13 +187,11 @@
                                 });
                             </script>
 
-                            <button type="submit" class="bg-transparent ">
-                                <i class="fa-solid fa-magnifying-glass" style="color: #ffffff;"></i>
-                            </button>
 
 
-                            
-                            
+
+
+
                         </form>
 
                     </li>
@@ -254,7 +259,7 @@
         </div>
     </nav>
 
-    <div class="container"  style="padding: 0; margin-top: 80px"> </div>
+    <div class="container" style="padding: 0; margin-top: 80px"> </div>
 
     <section>
         @yield('beta')
@@ -288,11 +293,11 @@
         <button ref="#top" class="btn btn-lg btn-primary btn-lg-square back-to-top">
             <i class="bi bi-arrow-up"></i>
         </button>
-      
+
     </section>
 
     <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
-        <div class="container py-5">
+        <div class="container py-5" id="contact">
             <div class="row g-5">
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-light mb-4">Liên hệ với chúng tôi</h4>
