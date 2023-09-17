@@ -230,7 +230,104 @@
         </div>
     </div> --}}
     <!-- Service End -->
+    <div class="container">
+        <div class="row row-cols-1 row-cols-md-2">
+            <div class="texts col col-md-4 col-lg-4 align-self-stretch">
+                <div class="row align-items-center">
+                    <div class="col offset-1 offset-xl-2 no-gutters">
+                        <div class="texts-wrapper css-1v6uxg8">
+                            <h2 class="primary texts-block-title--primary"></h2>
+                            <h3 class="secondary texts-block-title--secondary">Tên Xe [Đừng có gắn mấy chữ tào lao =)) ]
+                            </h3>
+                            <div>
+                                <p>[Tên xe ] mẫu xe tiện ích , mang đến sự sang trọng, tính thể
+                                    thao và hiệu suất tuyệt vời , sự thoải mái và tính linh hoạt. Nó mang đến động học lái
+                                    tốt
+                                    nhất
+                                    trong phân khúc, cùng với thiết kế không thể nhầm lẫn. Đây hiện thân cho những đặc điểm
+                                    của
+                                    nhiều linh hồn: thể thao, lịch lãm và off-road, và có tính phù hợp cho việc lái hàng
+                                    ngày
+                                    trong nhiều môi trường khác nhau. Với âm thanh động cơ độc đáo đầy bất ngờ, kết hợp với
+                                    hiệu
+                                    suất cao,[Tên xe] đảm bảo sẽ đem đến cho bạn trải nghiệm tuyệt vời , vượt ngoài cả mong
+                                    đợi
+                                    .</p>
+                            </div>
+                            <div class="links d-block">
+                                <div class="row row-cols-1 row-cols-lg-1">
+                                    <a href="#" class="col-12 text-decoration-none fs-6">Thông số</a>
+                                    <hr>
+                                    <a href="#" class="col-12 text-decoration-none fs-6">Chi Tiết</a>
+                                    <hr>
+                                </div>
+                            </div>
 
+                            <style>
+                                .row hr {
+                                    height: 2px;
+                                    background-color: transparent;
+                                    position: relative;
+                                    border: none;
+                                    transition: background-color 0.3s ease-in-out;
+                                }
+
+
+                                .row a:hover+hr::before {
+                                    content: "";
+                                    position: absolute;
+                                    top: 0;
+                                    width: 0;
+                                    /* Ban đầu bề rộng là 0 */
+                                    /* Màu nền đen khi hover */
+                                    /* Hiệu ứng chuyển màu */
+                                    z-index: -1;
+                                    pointer-events: none;
+                                    left: 0;
+                                    height: 2px;
+                                    background: red;
+                                    transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+                                    transition-duration: 400ms;
+                                    transition-property: width, left;
+                                }
+
+                                /* CSS cho hover out */
+                                .row a:hover+hr::before {
+                                    width: 100%;
+                                    /* Khi hover out, thanh sẽ chuyển màu lại từ trái sang phải */
+                                }
+                            </style>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-5 d-none d-lg-flex animated zoomIn justify-content-left" style=" height: 40vh;">
+                <img class="img-fluid" src="./img/333-removebg.png" alt="hotsale">
+            </div>
+
+
+            {{-- <div class="col col-md-8 col-lg-8">
+                <svg width="100%" height="100%" viewBox="0 0 24 11" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink" class="clip-svg">
+                    <defs>
+                        <clipPath id="clip-polygon--uid126">
+                            <polygon points="11 0, 11.1 0, 11.1 11, 0 11"></polygon>
+                            <rect x="11" y="0" width="13" height="11"></rect>
+                            {{-- <polygon points="15.9 0, 24 0, 16 11, 15.9 11"></polygon> --}}
+                        {{-- </clipPath>
+                    </defs>
+                    <g clip-path="url(#clip-polygon--uid126)">
+                        <image class="img-fluid" xlink:href="{{ asset('img/car1.jpg') }}" alt="Ferrari logo image"
+                            width="100%" height="100%" x="0%" y="0%">
+                        </image>
+                    </g>
+                </svg> --}}
+
+            {{-- </div> --}} 
+        </div>
+
+    </div>
 
     <!-- About Start -->
     <div class="container-xxl py-5">
@@ -652,111 +749,9 @@
     <!-- Testimonial End -->
 @endsection
 
-{{-- @section('sect2')
-    <div class="container">
-        <div class="row row-cols-1 row-cols-md-2">
-            <div class="texts col col-md-4 col-lg-4 align-self-stretch">
-                <div class="row align-items-center">
-                    <div class="col offset-1 offset-xl-2 no-gutters">
-                        <div class="texts-wrapper css-1v6uxg8">
-                            <h2 class="primary texts-block-title--primary"></h2>
-                            <h3 class="secondary texts-block-title--secondary">Tên Xe [Đừng có gắn mấy chữ tào lao =)) ]
-                            </h3>
-                            <div>
-                                <p>[Tên xe ] mẫu xe tiện ích , mang đến sự sang trọng, tính thể
-                                    thao và hiệu suất tuyệt vời , sự thoải mái và tính linh hoạt. Nó mang đến động học lái
-                                    tốt
-                                    nhất
-                                    trong phân khúc, cùng với thiết kế không thể nhầm lẫn. Đây hiện thân cho những đặc điểm
-                                    của
-                                    nhiều linh hồn: thể thao, lịch lãm và off-road, và có tính phù hợp cho việc lái hàng
-                                    ngày
-                                    trong nhiều môi trường khác nhau. Với âm thanh động cơ độc đáo đầy bất ngờ, kết hợp với
-                                    hiệu
-                                    suất cao,[Tên xe] đảm bảo sẽ đem đến cho bạn trải nghiệm tuyệt vời , vượt ngoài cả mong
-                                    đợi
-                                    .</p>
-                            </div>
-                            <div class="links d-block">
-                                <div class="row row-cols-1 row-cols-lg-1">
-                                    <a href="#" class="col-12 text-decoration-none fs-5">Thông số</a>
-                                    <hr>
-                                    <a href="#" class="col-12 text-decoration-none fs-5">Liên hệ</a>
-                                    <hr>
-                                    <a href="#" class="col-12 text-decoration-none fs-5">Chi Tiết</a>
-                                    <hr>
-                                </div>
-                            </div>
-
-                            <style>
-                                .row hr {
-                                    height: 2px;
-                                    background-color: transparent;
-                                    position: relative;
-                                    border: none;
-                                    transition: background-color 0.3s ease-in-out;
-                                }
-
-
-                                .row a:hover+hr::before {
-                                    content: "";
-                                    position: absolute;
-                                    top: 0;
-                                    width: 0;
-                                    /* Ban đầu bề rộng là 0 */
-                                    /* Màu nền đen khi hover */
-                                    /* Hiệu ứng chuyển màu */
-                                    z-index: -1;
-                                    pointer-events: none;
-                                    left: 0;
-                                    height: 2px;
-                                    background: red;
-                                    transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
-                                    transition-duration: 400ms;
-                                    transition-property: width, left;
-                                }
-
-                                /* CSS cho hover out */
-                                .row a:hover+hr::before {
-                                    width: 100%;
-                                    /* Khi hover out, thanh sẽ chuyển màu lại từ trái sang phải */
-                                }
-                            </style>
-
-
-
-
-
-
-
-
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col col-md-8 col-lg-8">
-                <svg width="100%" height="100%" viewBox="0 0 24 11" xmlns="http://www.w3.org/2000/svg"
-                    xmlns:xlink="http://www.w3.org/1999/xlink" class="clip-svg">
-                    <defs>
-                        <clipPath id="clip-polygon--uid126">
-                            <polygon points="11 0, 11.1 0, 11.1 11, 0 11"></polygon>
-                            <rect x="11" y="0" width="13" height="11"></rect>
-                            {{-- <polygon points="15.9 0, 24 0, 16 11, 15.9 11"></polygon> --}}
-                        {{-- </clipPath>
-                    </defs>
-                    <g clip-path="url(#clip-polygon--uid126)">
-                        <image class="img-fluid" xlink:href="{{ asset('img/car1.jpg') }}" alt="Ferrari logo image"
-                            width="100%" height="100%" x="0%" y="0%">
-                        </image>
-                    </g>
-                </svg>
-
-            </div>
-        </div>
-
-    </div> --}}
-{{-- @endsection --}}
+@section('sect2')
+    
+@endsection 
 {{-- @section('sect3')
     <div class="container">
         <div class="radio-inputs">
