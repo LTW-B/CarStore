@@ -2,9 +2,10 @@
 @section('title', $homeData['title'])
 @section('beta')
  <!-- Carousel Start -->
- <div class="container-fluid p-0 mb-5">
+ <div class="container-fluid p-0 mb-5" >
     <div id="header-carousel" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
+            
             <div class="carousel-item active">
                 <img class="w-100" src="https://wallpapersmug.com/download/1600x900/58ee22/horse-ferrari-logo.jpg" alt="Image">
                 <div class="carousel-caption d-flex align-items-center">
@@ -16,12 +17,13 @@
                                 <a href="" class="btn btn-primary py-3 px-5 animated slideInDown">Learn More<i class="fa fa-arrow-right ms-3"></i></a>
                             </div>
                             <div class="col-lg-5 d-none d-lg-flex animated zoomIn">
-                                <img class="img-fluid" src="img/carousel-1.png" alt="">
+                                <img class="img-fluid" src="img/carousel-2.png" alt="new">
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+
             <div class="carousel-item">
                 <img class="w-100" src="img/carousel-bg-2.jpg" alt="Image">
                 <div class="carousel-caption d-flex align-items-center">
@@ -33,7 +35,7 @@
                                 <a href="" class="btn btn-primary py-3 px-5 animated slideInDown">Learn More<i class="fa fa-arrow-right ms-3"></i></a>
                             </div>
                             <div class="col-lg-5 d-none d-lg-flex animated zoomIn">
-                                <img class="img-fluid" src="img/carousel-2.png" alt="">
+                                <img class="img-fluid" src="img/carousel-1.png" alt="">
                             </div>
                         </div>
                     </div>

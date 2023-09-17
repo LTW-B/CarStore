@@ -2,28 +2,25 @@
 <html lang="en">
 
 <head>
-    {{-- Meta and fonawesome + bootstrap  --}}
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="{{ asset('plugins/font-awesome/css/all.min.css') }}">
     <link rel="stylesheet" href="{{ asset('plugins/bootstrap/css/bootstrap.min.css') }}">
-    {{-- Fav icon --}}
-    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+    <link href="./favicon.ico" rel="icon">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@600;700&family=Ubuntu:wght@400;500&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@600;700&family=Ubuntu:wght@400;500&display=swap" rel="stylesheet"> 
 
     <!-- Icon Font Stylesheet -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
     <!-- Libraries Stylesheet -->
-    <link href="{{ asset('lib/animate/animate.min.css') }}"rel="stylesheet">
-    <link href="{{ asset('lib/owlcarousel/assets/owl.carousel.min.css') }}"rel="stylesheet">
-    <link href="{{ asset('lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css') }}"rel="stylesheet" />
+    <link href="{{asset('lib/animate/animate.min.css')}}"rel="stylesheet">
+    <link href="{{asset('lib/owlcarousel/assets/owl.carousel.min.css')}}"rel="stylesheet">
+    <link href="{{asset('lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css')}}"rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <script src="{{ asset('plugins/bootstrap/js/bootstrap.bundle.js') }}"></script>
@@ -31,17 +28,17 @@
     <script src="{{ asset('plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href='{{ asset('css/style.css') }}'>
-
+    <link rel="stylesheet" href='{{asset('css/style.css')}}'>
     <!-- Bao gồm CSS của Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.5.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <title>
-        @yield('title', 'Official LexuZ Website')
+        @yield('title', 'Car Store')
     </title>
 
 </head>
 
 <body>
+
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container text-black-50">
             <a href="{{ route('home') }}" class="" data-event-module-slug="header"data-event-label="logo">
@@ -60,20 +57,77 @@
                 aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
+            <!-- Logo -->
+
+            <!-- Toggle button for small screens -->
+
+
+            <!-- Navbar content -->
 
             <div class="collapse navbar-collapse" id="navbarContent">
 
                 <!-- Nav right -->
                 <ul class="navbar-nav me-auto text-uppercase ">
-
-                    <li class="nav-item">
-                        <a class="nav-link active" href="{{ route('home') }}">LexuZ </a>
+                    {{-- <li class="nav-item">
+                        <a class="nav-link" href="#">Racing</a>
+                    </li> --}}
+                    {{-- <li class="nav-item">
+                        <a class="nav-link" href="{{ route('home.AboutPage') }}">Sports Cars</a>
                     </li>
-
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Collections</a>
+                    </li> --}}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('home.linhkien') }}">Linh kiện</a>
+                    </li>
+                    @if (auth()->check() && auth()->user()->isAdmin())
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="{{ route('admin.home.index') }}">Admin</a>
+                    </li>
+                    {{-- @else --}}
+                        
+                    @endif
+                    <!-- Dropdown menu -->
+                </ul>
+                <!-- /nav left -->
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" id="servicesDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fa-regular fa-bookmark me-2" ></i>Thư viện
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
+                            <li>
+                                <a class="dropdown-item" href="{{ route('home') }}">
+                                    <i class="fa-solid fa-house  me-2" style="color: #171212;"></i>Home
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="{{route('home.about')}}">
+                                    <i class="fa-solid fa-address-card  me-2"></i>About us
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="{{route('home.team')}}">
+                                    <i class="fa-solid fa-users  me-2"></i>Team
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="{{route('home.testimonial')}}">
+                                    <i class="fa-solid fa-meteor  me-2"></i>Testimonial
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="{{route('home.service')}}">
+                                    <i class="fa-brands fa-servicestack  me-2"></i>Services
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle active" href="#" id="StoreDropdown" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="fa-solid fa-store me-2"></i>Cửa hàng
+                            <i class="fa-solid fa-warehouse me-2"></i>Cửa hàng
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="StoreDropdown">
                             <li>
@@ -82,67 +136,23 @@
                                 </a>
                             </li>
                             <li>
-                                <a class="dropdown-item " href="{{ route('home.linhkien') }}">
+                                <a class="dropdown-item" href="{{ route('home.linhkien') }}">
                                     <i class="fa-solid fa-screwdriver-wrench me-2"></i>Linh Kiện
                                 </a>
                             </li>
                         </ul>
                     </li>
-
                     <li class="nav-item">
-                        <a class="nav-link active" href="{{ route('home.about') }}">
-                            <i class="fa-solid fa-phone me-2"></i>Liên hệ
-                        </a>
+                        <a class="nav-link" href="#"><i class="fa-regular fa-comments"></i></a>
                     </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link active" href="{{ route('home.about') }}">
-                            <i class="fa-solid fa-address-card  me-2"></i>Giới thiệu
-                        </a>
-                    </li>
-
-                    @if (auth()->check() &&
-                            auth()->user()->isAdmin())
-                        <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="{{ route('admin.home.index') }}">Admin</a>
-                        </li>
-                        {{-- @else --}}
-                    @endif
-                    <!-- Dropdown menu -->
-                </ul>
-
-                <!-- /nav left -->
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle active" href="#" id="servicesDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="fa-regular fa-bookmark me-2"></i>Thư viện
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
-                            <li>
-                                <a class="dropdown-item" href="{{ route('home.team') }}">
-                                    <i class="fa-solid fa-users  me-2"></i>Đội ngũ
-                                </a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="{{ route('home.testimonial') }}">
-                                    <i class="fa-solid fa-meteor  me-2"></i>Phản hồi
-                                </a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="{{ route('home.service') }}">
-                                    <i class="fa-brands fa-servicestack  me-2"></i>Dịch vụ
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
 
 
 
                     <li class="nav-item">
                         <form action="{{ route('search') }}" method="GET" class="nav-link">
                             @csrf
-                            <input type="text" name="SearchValue" id="SearchInput" autocomplete="off" class="">
+                            <input type="text" name="SearchValue" id="SearchInput" autocomplete="off">
                             <ul id="searchResult" class="List-group position-absolute bg-light text-dark"
                                 style="display: block; z-index:100; padding:0; width:189px"></ul>
 
@@ -180,20 +190,16 @@
                                 });
                             </script>
 
-                            <button type="submit" class="bg-transparent ">
-                                <i class="fa-solid fa-magnifying-glass" style="color: #ffffff;"></i>
+                            <button type="submit">
+                                <i class="fa-solid fa-magnifying-glass"></i>
                             </button>
-
-
-                            
-                            
                         </form>
 
                     </li>
 
 
                     <li class="nav-item dropdown">
-                        <a class="nav-link active dropdown-toggle" href="#" id="UserDropdown" role="button"
+                        <a class="nav-link dropdown-toggle" href="#" id="UserDropdown" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
                             <i class="fa-regular fa-user"></i>
                         </a>
@@ -244,22 +250,25 @@
                         @endguest
 
                     </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="fa-regular fa-comments"></i></a>
-                    </li>
-
                 </ul>
+
+
+
+
+
             </div>
         </div>
+
     </nav>
 
-    <div class="container"  style="padding: 0; margin-top: 80px"> </div>
+    <div class="container" style="padding: 0; margin-top: 80px">
+        {{-- <div id="searchResult">
 
+        </div> --}}
+    </div>
     <section>
         @yield('beta')
     </section>
-
     <div class="container-fluid" style="padding: 0; margin-top: 80px">
         @yield('sect1')
     </div>
@@ -267,90 +276,78 @@
     <div class="container-fluid bg-white" style="padding:0; margin-top: 80px">
         @yield('sect2')
     </div>
-
     <div class="container-fluid bg-light" style="margin-top: 80px">
         @yield('sect3')
     </div>
-
     <div class="container" style="margin-top: 80px">
         <div class="row">
             @yield('sect4')
         </div>
     </div>
-
     <div class="container-fluid bg-dark-subtle">
         @yield('sect5')
     </div>
+    <div class="container">
 
-    <div class="container"> </div>
 
+    </div>
     <section>
-        <button ref="#top" class="btn btn-lg btn-primary btn-lg-square back-to-top">
-            <i class="bi bi-arrow-up"></i>
-        </button>
-      
-    </section>
+        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
 
+    </section>
+    <!-- Footer Start -->
     <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
         <div class="container py-5">
             <div class="row g-5">
                 <div class="col-lg-3 col-md-6">
-                    <h4 class="text-light mb-4">Liên hệ với chúng tôi</h4>
-                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Công viên Phần mềm Quang Trung, Lô 14
-                        Đường Số 5,Tân Chánh Hiệp, Quận 12, Thành phố Hồ Chí Minh .</p>
-                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+0877-876-875</p>
-                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>LexuZofficial@gmail.com</p>
+                    <h4 class="text-light mb-4">Address</h4>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>123 Street, New York, USA</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+012 345 67890</p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@example.com</p>
                     <div class="d-flex pt-2">
                         <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-outline-light btn-social" href=""><i
-                                class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
                         <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
-                        <a class="btn btn-outline-light btn-social" href=""><i
-                                class="fab fa-linkedin-in"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
-                    <h4 class="text-light mb-4">Thời gian hoạt động</h4>
-                    <h6 class="text-light">Thứ hai - Thứ sáu:</h6>
-                    <p class="mb-4">07.00 AM - 22.00 PM</p>
-                    <h6 class="text-light">Thứ bảy - Chủ nhật:</h6>
-                    <p class="mb-0">07.00 AM - 16.00 PM</p>
+                    <h4 class="text-light mb-4">Opening Hours</h4>
+                    <h6 class="text-light">Monday - Friday:</h6>
+                    <p class="mb-4">09.00 AM - 09.00 PM</p>
+                    <h6 class="text-light">Saturday - Sunday:</h6>
+                    <p class="mb-0">09.00 AM - 12.00 PM</p>
                 </div>
-
                 <div class="col-lg-3 col-md-6">
-                    <h4 class="text-light mb-4">Dịch vụ</h4>
-                    <a class="btn btn-link" href="">Kiểm tra chẩn đoán</a>
-                    <a class="btn btn-link" href="">Dịch vụ động cơ</a>
-                    <a class="btn btn-link" href="">Thay thế lốp xe</a>
-                    <a class="btn btn-link" href="">Thay dầu máy</a>
-                    <a class="btn btn-link" href="">Vệ sinh bụi bẩn</a>
+                    <h4 class="text-light mb-4">Services</h4>
+                    <a class="btn btn-link" href="">Diagnostic Test</a>
+                    <a class="btn btn-link" href="">Engine Servicing</a>
+                    <a class="btn btn-link" href="">Tires Replacement</a>
+                    <a class="btn btn-link" href="">Oil Changing</a>
+                    <a class="btn btn-link" href="">Vacuam Cleaning</a>
                 </div>
-
                 <div class="col-lg-3 col-md-6">
-                    <h4 class="text-light mb-4">Đăng ký nhận tin tức</h4>
-                    <p>Đăng ký nhận thông tin và cập nhật mới nhất về sản phẩm và dịch vụ của chúng tôi.</p>
+                    <h4 class="text-light mb-4">Newsletter</h4>
+                    <p>Dolor amet sit justo amet elitr clita ipsum elitr est.</p>
                     <div class="position-relative mx-auto" style="max-width: 400px;">
-                        <input class="form-control border-0 w-100 py-3 ps-4 pe-5" type="text"
-                            placeholder="Email của bạn">
-                        <button type="button"
-                            class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">Đăng ký</button>
+                        <input class="form-control border-0 w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
+                        <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
                     </div>
                 </div>
-
             </div>
         </div>
-
         <div class="container">
             <div class="copyright">
                 <div class="row">
                     <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                        &copy; <a class="border-bottom" href="#">LeuxZ Official Webisite</a>, All Right
-                        Reserved.
-                        Designed By <a class="border-bottom" href="https://htmlcodex.com">Dr.Moho & Oranty</a>
+                        &copy; <a class="border-bottom" href="#">Your Site Name</a>, All Right Reserved.
+
+                        <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
+                        Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a>
                     </div>
                     <div class="col-md-6 text-center text-md-end">
                         <div class="footer-menu">
-                            <a href="{{ route('home') }}">Home</a>
+                            <a href="">Home</a>
                             <a href="">Cookies</a>
                             <a href="">Help</a>
                             <a href="">FQAs</a>
@@ -360,22 +357,35 @@
             </div>
         </div>
     </div>
+    <!-- Footer End -->
 
-    {{-- Script Component --}}
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="{{ asset('lib/wow/wow.min.js') }}"></script>
-    <script src="{{ asset('lib/easing/easing.min.js') }}"></script>
-    <script src="{{ asset('lib/waypoints/waypoints.min.js') }}"></script>
-    <script src="{{ asset('lib/counterup/counterup.min.js') }}"></script>
-    <script src="{{ asset('lib/owlcarousel/owl.carousel.min.js') }}"></script>
-    <script src="{{ asset('lib/tempusdominus/js/moment.min.js') }}"></script>
-    <script src="{{ asset('lib/tempusdominus/js/moment-timezone.min.js') }}"></script>
-    <script src="{{ asset('lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js') }}"></script>
 
-    <!-- Template Javascript -->
-    <script src="{{ asset('js/main.js') }}"></script>
+    <!-- Back to Top -->
 
+
+    {{-- <style>
+        .corner-button {
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            z-index: 2;
+            /* Để nút nổi lên trên phần tử chứa */
+        }
+    </style> --}}
+        <!-- JavaScript Libraries -->
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="{{asset('lib/wow/wow.min.js')}}"></script>
+        <script src="{{asset('lib/easing/easing.min.js')}}"></script>
+        <script src="{{asset('lib/waypoints/waypoints.min.js')}}"></script>
+        <script src="{{asset('lib/counterup/counterup.min.js')}}"></script>
+        <script src="{{asset('lib/owlcarousel/owl.carousel.min.js')}}"></script>
+        <script src="{{asset('lib/tempusdominus/js/moment.min.js')}}"></script>
+        <script src="{{asset('lib/tempusdominus/js/moment-timezone.min.js')}}"></script>
+        <script src="{{asset('lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js')}}"></script>
+    
+        <!-- Template Javascript -->
+        <script src="{{asset('js/main.js')}}"></script>
 </body>
 
 </html>

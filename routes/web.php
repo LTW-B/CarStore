@@ -14,6 +14,14 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
+Route::get('/abc', function () {
+    return view('layouts.app');
+});
+Route::get('/d', function () {
+    return view('layouts.backup');
+});
+
+
 Route::get('/', 'App\Http\Controllers\HomeController@home')
     ->name("home");
 Route::get('/about', 'App\Http\Controllers\HomeController@about')
@@ -80,7 +88,7 @@ Route::post('/register', 'App\Http\Controllers\Auth\RegisterController@register'
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'home'])->name('home');
 
-//home controller chuyển trang
+//home controller chuyển trang  
 
 Route::get('/home/about', 'App\Http\Controllers\HomeController@about')->name('home.about');
 Route::get('/home/testimonial', 'App\Http\Controllers\HomeController@testimonial')->name('home.testimonial');

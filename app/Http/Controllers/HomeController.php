@@ -14,9 +14,10 @@ class HomeController extends Controller
     public function home()
     {
         $homeData =[] ;
-        $homeData['title'] = 'Best Car Website';
+        $homeData['title'] = 'Official LexuZ Website';
         return view('welcome')->with('homeData', $homeData);
     }
+
     public function about(){
         return view('home.about');
     }
