@@ -41,7 +41,7 @@ class StoreController extends Controller
                 ->get();
         } else {
             // Trường hợp SearchValue rỗng, trả về kết quả mặc định "Không có kết quả"
-            $store = ['Không có kết quả'];
+            return back();
         }
 
         return view('Store.Search')->with('store', $store);
