@@ -15,6 +15,19 @@ class StoreController extends Controller
         $storeData['stores'] = Store::all();
         return view('Store.index')->with('storeData', $storeData);
     }
+    public function filterStores(Request $request)
+    {
+        $storeData = [];
+        $storeData['title'] = 'Store/index';
+        $storeData['subtitle'] = 'List of stores';
+        $storeData['stores'] = Store::get()->sortBy('Name')->all();
+        $selectedCategory = $request->input('selectedCategory');
+        $storeData['selectedCategory'] = $selectedCategory;
+        $storeData['selectedResults'] = Store::where('category', array($selectedCategory))->get();
+        return view('Store.index')->with('storeData', $storeData);
+
+    }
+
     public function show($id)
     {
         $storeData = [];
@@ -46,7 +59,6 @@ class StoreController extends Controller
 
         return view('Store.Search')->with('store', $store);
     }
-
 
     public function suggest_ajax(Request $request)
     {

@@ -31,6 +31,8 @@ Route::get('/store/index', 'App\Http\Controllers\StoreController@index')
     ->name("store.index");
 Route::get('/store/show/{id}', 'App\Http\Controllers\StoreController@show')
     ->name("store.show");
+Route::post('/filter-stores', 'App\Http\Controllers\StoreController@filterStores')->name('filterStores');
+
 //get images
 Route::get('/store/showItem/{filename}', 'App\Http\Controllers\StoreController@showImage')
     ->name('store.showImage');

@@ -1,30 +1,51 @@
 @extends('layouts.app')
+
 @section('sect5')
     <div class="container">
-        <div style="right: 2em; position:fixed; ">
-            <select name="cate" id="cate">
-                <option value="car">Loại</option>
-                <option value="car">Xe oto</option>
-                <option value="linhkien">Linh Kiện</option>
-            </select>
+        <div class="col-12 text-center">
+            <div class="col-6 d-inline-flex">
+                <label for="selectDepartment" class="mt-2">Department:</label>
+                <form action="{{ route('filterStores') }}" method="POST" id="myForm">
+                    @csrf
+                    <select name="selectedCategory" id="selectedCategory" class="form-select ms-3">
+                        <option value="0">Select Department</option>
+                        @php
+                            $uniqueCategories = [];
+                        @endphp
+                        @foreach ($storeData['stores'] as $store)
+                            @if (!in_array($store->category, $uniqueCategories))
+                                <option
+                                    value="{{ $store->category }}"{{ $storeData['selectedCategory'] == $store->category ? ' selected' : '' }}>
+                                    {{ $store->category }}
+                                </option>
+                                @php
+                                    $uniqueCategories[] = $store->category;
+                                @endphp
+                            @endif
+                        @endforeach
+                    </select>
+                </form>
+            </div>
         </div>
 
-        <div class="row row-cols-1 row-cols-md-3 row-cols-sm-2 row-cols-lg-6  gap-3 ">
-            @foreach ($storeData['stores'] as $store)
-                @if ($store->getCategory() == request('selectedCategory'))
+        <div class="row row-cols-1 row-cols-md-3 row-cols-sm-2 row-cols-lg-6 gap-3">
+            @isset($storeData['selectedResults'])
+                @foreach ($storeData['selectedResults'] as $store)
                     <div class="col-md-4 col-lg-3 col-sm-12 mb-2 d-flex row">
                         <div class="card">
-                            {{-- Set a fixed height for the image container --}}
                             <div class="image-container" style="height: 200px; overflow: hidden;">
                                 <img src="{{ route('store.showImage', ['filename' => $store['image']]) }}" alt="image"
                                     class="card-img-top img-card">
                             </div>
                             <div class="card-footer">
-
                                 <span class="text-title">
-                                    <a href="{{ route('store.show', ['id' => $store->getId()]) }}" class="text-capitalize">
-                                        {{ $store->getName() }}
-                                    </a>
+                                    <div class="row">
+                                        <div class="col-12"><a href="{{ route('store.show', ['id' => $store->getId()]) }}"
+                                                class="text-capitalize">{{ $store->getName() }}</a></div>
+                                        <div class="col">
+                                            {{ $store->price }}$
+                                        </div>
+                                    </div>
                                 </span>
                                 <div class="card-button">
                                     <svg fill="#000000" height="46px" width="46px" version="1.1" id="Icons"
@@ -43,102 +64,96 @@
                                         </g>
                                     </svg>
                                 </div>
-                                {{-- <div class="col me-auto text-title" style="">
-                                
-                            </div>
-                            <div class="col ms-auto">
-                                
-                            </div> --}}
-
                             </div>
                         </div>
                     </div>
-                    <style>
-                        .card-footer {
-                            width: 100%;
-                            display: flex;
-                            justify-content: space-between;
-                            align-items: center;
-                            padding-top: 10px;
-                            border-top: 1px solid #ddd;
-                        }
-
-                        .text-title>a {
-                            text-decoration: none;
-                        }
-
-                        .text-title {
-                            font-weight: 900;
-                            font-size: 1.2em;
-                            line-height: 1.5;
-                        }
-
-
-                        /*Button*/
-                        .card-button {
-                            border: 1px solid #252525;
-                            display: flex;
-                            padding: .3em;
-                            cursor: pointer;
-                            border-radius: 50px;
-                            transition: .3s ease-in-out;
-                        }
-
-                        /*Hover*/
-                        /* Khi ảnh nằm trong một container */
-                        .image-container {
-                            position: relative;
-                            /* Để xác định vị trí tương đối */
-                            overflow: hidden;
-                            /* Ẩn phần ảnh vượt ra khỏi container */
-                        }
-
-                        /* Ảnh ban đầu */
-                        .image-container img {
-                            width: 100%;
-                            /* Đặt chiều rộng ban đầu */
-                            height: auto;
-                            /* Tự động tính chiều cao */
-                            transition: transform 0.3s;
-                            /* Hiệu ứng chuyển đổi */
-                        }
-
-                        /* Ảnh khi hover */
-                        .image-container:hover img {
-                            transform: scale(1.1);
-                            /* Phóng to ảnh khi hover */
-                        }
-
-                        .card-button:hover {
-                            border: 1px solid #ffcaa6;
-                            background-color: #ffcaa6;
-                        }
-                    </style>
-                @endif
-
-                <script>
-                    // Lắng nghe sự kiện change của dropdown
-                    document.getElementById('cate').addEventListener('change', function() {
-                        // Lấy giá trị của option đã chọn
-                        var selectedValue = this.value;
-                        
-                        // Cập nhật tham số selectedCategory trong URL
-                        var currentUrl = window.location.href;
-                        var newUrl;
-                
-                        // Kiểm tra xem tham số selectedCategory đã tồn tại trong URL hay chưa
-                        if (currentUrl.includes('selectedCategory=')) {
-                            newUrl = currentUrl.replace(/selectedCategory=([^&]*)/, 'selectedCategory=' + selectedValue);
-                        } else {
-                            // Nếu tham số chưa tồn tại, thêm nó vào URL
-                            newUrl = currentUrl + (currentUrl.includes('?') ? '&' : '?') + 'selectedCategory=' + selectedValue;
-                        }
-                
-                        // Chuyển hướng đến URL mới
-                        window.location.href = newUrl;
-                    });
-                </script>
-            @endforeach
+                @endforeach
+            @endisset
         </div>
     </div>
+
+    <script>
+        document.getElementById('category').addEventListener('change', function() {
+            var selectedValue = this.value;
+            var currentUrl = window.location.href;
+            var newUrl;
+
+            if (currentUrl.includes('selectedCategory=')) {
+                newUrl = currentUrl.replace(/selectedCategory=([^&]*)/, 'selectedCategory=' + selectedValue);
+            } else {
+                newUrl = currentUrl + (currentUrl.includes('?') ? '&' : '?') + 'selectedCategory=' + selectedValue;
+            }
+
+            window.location.href = newUrl;
+        });
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            document.querySelector("#selectedCategory").addEventListener("change", function() {
+                // Submit the form when an option is selected
+                document.querySelector("#myForm").submit();
+            });
+        });
+    </script>
 @endsection
+<style>
+    .card-footer {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 10px;
+        border-top: 1px solid #ddd;
+    }
+
+    .text-title>a {
+        text-decoration: none;
+    }
+
+    .text-title {
+        font-weight: 900;
+        font-size: 1.2em;
+        line-height: 1.5;
+    }
+
+
+    /*Button*/
+    .card-button {
+        border: 1px solid #252525;
+        display: flex;
+        padding: .3em;
+        cursor: pointer;
+        border-radius: 50px;
+        transition: .3s ease-in-out;
+    }
+
+    /*Hover*/
+    /* Khi ảnh nằm trong một container */
+    .image-container {
+        position: relative;
+        /* Để xác định vị trí tương đối */
+        overflow: hidden;
+        /* Ẩn phần ảnh vượt ra khỏi container */
+    }
+
+    /* Ảnh ban đầu */
+    .image-container img {
+        width: 100%;
+        /* Đặt chiều rộng ban đầu */
+        height: auto;
+        /* Tự động tính chiều cao */
+        transition: transform 0.3s;
+        /* Hiệu ứng chuyển đổi */
+    }
+
+    /* Ảnh khi hover */
+    .image-container:hover img {
+        transform: scale(1.1);
+        /* Phóng to ảnh khi hover */
+    }
+
+    .card-button:hover {
+        border: 1px solid #ffcaa6;
+        background-color: #ffcaa6;
+    }
+</style>
