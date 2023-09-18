@@ -59,200 +59,29 @@
             </button>
         </div>
     </div>
-    <!-- Carousel End -->
-    {{-- <div class="position-relative">
-        <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"
-                    aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1"
-                    aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2"
-                    aria-label="Slide 3"></button>
-                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3"
-                    aria-label="Slide 4"></button>
-            </div>
-            <div class="carousel-inner text-white">
-                <div class="carousel-item active" data-bs-interval="3000">
-                    <img src="https://wallpapersmug.com/download/1600x900/58ee22/horse-ferrari-logo.jpg" class="d-block w-100 img-fluid" alt="...">
-                    <div class="carousel-caption d-none d-md-block text-white">
-                        <h5>First slide label</h5>
-                        <p>Some representative placeholder content for the first slide.</p>
-                    </div>
-                </div>
-                <div class="carousel-item" data-bs-interval="3000">
-                    <img src="https://wallpapersmug.com/download/1600x900/d095c4/the-crew-pagani-huayra-and-ferrari-laferrari-face-off.jpg" class="d-block w-100 img-fluid"
-                        alt="...">
-                    <div class="carousel-caption d-none d-md-block text-white">
-                        <h5>Second slide label</h5>
-                        <p>Some representative placeholder content for the second slide.</p>
-                    </div>
-                </div>
-                <div class="carousel-item" data-bs-interval="3000">
-                    <img src="https://wallpapersmug.com/download/1600x900/1f9944/sports-car-red-ferrari-laferrari.jpg" class="d-block w-100 img-fluid" alt="...">
-                    <div class="carousel-caption d-none d-md-block text-white">
-                        <h5>Third slide label</h5>
-                        <p>Some representative placeholder content for the third slide.</p>
-                    </div>
-                </div>
-                <div class="carousel-item" data-bs-interval="3000">
-                    <img src="https://wallpapersmug.com/download/1600x900/9c4d8f/la-ferrari-in-rain-4k.jpg" class="d-block w-100 img-fluid"
-                        alt="...">
-                    <div class="carousel-caption d-none d-md-block text-white">
-                        <h5>Fourth slide label</h5>
-                        <p>Some representative placeholder content for the third slide.</p>
-                    </div>
-                </div>
-            </div>
-            <button class="carousel-control-prev css-1dcc63t" type="button" data-bs-target="#carouselExampleDark"
-                data-bs-slide="prev">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50.464 58.271" style="width:58.271px">
-                    <g stroke-width="1" transform="translate(-1624 -187.923)">
-                        <path d="M50.464 43.992L25.732 58.271 1 43.992V15.434L25.732 1.155l24.732 14.279z"
-                            transform="translate(1623.5 187.345)" class="hexagon" fill="#ffffff"></path>
-                        <path class="icon" d="M0 5.675L7.432 0l7.432 5.675" transform="rotate(-90 935.432 -711.068)">
-                        </path>
-                    </g>
-                </svg>
-            </button>
-            <button class="carousel-control-next css-1dcc63t" type="button" data-bs-target="#carouselExampleDark"
-                data-bs-slide="next">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50.464 58.271" style="width:58.271px">
-                    <g stroke-width="1" transform="translate(-1624 -187.923)">
-                        <path d="M50.464 43.992L25.732 58.271 1 43.992V15.434L25.732 1.155l24.732 14.279z"
-                            transform="translate(1623.5 187.345)" class="hexagon" fill="#ffffff"></path>
-                        <path class="icon" d="M0 0l7.432 5.674L14.864 0" transform="rotate(-90 935.432 -711.068)">
-                        </path>
-                    </g>
-                </svg>
-            </button>
-            <style>
-                .css-1dcc63t {
-                    opacity: 0.2;
-                    border: 0;
-                    background: none;
-                    box-shadow: none;
-                    color: #202020;
-                }
 
-                .toMore:hover {
-                    background: white;
-                    opacity: 1;
-                    transform: scale(0.22);
-                }
-            </style>
-        </div> --}}
-
-    {{-- <img src="{{ asset('img/sect1.jpg') }}" alt="sect1_logo" class="img-fluid position-relative"> --}}
-    {{-- <div class="position-absolute top-0 left-0 d-flex pt-3  text-uppercase ">
-            <b class="bg-dark p-2" style=" clip-path: polygon(0px 0px, 100% 0px, calc(100% - 15px) 100%, 0% 100%);">
-                <Span class="text-white-50">Home/</Span> <span class="text-light">Welcome</span>
-            </b>
-        </div>
-        <div class="position-absolute p-3 top-50 left-0" style="margin-top: -120px; margin-left:5%">
-            <div class="container text-white">
-                <div class="mt-4 p-5">
-                    <h2>
-                        Ferrari
-                    </h2>
-                    <h1 class="text-nowrap">
-                        Welcome to our Ferrari website
-                    </h1>
-                </div>
-            </div>
-        </div>
-        <div class="position-absolute bottom-0 right-0 w-100">
-            <div class="container text-uppercase text-white pb-3">
-                <div class="row text-wrap justify-content-end d-flex">
-                    <div class="col-8"></div>
-                    <div class="col-1 text-end ">
-                        <a href="#images-s" class="cta cta-right text-uppercase icon-button css-1dcc63t toMore"
-                            data-layer="uaevent,store_gateway,Clic | Hero Banner,Anchor Link | MENSWEAR AND ACCESSORIES COLLECTION"
-                            aria-label="Go to section" style="width: 25px; height:25px">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50.464 58.271" style="width:58.279px">
-                                <g stroke-width="1.5" transform="translate(-1624 -187.923)">
-                                    <path d="M50.464 43.992L25.732 58.271 1 43.992V15.434L25.732 1.155l24.732 14.279z"
-                                        transform="translate(1623.5 187.345)" class="hexagon" fill="#ffffff"></path>
-                                    <path class="icon" d="M1641.906,214.094l7.354,5.666,7.518-5.666"
-                                        transform="translate(-0.406 0.406)"></path>
-                                </g>
-                            </svg>
-                        </a>
-                    </div>
-                    <div class="col-3 text-justify flex-fill">
-                        <span>
-                            Overview
-                        </span>
-                        <h2>
-                            All Ferrari
-                        </h2>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> --}}
-
-    <!-- Service Start -->
-    {{-- <div class="container-xxl py-5">
-        <div class="container">
-            <div class="row g-4">
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="d-flex py-5 px-4">
-                        <i class="fa fa-certificate fa-3x text-primary flex-shrink-0"></i>
-                        <div class="ps-4">
-                            <h5 class="mb-3">Quality Servicing</h5>
-                            <p>Diam dolor diam ipsum sit amet diam et eos erat ipsum</p>
-                            <a class="text-secondary border-bottom" href="">Read More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="d-flex bg-light py-5 px-4">
-                        <i class="fa fa-users-cog fa-3x text-primary flex-shrink-0"></i>
-                        <div class="ps-4">
-                            <h5 class="mb-3">Expert Workers</h5>
-                            <p>Diam dolor diam ipsum sit amet diam et eos erat ipsum</p>
-                            <a class="text-secondary border-bottom" href="">Read More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="d-flex py-5 px-4">
-                        <i class="fa fa-tools fa-3x text-primary flex-shrink-0"></i>
-                        <div class="ps-4">
-                            <h5 class="mb-3">Modern Equipment</h5>
-                            <p>Diam dolor diam ipsum sit amet diam et eos erat ipsum</p>
-                            <a class="text-secondary border-bottom" href="">Read More</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> --}}
-    <!-- Service End -->
+   
+    
     <div class="container">
-        <div class="row row-cols-1 row-cols-md-2">
-            <div class="texts col col-md-4 col-lg-4 align-self-stretch">
+        <div class="row">
+            <div class="texts col col-md-4 col-lg-4 d-flex justify-content-between">
+                <!-- ... (Phần nội dung văn bản) ... -->
                 <div class="row align-items-center">
                     <div class="col offset-1 offset-xl-2 no-gutters">
                         <div class="texts-wrapper css-1v6uxg8">
                             <h2 class="primary texts-block-title--primary"></h2>
-                            <h3 class="secondary texts-block-title--secondary">Tên Xe [Đừng có gắn mấy chữ tào lao =)) ]
+                            <h3 class="secondary texts-block-title--secondary">Aston Martin DBSV12 2019
                             </h3>
                             <div>
-                                <p>[Tên xe ] mẫu xe tiện ích , mang đến sự sang trọng, tính thể
-                                    thao và hiệu suất tuyệt vời , sự thoải mái và tính linh hoạt. Nó mang đến động học lái
-                                    tốt
-                                    nhất
-                                    trong phân khúc, cùng với thiết kế không thể nhầm lẫn. Đây hiện thân cho những đặc điểm
-                                    của
-                                    nhiều linh hồn: thể thao, lịch lãm và off-road, và có tính phù hợp cho việc lái hàng
-                                    ngày
-                                    trong nhiều môi trường khác nhau. Với âm thanh động cơ độc đáo đầy bất ngờ, kết hợp với
-                                    hiệu
-                                    suất cao,[Tên xe] đảm bảo sẽ đem đến cho bạn trải nghiệm tuyệt vời , vượt ngoài cả mong
-                                    đợi
-                                    .</p>
+                                <p>Aston Martin DBS V12 2019 là một siêu xe thể thao đỉnh cao của hãng Aston
+                                   Martin. Thiết kế quyến rũ và động cơ V12 mạnh mẽ, đây không chỉ là
+                                   biểu tượng của sự sang trọng mà còn là hiện thân của tốc độ và hiệu suất.
+                                   <br>
+                                   Động cơ V12 6.0L cung cấp khả năng tăng tốc mạnh mẽ, đưa bạn từ 0 đến 100 km/h chỉ trong vài giây.
+                                   <br>
+                                   Nội thất được trang bị da và các vật liệu cao cấp, tạo nên không gian sang trọng và tiện nghi. 
+                                   
+                                    </p>
                             </div>
                             <div class="links d-block">
                                 <div class="row row-cols-1 row-cols-lg-1">
@@ -271,7 +100,6 @@
                                     border: none;
                                     transition: background-color 0.3s ease-in-out;
                                 }
-
 
                                 .row a:hover+hr::before {
                                     content: "";
@@ -298,35 +126,178 @@
                                 }
                             </style>
                         </div>
+                        
                     </div>
                 </div>
             </div>
-
-            <div class="col-lg-5 d-none d-lg-flex animated zoomIn justify-content-left" style=" height: 40vh;">
-                <img class="img-fluid" src="./img/333-removebg.png" alt="hotsale">
+    
+            <div class="col d-none d-lg-flex animated zoomIn align-self-center" style="height: 40vh;">
+                <img class="img-fluid" src="./img/rv-1.png" alt="hotsale">
             </div>
 
-
-            {{-- <div class="col col-md-8 col-lg-8">
-                <svg width="100%" height="100%" viewBox="0 0 24 11" xmlns="http://www.w3.org/2000/svg"
-                    xmlns:xlink="http://www.w3.org/1999/xlink" class="clip-svg">
-                    <defs>
-                        <clipPath id="clip-polygon--uid126">
-                            <polygon points="11 0, 11.1 0, 11.1 11, 0 11"></polygon>
-                            <rect x="11" y="0" width="13" height="11"></rect>
-                            {{-- <polygon points="15.9 0, 24 0, 16 11, 15.9 11"></polygon> --}}
-                        {{-- </clipPath>
-                    </defs>
-                    <g clip-path="url(#clip-polygon--uid126)">
-                        <image class="img-fluid" xlink:href="{{ asset('img/car1.jpg') }}" alt="Ferrari logo image"
-                            width="100%" height="100%" x="0%" y="0%">
-                        </image>
-                    </g>
-                </svg> --}}
-
-            {{-- </div> --}} 
+            <div class="col d-none d-lg-flex animated zoomIn align-self-center" style="height: 40vh;">
+                <img class="img-fluid" src="./img/rv-1-end.png" alt="hotsale">
+            </div>
         </div>
+    </div>
 
+
+    <div class="container">
+        <div class="row">
+            <div class="texts col col-md-4 col-lg-4 d-flex justify-content-between">
+                <!-- ... (Phần nội dung văn bản) ... -->
+                <div class="row align-items-center">
+                    <div class="col offset-1 offset-xl-2 no-gutters">
+                        <div class="texts-wrapper css-1v6uxg8">
+                            <h2 class="primary texts-block-title--primary"></h2>
+                            <h3 class="secondary texts-block-title--secondary">Aston Martin DBSV12 2019
+                            </h3>
+                            <div>
+                                <p>Aston Martin DBS V12 2019 là một siêu xe thể thao đỉnh cao của hãng Aston
+                                   Martin. Thiết kế quyến rũ và động cơ V12 mạnh mẽ, đây không chỉ là
+                                   biểu tượng của sự sang trọng mà còn là hiện thân của tốc độ và hiệu suất.
+                                   <br>
+                                   Động cơ V12 6.0L cung cấp khả năng tăng tốc mạnh mẽ, đưa bạn từ 0 đến 100 km/h chỉ trong vài giây.
+                                   <br>
+                                   Nội thất được trang bị da và các vật liệu cao cấp, tạo nên không gian sang trọng và tiện nghi. 
+                                   
+                                    </p>
+                            </div>
+                            <div class="links d-block">
+                                <div class="row row-cols-1 row-cols-lg-1">
+                                    <a href="#" class="col-12 text-decoration-none fs-6">Thông số</a>
+                                    <hr>
+                                    <a href="#" class="col-12 text-decoration-none fs-6">Chi Tiết</a>
+                                    <hr>
+                                </div>
+                            </div>
+
+                            <style>
+                                .row hr {
+                                    height: 2px;
+                                    background-color: transparent;
+                                    position: relative;
+                                    border: none;
+                                    transition: background-color 0.3s ease-in-out;
+                                }
+
+                                .row a:hover+hr::before {
+                                    content: "";
+                                    position: absolute;
+                                    top: 0;
+                                    width: 0;
+                                    /* Ban đầu bề rộng là 0 */
+                                    /* Màu nền đen khi hover */
+                                    /* Hiệu ứng chuyển màu */
+                                    z-index: -1;
+                                    pointer-events: none;
+                                    left: 0;
+                                    height: 2px;
+                                    background: red;
+                                    transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+                                    transition-duration: 400ms;
+                                    transition-property: width, left;
+                                }
+
+                                /* CSS cho hover out */
+                                .row a:hover+hr::before {
+                                    width: 100%;
+                                    /* Khi hover out, thanh sẽ chuyển màu lại từ trái sang phải */
+                                }
+                            </style>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col d-none d-lg-flex animated zoomIn align-self-center" style="height: 40vh;">
+                <img class="img-fluid" src="./img/rv-2.png" alt="hotsale">
+            </div>
+
+            <div class="col d-none d-lg-flex animated zoomIn align-self-center" style="height: 40vh;">
+                <img class="img-fluid" src="./img/rv-2-end.png" alt="hotsale">
+            </div>
+        </div>
+    </div>
+   
+    <div class="container">
+        <div class="row">
+            <div class="texts col col-md-4 col-lg-4 d-flex justify-content-between">
+                <!-- ... (Phần nội dung văn bản) ... -->
+                <div class="row align-items-center">
+                    <div class="col offset-1 offset-xl-2 no-gutters">
+                        <div class="texts-wrapper css-1v6uxg8">
+                            <h2 class="primary texts-block-title--primary"></h2>
+                            <h3 class="secondary texts-block-title--secondary">Aston Martin DBSV12 2019
+                            </h3>
+                            <div>
+                                <p>Aston Martin DBS V12 2019 là một siêu xe thể thao đỉnh cao của hãng Aston
+                                   Martin. Thiết kế quyến rũ và động cơ V12 mạnh mẽ, đây không chỉ là
+                                   biểu tượng của sự sang trọng mà còn là hiện thân của tốc độ và hiệu suất.
+                                   <br>
+                                   Động cơ V12 6.0L cung cấp khả năng tăng tốc mạnh mẽ, đưa bạn từ 0 đến 100 km/h chỉ trong vài giây.
+                                   <br>
+                                   Nội thất được trang bị da và các vật liệu cao cấp, tạo nên không gian sang trọng và tiện nghi. 
+                                   
+                                    </p>
+                            </div>
+                            <div class="links d-block">
+                                <div class="row row-cols-1 row-cols-lg-1">
+                                    <a href="#" class="col-12 text-decoration-none fs-6">Thông số</a>
+                                    <hr>
+                                    <a href="#" class="col-12 text-decoration-none fs-6">Chi Tiết</a>
+                                    <hr>
+                                </div>
+                            </div>
+
+                            <style>
+                                .row hr {
+                                    height: 2px;
+                                    background-color: transparent;
+                                    position: relative;
+                                    border: none;
+                                    transition: background-color 0.3s ease-in-out;
+                                }
+
+                                .row a:hover+hr::before {
+                                    content: "";
+                                    position: absolute;
+                                    top: 0;
+                                    width: 0;
+                                    /* Ban đầu bề rộng là 0 */
+                                    /* Màu nền đen khi hover */
+                                    /* Hiệu ứng chuyển màu */
+                                    z-index: -1;
+                                    pointer-events: none;
+                                    left: 0;
+                                    height: 2px;
+                                    background: red;
+                                    transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+                                    transition-duration: 400ms;
+                                    transition-property: width, left;
+                                }
+
+                                /* CSS cho hover out */
+                                .row a:hover+hr::before {
+                                    width: 100%;
+                                    /* Khi hover out, thanh sẽ chuyển màu lại từ trái sang phải */
+                                }
+                            </style>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col d-none d-lg-flex animated zoomIn align-self-center" style="height: 40vh;">
+                <img class="img-fluid" src="./img/rv-3.png" alt="hotsale">
+            </div>
+
+            <div class="col d-none d-lg-flex animated zoomIn align-self-center" style="height: 40vh;">
+                <img class="img-fluid" src="./img/rv-3-end.png" alt="hotsale">
+            </div>
+        </div>
     </div>
 
     <!-- About Start -->
@@ -402,8 +373,140 @@
     <!-- About End -->
 
 
-    <!-- Fact Start -->
-    <div class="container-fluid fact bg-dark my-5 py-5">
+   
+
+    <!-- Service Start -->
+    <div class="container-xxl service py-5">
+        <div class="container">
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                <h6 class="text-primary text-uppercase">// Dịch vụ của Chúng Tôi //</h6>
+                <h1 class="mb-5">Khám phá Dịch vụ của Chúng Tôi</h1>
+            </div>
+            <div class="row g-4 wow fadeInUp" data-wow-delay="0.3s">
+                <div class="col-lg-4">
+                    <div class="nav w-100 nav-pills me-4">
+                        <button class="nav-link w-100 d-flex align-items-center text-start p-4 mb-4 active"
+                            data-bs-toggle="pill" data-bs-target="#tab-pane-1" type="button">
+                            <i class="fa fa-car-side fa-2x me-3"></i>
+                            <h4 class="m-0">Kiểm tra chẩn đoán</h4>
+                        </button>
+                        <button class="nav-link w-100 d-flex align-items-center text-start p-4 mb-4" data-bs-toggle="pill"
+                            data-bs-target="#tab-pane-2" type="button">
+                            <i class="fa fa-car fa-2x me-3"></i>
+                            <h4 class="m-0">Dịch vụ động cơ</h4>
+                        </button>
+                        <button class="nav-link w-100 d-flex align-items-center text-start p-4 mb-4" data-bs-toggle="pill"
+                            data-bs-target="#tab-pane-3" type="button">
+                            <i class="fa fa-cog fa-2x me-3"></i>
+                            <h4 class="m-0">Thay thế lốp xe</h4>
+                        </button>
+                        <button class="nav-link w-100 d-flex align-items-center text-start p-4 mb-0" data-bs-toggle="pill"
+                            data-bs-target="#tab-pane-4" type="button">
+                            <i class="fa fa-oil-can fa-2x me-3"></i>
+                            <h4 class="m-0">Thay dầu máy</h4>
+                        </button>
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <div class="tab-content w-100">
+                        <div class="tab-pane fade show active" id="tab-pane-1">
+                            <div class="row g-4">
+                                <div class="col-md-6" style="min-height: 350px;">
+                                    <div class="position-relative h-100">
+                                        <img class="position-absolute img-fluid w-100 h-100" src="img/service-1.jpg"
+                                            style="object-fit: cover;" alt="">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <h3 class="mb-3">30 Năm Kinh Nghiệm Trong Dịch Vụ Ô Tô</h3>
+                                    <p class="mb-4">Chúng tôi có đội ngũ kỹ thuật viên chuyên nghiệp và hiện đại với hơn
+                                        30 năm kinh nghiệm trong lĩnh vực ô tô. Chúng tôi cam kết đưa ra các dịch vụ
+                                        kiểm tra chẩn đoán chất lượng hàng đầu.
+                                    </p>
+                                    <p><i class="fa fa-check text-success me-3"></i>Dịch vụ chất lượng</p>
+                                    <p><i class="fa fa-check text-success me-3"></i>Kỹ thuật viên lành nghề</p>
+                                    <p><i class="fa fa-check text-success me-3"></i>Thiết bị hiện đại</p>
+                                    <a href="" class="btn btn-primary py-3 px-5 mt-3">Xem thêm<i
+                                            class="fa fa-arrow-right ms-3"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="tab-pane-2">
+                            <div class="row g-4">
+                                <div class="col-md-6" style="min-height: 350px;">
+                                    <div class="position-relative h-100">
+                                        <img class="position-absolute img-fluid w-100 h-100" src="img/service-2.jpg"
+                                            style="object-fit: cover;" alt="">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <h3 class="mb-3">30 Năm Kinh Nghiệm Trong Dịch Vụ Ô Tô</h3>
+                                    <p class="mb-4">Chúng tôi có đội ngũ kỹ thuật viên chuyên nghiệp và hiện đại với hơn
+                                        30 năm kinh nghiệm trong lĩnh vực ô tô. Chúng tôi cam kết đưa ra các dịch vụ
+                                        động cơ chất lượng hàng đầu.
+                                    </p>
+                                    <p><i class="fa fa-check text-success me-3"></i>Dịch vụ chất lượng</p>
+                                    <p><i class="fa fa-check text-success me-3"></i>Kỹ thuật viên lành nghề</p>
+                                    <p><i class="fa fa-check text-success me-3"></i>Thiết bị hiện đại</p>
+                                    <a href="" class="btn btn-primary py-3 px-5 mt-3">Xem thêm<i
+                                            class="fa fa-arrow-right ms-3"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="tab-pane-3">
+                            <div class="row g-4">
+                                <div class="col-md-6" style="min-height: 350px;">
+                                    <div class="position-relative h-100">
+                                        <img class="position-absolute img-fluid w-100 h-100" src="img/service-3.jpg"
+                                            style="object-fit: cover;" alt="">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <h3 class="mb-3">30 Năm Kinh Nghiệm Trong Dịch Vụ Ô Tô</h3>
+                                    <p class="mb-4">Chúng tôi có đội ngũ kỹ thuật viên chuyên nghiệp và hiện đại với hơn
+                                        30 năm kinh nghiệm trong lĩnh vực ô tô. Chúng tôi cam kết đưa ra các dịch vụ
+                                        thay thế lốp xe chất lượng hàng đầu.
+                                    </p>
+                                    <p><i class="fa fa-check text-success me-3"></i>Dịch vụ chất lượng</p>
+                                    <p><i class="fa fa-check text-success me-3"></i>Kỹ thuật viên lành nghề</p>
+                                    <p><i class="fa fa-check text-success me-3"></i>Thiết bị hiện đại</p>
+                                    <a href="" class="btn btn-primary py-3 px-5 mt-3">Xem thêm<i
+                                            class="fa fa-arrow-right ms-3"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="tab-pane-4">
+                            <div class="row g-4">
+                                <div class="col-md-6" style="min-height: 350px;">
+                                    <div class="position-relative h-100">
+                                        <img class="position-absolute img-fluid w-100 h-100" src="img/service-4.jpg"
+                                            style="object-fit: cover;" alt="">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <h3 class="mb-3">30 Năm Kinh Nghiệm Trong Dịch Vụ Ô Tô</h3>
+                                    <p class="mb-4">Chúng tôi có đội ngũ kỹ thuật viên chuyên nghiệp và hiện đại với hơn
+                                        30 năm kinh nghiệm trong lĩnh vực ô tô. Chúng tôi cam kết đưa ra các dịch vụ
+                                        thay dầu máy chất lượng hàng đầu.
+                                    </p>
+                                    <p><i class="fa fa-check text-success me-3"></i>Dịch vụ chất lượng</p>
+                                    <p><i class="fa fa-check text-success me-3"></i>Kỹ thuật viên lành nghề</p>
+                                    <p><i class="fa fa-check text-success me-3"></i>Thiết bị hiện đại</p>
+                                    <a href="" class="btn btn-primary py-3 px-5 mt-3">Xem thêm<i
+                                            class="fa fa-arrow-right ms-3"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        
+    <!-- Service End -->
+
+     <!-- Fact Start -->
+     <div class="container-fluid fact bg-dark my-5 py-5">
         <div class="container">
             <div class="row g-4">
                 <div class="col-md-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.1s">
@@ -429,134 +532,7 @@
             </div>
         </div>
     </div>
-    
     <!-- Fact End -->
-
-
-    <!-- Service Start -->
-    <div class="container-xxl service py-5">
-        <div class="container">
-            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                <h6 class="text-primary text-uppercase">// Our Services //</h6>
-                <h1 class="mb-5">Explore Our Services</h1>
-            </div>
-            <div class="row g-4 wow fadeInUp" data-wow-delay="0.3s">
-                <div class="col-lg-4">
-                    <div class="nav w-100 nav-pills me-4">
-                        <button class="nav-link w-100 d-flex align-items-center text-start p-4 mb-4 active"
-                            data-bs-toggle="pill" data-bs-target="#tab-pane-1" type="button">
-                            <i class="fa fa-car-side fa-2x me-3"></i>
-                            <h4 class="m-0">Diagnostic Test</h4>
-                        </button>
-                        <button class="nav-link w-100 d-flex align-items-center text-start p-4 mb-4" data-bs-toggle="pill"
-                            data-bs-target="#tab-pane-2" type="button">
-                            <i class="fa fa-car fa-2x me-3"></i>
-                            <h4 class="m-0">Engine Servicing</h4>
-                        </button>
-                        <button class="nav-link w-100 d-flex align-items-center text-start p-4 mb-4" data-bs-toggle="pill"
-                            data-bs-target="#tab-pane-3" type="button">
-                            <i class="fa fa-cog fa-2x me-3"></i>
-                            <h4 class="m-0">Tires Replacement</h4>
-                        </button>
-                        <button class="nav-link w-100 d-flex align-items-center text-start p-4 mb-0" data-bs-toggle="pill"
-                            data-bs-target="#tab-pane-4" type="button">
-                            <i class="fa fa-oil-can fa-2x me-3"></i>
-                            <h4 class="m-0">Oil Changing</h4>
-                        </button>
-                    </div>
-                </div>
-                <div class="col-lg-8">
-                    <div class="tab-content w-100">
-                        <div class="tab-pane fade show active" id="tab-pane-1">
-                            <div class="row g-4">
-                                <div class="col-md-6" style="min-height: 350px;">
-                                    <div class="position-relative h-100">
-                                        <img class="position-absolute img-fluid w-100 h-100" src="img/service-1.jpg"
-                                            style="object-fit: cover;" alt="">
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <h3 class="mb-3">30 Years Of Experience In Auto Servicing</h3>
-                                    <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu
-                                        diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita
-                                        duo justo magna dolore erat amet</p>
-                                    <p><i class="fa fa-check text-success me-3"></i>Quality Servicing</p>
-                                    <p><i class="fa fa-check text-success me-3"></i>Expert Workers</p>
-                                    <p><i class="fa fa-check text-success me-3"></i>Modern Equipment</p>
-                                    <a href="" class="btn btn-primary py-3 px-5 mt-3">Read More<i
-                                            class="fa fa-arrow-right ms-3"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tab-pane fade" id="tab-pane-2">
-                            <div class="row g-4">
-                                <div class="col-md-6" style="min-height: 350px;">
-                                    <div class="position-relative h-100">
-                                        <img class="position-absolute img-fluid w-100 h-100" src="img/service-2.jpg"
-                                            style="object-fit: cover;" alt="">
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <h3 class="mb-3">30 Years Of Experience In Auto Servicing</h3>
-                                    <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu
-                                        diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita
-                                        duo justo magna dolore erat amet</p>
-                                    <p><i class="fa fa-check text-success me-3"></i>Quality Servicing</p>
-                                    <p><i class="fa fa-check text-success me-3"></i>Expert Workers</p>
-                                    <p><i class="fa fa-check text-success me-3"></i>Modern Equipment</p>
-                                    <a href="" class="btn btn-primary py-3 px-5 mt-3">Read More<i
-                                            class="fa fa-arrow-right ms-3"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tab-pane fade" id="tab-pane-3">
-                            <div class="row g-4">
-                                <div class="col-md-6" style="min-height: 350px;">
-                                    <div class="position-relative h-100">
-                                        <img class="position-absolute img-fluid w-100 h-100" src="img/service-3.jpg"
-                                            style="object-fit: cover;" alt="">
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <h3 class="mb-3">30 Years Of Experience In Auto Servicing</h3>
-                                    <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu
-                                        diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita
-                                        duo justo magna dolore erat amet</p>
-                                    <p><i class="fa fa-check text-success me-3"></i>Quality Servicing</p>
-                                    <p><i class="fa fa-check text-success me-3"></i>Expert Workers</p>
-                                    <p><i class="fa fa-check text-success me-3"></i>Modern Equipment</p>
-                                    <a href="" class="btn btn-primary py-3 px-5 mt-3">Read More<i
-                                            class="fa fa-arrow-right ms-3"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tab-pane fade" id="tab-pane-4">
-                            <div class="row g-4">
-                                <div class="col-md-6" style="min-height: 350px;">
-                                    <div class="position-relative h-100">
-                                        <img class="position-absolute img-fluid w-100 h-100" src="img/service-4.jpg"
-                                            style="object-fit: cover;" alt="">
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <h3 class="mb-3">30 Years Of Experience In Auto Servicing</h3>
-                                    <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu
-                                        diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita
-                                        duo justo magna dolore erat amet</p>
-                                    <p><i class="fa fa-check text-success me-3"></i>Quality Servicing</p>
-                                    <p><i class="fa fa-check text-success me-3"></i>Expert Workers</p>
-                                    <p><i class="fa fa-check text-success me-3"></i>Modern Equipment</p>
-                                    <a href="" class="btn btn-primary py-3 px-5 mt-3">Read More<i
-                                            class="fa fa-arrow-right ms-3"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Service End -->
 
 
     <!-- Booking Start -->
@@ -750,8 +726,8 @@
 @endsection
 
 @section('sect2')
-    
-@endsection 
+
+@endsection
 {{-- @section('sect3')
     <div class="container">
         <div class="radio-inputs">
