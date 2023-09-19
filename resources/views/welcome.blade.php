@@ -300,6 +300,128 @@
         </div>
     </div>
 
+     <!-- Service Start -->
+     <div class="container-xxl service py-5">
+        <div class="container">
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+            
+                <h1 class="mb-5">Khám phá Dịch vụ của Chúng Tôi</h1>
+            </div>
+            <div class="row g-4 wow fadeInUp" data-wow-delay="0.3s">
+                <div class="col-lg-4">
+                    <div class="nav w-100 nav-pills me-4">
+                        <button class="nav-link w-100 d-flex align-items-center text-start p-4 mb-4 active"
+                            data-bs-toggle="pill" data-bs-target="#tab-pane-1" type="button">
+                            <i class="fa fa-car-side fa-2x me-3"></i>
+                            <h4 class="m-0">Kiểm tra chẩn đoán</h4>
+                        </button>
+                        <button class="nav-link w-100 d-flex align-items-center text-start p-4 mb-4" data-bs-toggle="pill"
+                            data-bs-target="#tab-pane-2" type="button">
+                            <i class="fa fa-car fa-2x me-3"></i>
+                            <h4 class="m-0">Dịch vụ động cơ</h4>
+                        </button>
+                        <button class="nav-link w-100 d-flex align-items-center text-start p-4 mb-4" data-bs-toggle="pill"
+                            data-bs-target="#tab-pane-3" type="button">
+                            <i class="fa fa-cog fa-2x me-3"></i>
+                            <h4 class="m-0">Thay thế lốp xe</h4>
+                        </button>
+                        <button class="nav-link w-100 d-flex align-items-center text-start p-4 mb-0" data-bs-toggle="pill"
+                            data-bs-target="#tab-pane-4" type="button">
+                            <i class="fa fa-oil-can fa-2x me-3"></i>
+                            <h4 class="m-0">Thay dầu máy</h4>
+                        </button>
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <div class="tab-content w-100">
+                        <div class="tab-pane fade show active" id="tab-pane-1">
+                            <div class="row g-4">
+                                <div class="col-md-6" style="min-height: 350px;">
+                                    <div class="position-relative h-100">
+                                        <img class="position-absolute img-fluid w-100 h-100" src="img/service-1.jpg"
+                                            style="object-fit: cover;" alt="Kiểm tra chẩn đoán ô tô">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <h3 class="mb-3">Kiểm Tra Chẩn Đoán Ô Tô</h3>
+                                    <p class="mb-4">Dịch vụ kiểm tra chẩn đoán ô tô giúp đảm bảo rằng xe của bạn hoạt động trong tình trạng tốt nhất. Chúng tôi sử dụng các thiết bị hiện đại và đội ngũ kỹ thuật viên lành nghề để kiểm tra các hệ thống và linh kiện của xe, từ động cơ đến hệ thống điện và điều hòa không khí.</p>
+                                    <p><i class="fa fa-check text-success me-3"></i>Kiểm tra toàn diện</p>
+                                    <p><i class="fa fa-check text-success me-3"></i>Xác định sớm sự cố tiềm ẩn</p>
+                                    <p><i class="fa fa-check text-success me-3"></i>Đảm bảo an toàn khi lái xe</p>
+                                    <a href="/chi-tiet-khac/kiem-tra-chan-doan" class="btn btn-primary py-3 px-5 mt-3">Xem thêm<i
+                                            class="fa fa-arrow-right ms-3"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="tab-pane fade" id="tab-pane-2">
+                            <div class="row g-4">
+                                <div class="col-md-6" style="min-height: 350px;">
+                                    <div class="position-relative h-100">
+                                        <img class="position-absolute img-fluid w-100 h-100" src="img/service-2.jpg"
+                                            style="object-fit: cover;" alt="Dịch vụ động cơ ô tô">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <h3 class="mb-3">Dịch Vụ Động Cơ Ô Tô</h3>
+                                    <p class="mb-4">Với hơn 30 năm kinh nghiệm trong dịch vụ động cơ ô tô, chúng tôi cung cấp các dịch vụ bảo dưỡng và sửa chữa động cơ để đảm bảo hiệu suất tối ưu của xe của bạn. Đội ngũ kỹ thuật viên chuyên nghiệp của chúng tôi sẽ kiểm tra, bảo trì và sửa chữa động cơ của bạn.</p>
+                                    <p><i class="fa fa-check text-success me-3"></i>Bảo dưỡng định kỳ</p>
+                                    <p><i class="fa fa-check text-success me-3"></i>Sửa chữa động cơ</p>
+                                    <p><i class="fa fa-check text-success me-3"></i>Tư vấn chuyên nghiệp</p>
+                                    <a href="/chi-tiet-khac/dich-vu-dong-co" class="btn btn-primary py-3 px-5 mt-3">Xem thêm<i
+                                            class="fa fa-arrow-right ms-3"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="tab-pane fade" id="tab-pane-3">
+                            <div class="row g-4">
+                                <div class="col-md-6" style="min-height: 350px;">
+                                    <div class="position-relative h-100">
+                                        <img class="position-absolute img-fluid w-100 h-100" src="img/service-3.jpg"
+                                            style="object-fit: cover;" alt="Thay thế lốp xe ô tô">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <h3 class="mb-3">Thay Thế Lốp Xe Ô Tô</h3>
+                                    <p class="mb-4">Chúng tôi cung cấp dịch vụ thay thế lốp xe chất lượng hàng đầu. Đội ngũ kỹ thuật viên của chúng tôi sẽ thay thế lốp xe cũ bằng các lốp mới và đảm bảo xe của bạn sẽ luôn an toàn trên mọi cung đường.</p>
+                                    <p><i class="fa fa-check text-success me-3"></i>Thay thế lốp xe chất lượng</p>
+                                    <p><i class="fa fa-check text-success me-3"></i>Cung cấp các loại lốp chất lượng</p>
+                                    <p><i class="fa fa-check text-success me-3"></i>Tư vấn lựa chọn lốp phù hợp</p>
+                                    <a href="/chi-tiet-khac/thay-the-lop-xe" class="btn btn-primary py-3 px-5 mt-3">Xem thêm<i
+                                            class="fa fa-arrow-right ms-3"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="tab-pane fade" id="tab-pane-4">
+                            <div class="row g-4">
+                                <div class="col-md-6" style="min-height: 350px;">
+                                    <div class="position-relative h-100">
+                                        <img class="position-absolute img-fluid w-100 h-100" src="img/service-4.jpg"
+                                            style="object-fit: cover;" alt="Thay dầu máy ô tô">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <h3 class="mb-3">Thay Dầu Máy Ô Tô</h3>
+                                    <p class="mb-4">Chúng tôi cung cấp dịch vụ thay dầu máy chất lượng hàng đầu. Việc thay dầu máy định kỳ là quan trọng để bảo vệ động cơ và duy trì hiệu suất xe của bạn. Hãy để chúng tôi chăm sóc xe của bạn bằng cách thay dầu máy đúng cách.</p>
+                                    <p><i class="fa fa-check text-success me-3"></i>Thay dầu máy chất lượng</p>
+                                    <p><i class="fa fa-check text-success me-3"></i>Chất lượng dầu động cơ</p>
+                                    <p><i class="fa fa-check text-success me-3"></i>Bảo trì động cơ</p>
+                                    <a href="/chi-tiet-khac/thay-dau-may" class="btn btn-primary py-3 px-5 mt-3">Xem thêm<i
+                                            class="fa fa-arrow-right ms-3"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        
+    <!-- Service End -->
+
     <!-- About Start -->
     <div class="container-xxl py-5">
         <div class="container">
@@ -375,135 +497,7 @@
 
    
 
-    <!-- Service Start -->
-    <div class="container-xxl service py-5">
-        <div class="container">
-            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                <h6 class="text-primary text-uppercase">// Dịch vụ của Chúng Tôi //</h6>
-                <h1 class="mb-5">Khám phá Dịch vụ của Chúng Tôi</h1>
-            </div>
-            <div class="row g-4 wow fadeInUp" data-wow-delay="0.3s">
-                <div class="col-lg-4">
-                    <div class="nav w-100 nav-pills me-4">
-                        <button class="nav-link w-100 d-flex align-items-center text-start p-4 mb-4 active"
-                            data-bs-toggle="pill" data-bs-target="#tab-pane-1" type="button">
-                            <i class="fa fa-car-side fa-2x me-3"></i>
-                            <h4 class="m-0">Kiểm tra chẩn đoán</h4>
-                        </button>
-                        <button class="nav-link w-100 d-flex align-items-center text-start p-4 mb-4" data-bs-toggle="pill"
-                            data-bs-target="#tab-pane-2" type="button">
-                            <i class="fa fa-car fa-2x me-3"></i>
-                            <h4 class="m-0">Dịch vụ động cơ</h4>
-                        </button>
-                        <button class="nav-link w-100 d-flex align-items-center text-start p-4 mb-4" data-bs-toggle="pill"
-                            data-bs-target="#tab-pane-3" type="button">
-                            <i class="fa fa-cog fa-2x me-3"></i>
-                            <h4 class="m-0">Thay thế lốp xe</h4>
-                        </button>
-                        <button class="nav-link w-100 d-flex align-items-center text-start p-4 mb-0" data-bs-toggle="pill"
-                            data-bs-target="#tab-pane-4" type="button">
-                            <i class="fa fa-oil-can fa-2x me-3"></i>
-                            <h4 class="m-0">Thay dầu máy</h4>
-                        </button>
-                    </div>
-                </div>
-                <div class="col-lg-8">
-                    <div class="tab-content w-100">
-                        <div class="tab-pane fade show active" id="tab-pane-1">
-                            <div class="row g-4">
-                                <div class="col-md-6" style="min-height: 350px;">
-                                    <div class="position-relative h-100">
-                                        <img class="position-absolute img-fluid w-100 h-100" src="img/service-1.jpg"
-                                            style="object-fit: cover;" alt="">
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <h3 class="mb-3">30 Năm Kinh Nghiệm Trong Dịch Vụ Ô Tô</h3>
-                                    <p class="mb-4">Chúng tôi có đội ngũ kỹ thuật viên chuyên nghiệp và hiện đại với hơn
-                                        30 năm kinh nghiệm trong lĩnh vực ô tô. Chúng tôi cam kết đưa ra các dịch vụ
-                                        kiểm tra chẩn đoán chất lượng hàng đầu.
-                                    </p>
-                                    <p><i class="fa fa-check text-success me-3"></i>Dịch vụ chất lượng</p>
-                                    <p><i class="fa fa-check text-success me-3"></i>Kỹ thuật viên lành nghề</p>
-                                    <p><i class="fa fa-check text-success me-3"></i>Thiết bị hiện đại</p>
-                                    <a href="" class="btn btn-primary py-3 px-5 mt-3">Xem thêm<i
-                                            class="fa fa-arrow-right ms-3"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tab-pane fade" id="tab-pane-2">
-                            <div class="row g-4">
-                                <div class="col-md-6" style="min-height: 350px;">
-                                    <div class="position-relative h-100">
-                                        <img class="position-absolute img-fluid w-100 h-100" src="img/service-2.jpg"
-                                            style="object-fit: cover;" alt="">
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <h3 class="mb-3">30 Năm Kinh Nghiệm Trong Dịch Vụ Ô Tô</h3>
-                                    <p class="mb-4">Chúng tôi có đội ngũ kỹ thuật viên chuyên nghiệp và hiện đại với hơn
-                                        30 năm kinh nghiệm trong lĩnh vực ô tô. Chúng tôi cam kết đưa ra các dịch vụ
-                                        động cơ chất lượng hàng đầu.
-                                    </p>
-                                    <p><i class="fa fa-check text-success me-3"></i>Dịch vụ chất lượng</p>
-                                    <p><i class="fa fa-check text-success me-3"></i>Kỹ thuật viên lành nghề</p>
-                                    <p><i class="fa fa-check text-success me-3"></i>Thiết bị hiện đại</p>
-                                    <a href="" class="btn btn-primary py-3 px-5 mt-3">Xem thêm<i
-                                            class="fa fa-arrow-right ms-3"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tab-pane fade" id="tab-pane-3">
-                            <div class="row g-4">
-                                <div class="col-md-6" style="min-height: 350px;">
-                                    <div class="position-relative h-100">
-                                        <img class="position-absolute img-fluid w-100 h-100" src="img/service-3.jpg"
-                                            style="object-fit: cover;" alt="">
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <h3 class="mb-3">30 Năm Kinh Nghiệm Trong Dịch Vụ Ô Tô</h3>
-                                    <p class="mb-4">Chúng tôi có đội ngũ kỹ thuật viên chuyên nghiệp và hiện đại với hơn
-                                        30 năm kinh nghiệm trong lĩnh vực ô tô. Chúng tôi cam kết đưa ra các dịch vụ
-                                        thay thế lốp xe chất lượng hàng đầu.
-                                    </p>
-                                    <p><i class="fa fa-check text-success me-3"></i>Dịch vụ chất lượng</p>
-                                    <p><i class="fa fa-check text-success me-3"></i>Kỹ thuật viên lành nghề</p>
-                                    <p><i class="fa fa-check text-success me-3"></i>Thiết bị hiện đại</p>
-                                    <a href="" class="btn btn-primary py-3 px-5 mt-3">Xem thêm<i
-                                            class="fa fa-arrow-right ms-3"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tab-pane fade" id="tab-pane-4">
-                            <div class="row g-4">
-                                <div class="col-md-6" style="min-height: 350px;">
-                                    <div class="position-relative h-100">
-                                        <img class="position-absolute img-fluid w-100 h-100" src="img/service-4.jpg"
-                                            style="object-fit: cover;" alt="">
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <h3 class="mb-3">30 Năm Kinh Nghiệm Trong Dịch Vụ Ô Tô</h3>
-                                    <p class="mb-4">Chúng tôi có đội ngũ kỹ thuật viên chuyên nghiệp và hiện đại với hơn
-                                        30 năm kinh nghiệm trong lĩnh vực ô tô. Chúng tôi cam kết đưa ra các dịch vụ
-                                        thay dầu máy chất lượng hàng đầu.
-                                    </p>
-                                    <p><i class="fa fa-check text-success me-3"></i>Dịch vụ chất lượng</p>
-                                    <p><i class="fa fa-check text-success me-3"></i>Kỹ thuật viên lành nghề</p>
-                                    <p><i class="fa fa-check text-success me-3"></i>Thiết bị hiện đại</p>
-                                    <a href="" class="btn btn-primary py-3 px-5 mt-3">Xem thêm<i
-                                            class="fa fa-arrow-right ms-3"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-        
-    <!-- Service End -->
+   
 
      <!-- Fact Start -->
      <div class="container-fluid fact bg-dark my-5 py-5">
@@ -541,47 +535,46 @@
             <div class="row gx-5">
                 <div class="col-lg-6 py-5">
                     <div class="py-5">
-                        <h1 class="text-white mb-4">Certified and Award Winning Car Repair Service Provider</h1>
-                        <p class="text-white mb-0">Eirmod sed tempor lorem ut dolores. Aliquyam sit sadipscing kasd ipsum.
-                            Dolor ea et dolore et at sea ea at dolor, justo ipsum duo rebum sea invidunt voluptua. Eos vero
-                            eos vero ea et dolore eirmod et. Dolores diam duo invidunt lorem. Elitr ut dolores magna sit.
-                            Sea dolore sanctus sed et. Takimata takimata sanctus sed.</p>
+                        <h1 class="text-white mb-4">Nhà cung cấp Dịch vụ Sửa chữa Ô tô uy tín và chất lượng hàng đầu </h1>
+                        <p class="text-white mb-0">Chúng tôi tự hào là nhà cung cấp dịch vụ sửa chữa ô tô được chứng nhận và đã nhận nhiều giải thưởng. Với kinh nghiệm nhiều năm, chúng tôi cam kết mang đến cho bạn những dịch vụ sửa chữa chất lượng và uy tín.</p>
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <div class="bg-primary h-100 d-flex flex-column justify-content-center text-center p-5 wow zoomIn"
                         data-wow-delay="0.6s">
-                        <h1 class="text-white mb-4">Book For A Service</h1>
+                        <h1 class="text-white mb-4">Đặt lịch Dịch vụ</h1>
                         <form>
                             <div class="row g-3">
                                 <div class="col-12 col-sm-6">
-                                    <input type="text" class="form-control border-0" placeholder="Your Name"
+                                    <input type="text" class="form-control border-0" placeholder="Họ và Tên của bạn"
                                         style="height: 55px;">
                                 </div>
                                 <div class="col-12 col-sm-6">
-                                    <input type="email" class="form-control border-0" placeholder="Your Email"
+                                    <input type="email" class="form-control border-0" placeholder="Email của bạn"
                                         style="height: 55px;">
                                 </div>
                                 <div class="col-12 col-sm-6">
                                     <select class="form-select border-0" style="height: 55px;">
-                                        <option selected>Select A Service</option>
-                                        <option value="1">Service 1</option>
-                                        <option value="2">Service 2</option>
-                                        <option value="3">Service 3</option>
+                                        <option selected>Chọn Dịch vụ</option>
+                                        <option value="1">Kiểm tra chuẩn đoán</option>
+                                        <option value="2">Sữa chữa và bảo dưỡng động cơ</option>
+                                        <option value="3">Thay thế lốp xe</option>
+                                        <option value="4">Thay dầu máy </option>
+                                        <option value="5">Khác (vui lòng thêm mô tả trong yêu cầu đặc biệt) </option>
                                     </select>
                                 </div>
                                 <div class="col-12 col-sm-6">
                                     <div class="date" id="date1" data-target-input="nearest">
                                         <input type="text" class="form-control border-0 datetimepicker-input"
-                                            placeholder="Service Date" data-target="#date1" data-toggle="datetimepicker"
+                                            placeholder="Ngày Dịch vụ" data-target="#date1" data-toggle="datetimepicker"
                                             style="height: 55px;">
                                     </div>
                                 </div>
                                 <div class="col-12">
-                                    <textarea class="form-control border-0" placeholder="Special Request"></textarea>
+                                    <textarea class="form-control border-0" placeholder="Yêu cầu Đặc biệt"></textarea>
                                 </div>
                                 <div class="col-12">
-                                    <button class="btn btn-secondary w-100 py-3" type="submit">Book Now</button>
+                                    <button class="btn btn-secondary w-100 py-3" type="submit">Đặt Ngay</button>
                                 </div>
                             </div>
                         </form>
@@ -592,137 +585,136 @@
     </div>
     <!-- Booking End -->
 
-
-    <!-- Team Start -->
-    <div class="container-xxl py-5">
-        <div class="container">
-            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                <h6 class="text-primary text-uppercase">// Our Technicians //</h6>
-                <h1 class="mb-5">Our Expert Technicians</h1>
+<!-- Đội ngũ của chúng tôi -->
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+            <h1 class="mb-5">Đội Ngũ Chuyên Gia Của Chúng Tôi</h1>
+        </div>
+        <div class="row g-4">
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="team-item">
+                    <div class="position-relative overflow-hidden">
+                        <img class="img-fluid" src="img/team-1.jpg" alt="">
+                        <div class="team-overlay position-absolute start-0 top-0 w-100 h-100">
+                            <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-square mx-1" href=""><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    <div class="bg-light text-center p-4">
+                        <h5 class="fw-bold mb-0">John Doe</h5>
+                        <small>Chuyên Viên Bán Xe</small>
+                    </div>
+                </div>
             </div>
-            <div class="row g-4">
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="team-item">
-                        <div class="position-relative overflow-hidden">
-                            <img class="img-fluid" src="img/team-1.jpg" alt="">
-                            <div class="team-overlay position-absolute start-0 top-0 w-100 h-100">
-                                <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
-                        <div class="bg-light text-center p-4">
-                            <h5 class="fw-bold mb-0">Full Name</h5>
-                            <small>Designation</small>
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                <div class="team-item">
+                    <div class="position-relative overflow-hidden">
+                        <img class="img-fluid" src="img/team-2.jpg" alt="">
+                        <div class="team-overlay position-absolute start-0 top-0 w-100 h-100">
+                            <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-square mx-1" href=""><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="team-item">
-                        <div class="position-relative overflow-hidden">
-                            <img class="img-fluid" src="img/team-2.jpg" alt="">
-                            <div class="team-overlay position-absolute start-0 top-0 w-100 h-100">
-                                <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
-                        <div class="bg-light text-center p-4">
-                            <h5 class="fw-bold mb-0">Full Name</h5>
-                            <small>Designation</small>
-                        </div>
+                    <div class="bg-light text-center p-4">
+                        <h5 class="fw-bold mb-0">Jane Smith</h5>
+                        <small>Chuyên Viên Tư Vấn</small>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="team-item">
-                        <div class="position-relative overflow-hidden">
-                            <img class="img-fluid" src="img/team-3.jpg" alt="">
-                            <div class="team-overlay position-absolute start-0 top-0 w-100 h-100">
-                                <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
-                        <div class="bg-light text-center p-4">
-                            <h5 class="fw-bold mb-0">Full Name</h5>
-                            <small>Designation</small>
+            </div>
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                <div class="team-item">
+                    <div class="position-relative overflow-hidden">
+                        <img class="img-fluid" src="img/team-3.jpg" alt="">
+                        <div class="team-overlay position-absolute start-0 top-0 w-100 h-100">
+                            <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-square mx-1" href=""><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a>
                         </div>
                     </div>
+                    <div class="bg-light text-center p-4">
+                        <h5 class="fw-bold mb-0">Michael Johnson</h5>
+                        <small>Kỹ Thuật Viên</small>
+                    </div>
                 </div>
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
-                    <div class="team-item">
-                        <div class="position-relative overflow-hidden">
-                            <img class="img-fluid" src="img/team-4.jpg" alt="">
-                            <div class="team-overlay position-absolute start-0 top-0 w-100 h-100">
-                                <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a>
-                            </div>
+            </div>
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
+                <div class="team-item">
+                    <div class="position-relative overflow-hidden">
+                        <img class="img-fluid" src="img/team-4.jpg" alt="">
+                        <div class="team-overlay position-absolute start-0 top-0 w-100 h-100">
+                            <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-square mx-1" href=""><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a>
                         </div>
-                        <div class="bg-light text-center p-4">
-                            <h5 class="fw-bold mb-0">Full Name</h5>
-                            <small>Designation</small>
-                        </div>
+                    </div>
+                    <div class="bg-light text-center p-4">
+                        <h5 class="fw-bold mb-0">Emily Brown</h5>
+                        <small>Nhân Viên Bán Xe</small>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Team End -->
+</div>
+<!-- Đội ngũ của chúng tôi - Kết thúc -->
 
 
-    <!-- Testimonial Start -->
-    <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
-        <div class="container">
-            <div class="text-center">
-                <h6 class="text-primary text-uppercase">// Testimonial //</h6>
-                <h1 class="mb-5">Our Clients Say!</h1>
+
+  
+<div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
+    <div class="container">
+        <div class="text-center">
+            <h1 class="mb-5">Phản hồi từ Khách hàng</h1>
+        </div>
+        <div class="owl-carousel testimonial-carousel position-relative">
+            <div class="testimonial-item text-center">
+                <img class="bg-light rounded-circle p-2 mx-auto mb-3" src="img/testimonial-1.jpg"
+                    style="width: 80px; height: 80px;">
+                <h5 class="mb-0">Jennifer Rodriguez</h5>
+                <p>Giám Đốc Tiếp thị</p>
+                <div class="testimonial-text bg-light text-center p-4">
+                    <p class="mb-0">Chúng tôi đã mua chiếc Lexus LX570 từ trang web này và không thể hạnh phúc hơn. Siêu xe
+                        đẹp không gì so sánh, và dịch vụ khách hàng xuất sắc!</p>
+                </div>
             </div>
-            <div class="owl-carousel testimonial-carousel position-relative">
-                <div class="testimonial-item text-center">
-                    <img class="bg-light rounded-circle p-2 mx-auto mb-3" src="img/testimonial-1.jpg"
-                        style="width: 80px; height: 80px;">
-                    <h5 class="mb-0">Client Name</h5>
-                    <p>Profession</p>
-                    <div class="testimonial-text bg-light text-center p-4">
-                        <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et
-                            eos. Clita erat ipsum et lorem et sit.</p>
-                    </div>
+            <div class="testimonial-item text-center">
+                <img class="bg-light rounded-circle p-2 mx-auto mb-3" src="img/testimonial-2.jpg"
+                    style="width: 80px; height: 80px;">
+                <h5 class="mb-0">Michael Johnson</h5>
+                <p>Chuyên gia Ô tô</p>
+                <div class="testimonial-text bg-light text-center p-4">
+                    <p class="mb-0">Tôi đã mua Lexus LS500h từ đây và không thể tin nổi vào độ sang trọng và hiệu suất của nó.
+                        Một trải nghiệm mua sắm tuyệt vời!</p>
                 </div>
-                <div class="testimonial-item text-center">
-                    <img class="bg-light rounded-circle p-2 mx-auto mb-3" src="img/testimonial-2.jpg"
-                        style="width: 80px; height: 80px;">
-                    <h5 class="mb-0">Client Name</h5>
-                    <p>Profession</p>
-                    <div class="testimonial-text bg-light text-center p-4">
-                        <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et
-                            eos. Clita erat ipsum et lorem et sit.</p>
-                    </div>
+            </div>
+            <div class="testimonial-item text-center">
+                <img class="bg-light rounded-circle p-2 mx-auto mb-3" src="img/testimonial-3.jpg"
+                    style="width: 80px; height: 80px;">
+                <h5 class="mb-0">Emily Clark</h5>
+                <p>Chuyên viên Tài chính</p>
+                <div class="testimonial-text bg-light text-center p-4">
+                    <p class="mb-0">Tôi đã tìm thấy chiếc Lexus RX350 tuyệt vời ở đây và đã được hỗ trợ tận tâm từ nhân viên.
+                        Chắc chắn sẽ quay lại!</p>
                 </div>
-                <div class="testimonial-item text-center">
-                    <img class="bg-light rounded-circle p-2 mx-auto mb-3" src="img/testimonial-3.jpg"
-                        style="width: 80px; height: 80px;">
-                    <h5 class="mb-0">Client Name</h5>
-                    <p>Profession</p>
-                    <div class="testimonial-text bg-light text-center p-4">
-                        <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et
-                            eos. Clita erat ipsum et lorem et sit.</p>
-                    </div>
-                </div>
-                <div class="testimonial-item text-center">
-                    <img class="bg-light rounded-circle p-2 mx-auto mb-3" src="img/testimonial-4.jpg"
-                        style="width: 80px; height: 80px;">
-                    <h5 class="mb-0">Client Name</h5>
-                    <p>Profession</p>
-                    <div class="testimonial-text bg-light text-center p-4">
-                        <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et
-                            eos. Clita erat ipsum et lorem et sit.</p>
-                    </div>
+            </div>
+            <div class="testimonial-item text-center">
+                <img class="bg-light rounded-circle p-2 mx-auto mb-3" src="img/testimonial-4.jpg"
+                    style="width: 80px; height: 80px;">
+                <h5 class="mb-0">John Smith</h5>
+                <p>CEO Công ty</p>
+                <div class="testimonial-text bg-light text-center p-4">
+                    <p class="mb-0">Sự chọn lựa hoàn hảo cho ai đang tìm kiếm một chiếc siêu xe. Tôi đã mua một chiếc
+                        Lexus RC F và nó vượt xa mong đợi của tôi. Cảm ơn bạn!</p>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Testimonial End -->
+</div>
+
+
 @endsection
 
 @section('sect2')

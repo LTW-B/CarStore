@@ -122,6 +122,11 @@
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
                             <li>
+                                <a class="dropdown-item" href="{{ route('home.service') }}">
+                                    <i class="fa-brands fa-servicestack  me-2"></i>Dịch vụ
+                                </a>
+                            </li>
+                            <li>
                                 <a class="dropdown-item" href="{{ route('home.team') }}">
                                     <i class="fa-solid fa-users  me-2"></i>Đội ngũ
                                 </a>
@@ -129,11 +134,6 @@
                             <li>
                                 <a class="dropdown-item" href="{{ route('home.testimonial') }}">
                                     <i class="fa-solid fa-meteor  me-2"></i>Phản hồi
-                                </a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="{{ route('home.service') }}">
-                                    <i class="fa-brands fa-servicestack  me-2"></i>Dịch vụ
                                 </a>
                             </li>
                         </ul>
