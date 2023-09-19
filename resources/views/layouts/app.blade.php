@@ -8,8 +8,7 @@
     <link rel="stylesheet" href="{{ asset('plugins/font-awesome/css/all.min.css') }}">
     <link rel="stylesheet" href="{{ asset('plugins/bootstrap/css/bootstrap.min.css') }}">
     {{-- Fav icon --}}
-    <link rel="icon" href="./favicon.ico" type="image/x-icon">
-
+    <link rel="icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
