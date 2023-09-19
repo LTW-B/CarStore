@@ -4,18 +4,18 @@
     <div class="container">
         <div class="col-12 text-center">
             <div class="col-6 d-inline-flex">
-                <label for="selectDepartment" class="mt-2">Department:</label>
+                <label class="mt-2">Category:</label>
                 <form action="{{ route('filterStores') }}" method="POST" id="myForm">
                     @csrf
                     <select name="selectedCategory" id="selectedCategory" class="form-select ms-3">
-                        <option value="0">Select Department</option>
+                        <option value="0">Select Category</option>
                         @php
                             $uniqueCategories = [];
                         @endphp
                         @foreach ($storeData['stores'] as $store)
                             @if (!in_array($store->category, $uniqueCategories))
                                 <option
-                                    value="{{ $store->category }}"{{ $storeData['selectedCategory'] == $store->category ? ' selected' : '' }}>
+                                    value="{{ $store->category }}">
                                     {{ $store->category }}
                                 </option>
                                 @php
@@ -72,7 +72,7 @@
         </div>
     </div>
 
-    <script>
+    {{-- <script>
         document.getElementById('category').addEventListener('change', function() {
             var selectedValue = this.value;
             var currentUrl = window.location.href;
@@ -86,7 +86,7 @@
 
             window.location.href = newUrl;
         });
-    </script>
+    </script> --}}
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             document.querySelector("#selectedCategory").addEventListener("change", function() {
