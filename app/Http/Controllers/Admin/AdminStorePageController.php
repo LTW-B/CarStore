@@ -37,8 +37,8 @@ class AdminStorePageController extends Controller
         $newStore->save();
 
         if ($request->hasFile('image')) {
-            $imageName = $newStore->id . '.' . $request->file('image')->extension();
-            Storage::disk('upload')->put(
+            $imageName = $newStore->name. '.' . $request->file('image')->extension();
+            Storage::disk('ProductImages')->put(
                 $imageName,
                 file_get_contents($request->file('image')->getRealPath())
             );
@@ -80,7 +80,7 @@ class AdminStorePageController extends Controller
 
         if ($request->hasFile('image')) {
             $imageName = $updateStore->id . '.' . $request->file('image')->extension();
-            Storage::disk('upload')->put(
+            Storage::disk('ProductImages')->put(
                 $imageName,
                 file_get_contents($request->file('image')->getRealPath())
             );

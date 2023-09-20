@@ -46,7 +46,7 @@ class ProductController extends Controller
     }
     public function showImage($filename)
     {
-        $path = storage_path('app/upload/' . $filename);
+        $path = storage_path('app/ProductImages/' . $filename);
         return response()->file($path);
     }
 
