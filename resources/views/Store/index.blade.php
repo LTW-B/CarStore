@@ -2,8 +2,8 @@
 
 @section('sect5')
     <div class="container">
-        <div class="col-12 text-center">
-            <div class="col-6 d-inline-flex">
+        <div class="col-12 ">
+            <div class="d-inline-flex">
                 <label class="mt-2">Category:</label>
                 <form action="{{ route('filterStores') }}" method="POST" id="myForm">
                     @csrf
@@ -41,8 +41,8 @@
                             <div class="card-footer">
                                 <span class="text-title">
                                     <div class="row">
-                                        <div class="col-12"><a href="{{ route('store.show', ['id' => $store->getId()]) }}"
-                                                class="text-capitalize">{{ $store->getName() }}</a></div>
+                                        <div class="col-12"><a href="{{ route('store.show', ['id' => $store->id]) }}"
+                                                class="text-capitalize">{{ $store->name }}</a></div>
                                         <div class="col">
                                             {{ $store->price }}$
                                         </div>

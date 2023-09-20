@@ -27,14 +27,19 @@ Route::get('/', 'App\Http\Controllers\HomeController@home')
 Route::get('/about', 'App\Http\Controllers\HomeController@about')
     ->name("home.AboutPage");
 //Store routes
-Route::get('/store/index', 'App\Http\Controllers\StoreController@index')
+// Route::get('/store/index', 'App\Http\Controllers\StoreController@index')
+//     ->name("store.index");
+// Route::get('/store/show/{id}', 'App\Http\Controllers\StoreController@show')
+//     ->name("store.show");
+// Route::post('/filter-stores', 'App\Http\Controllers\StoreController@filterStores')->name('filterStores');
+Route::get('/store/index', 'App\Http\Controllers\ProductController@index')
     ->name("store.index");
-Route::get('/store/show/{id}', 'App\Http\Controllers\StoreController@show')
+Route::get('/store/show/{id}', 'App\Http\Controllers\ProductController@show')
     ->name("store.show");
-Route::post('/filter-stores', 'App\Http\Controllers\StoreController@filterStores')->name('filterStores');
+Route::post('/filter-stores', 'App\Http\Controllers\ProductController@filterStores')->name('filterStores');
 
 //get images
-Route::get('/store/showItem/{filename}', 'App\Http\Controllers\StoreController@showImage')
+Route::get('/store/showItem/{filename}', 'App\Http\Controllers\ProductController@showImage')
     ->name('store.showImage');
 //search 
 Route::get('search', [

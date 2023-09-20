@@ -7,14 +7,14 @@
         <div class="col-md-8">
             <div class="card-body text-wrap pt-3">
                 <h5 class="card-title ps-2">
-                    {{ $storeData['storeItem']->getName() }}
+                    {{ $storeData['storeItem']->name }}
                 </h5>
                 <div class="bg-light ps-2">
-                    (${{ $storeData['storeItem']->getPrice() }})
+                    (${{ $storeData['storeItem']->price }})
                 </div>
-                <p class="card-text ps-2">{{ $storeData['storeItem']->getDescription() }}</p>
+                <p class="card-text ps-2">{{ $storeData['storeItem']->description }}</p>
                 <div class="card-text">
-                    <form action="{{ route('cart.add', ['id' => $storeData['storeItem']->getId()]) }}" method="post"
+                    <form action="{{ route('cart.add', ['id' => $storeData['storeItem']->id]) }}" method="post"
                         class="container">
                         <div class="row row-cols-1 row-cols-md-1 g-3">
                             @csrf

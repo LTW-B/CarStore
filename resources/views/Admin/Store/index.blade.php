@@ -55,6 +55,11 @@
                                                     <input name="quantity" value="{{ old('quantity') }}" type="number"
                                                         class="form-control">
                                                 </div>
+                                                <label class="col-lg-2 col-md-6 col-sm-12 col-form-label">Tình trạng:</label>
+                                                <div class="col-lg-10 col-md-6 col-sm-12">
+                                                    <input name="condition" value="{{ old('condition') }}" type="text"
+                                                        class="form-control">
+                                                </div>
                                                 <label class="col-lg-2 col-md-6 col-sm-12 col-form-label">Hình ảnh:</label>
                                                 <div class="col-lg-10 col-md-6 col-sm-12">
                                                     <input class="form-control" type="file" name="image">
@@ -90,6 +95,7 @@
                         <th scope="col">Tên</th>
                         <th scope="col">Loại</th>
                         <th scope="col">Số lượng</th>
+                        <th scope="col">Trạng thái</th>
                         <th scope="col">Sửa</th>
                         <th scope="col">Xóa</th>
                     </tr>
@@ -102,21 +108,22 @@
                         <tr>
                             <td>{{ $counter }}</td>
                             <td>
-                                <a href="{{ route('store.show', ['id' => $store->getId()]) }}" class="text-capitalize text-decoration-none">
-                                    {{ $store->getId() }}
+                                <a href="{{ route('store.show', ['id' => $store->id]) }}" class="text-capitalize text-decoration-none">
+                                    {{ $store->id }}
                                 </a>
                             </td>
-                            <td>{{ $store->getname() }}</td>
-                            <td>{{ $store->getCategory() }}</td>
-                            <td>{{ $store->getQuantity() }}</td>
+                            <td>{{ $store->name }}</td>
+                            <td>{{ $store->category }}</td>
+                            <td>{{ $store->quantity }}</td>
+                            <td>{{ $store->condition}}</td>
                             <td>
                                 <a class="btn btn-primary"
-                                    href="{{ route('admin.store.edit', ['id' => $store->getId()]) }}">
+                                    href="{{ route('admin.store.edit', ['id' => $store->id]) }}">
                                     <i class="bi-pencil"></i>
                                 </a>
                             </td>
                             <td>
-                                <form action="{{ route('admin.store.delete', $store->getId()) }}" method="post">
+                                <form action="{{ route('admin.store.delete', $store->id) }}" method="post">
                                     @csrf
                                     @method('DELETE')
                                     <button class="btn btn-danger">

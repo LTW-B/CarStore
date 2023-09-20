@@ -13,15 +13,15 @@
                 @endforeach
             </ul>
             @endif
-            <form action="{{ route('admin.store.update', ['id'=> $storeData['store']->getId()]) }}" method="post" enctype="multipart/form-data">
+            <form action="{{ route('admin.store.update', ['id'=> $storeData['store']->id]) }}" method="post" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
                 <div class="row">
                     <div class="col">
                         <div class="mb-3 row">
-                            <label class="col-lg-2 col-md-6 col-sm-12 col-form-label">Name:</label>
+                            <label class="col-lg-2 col-md-6 col-sm-12 col-form-label">Tên Sản Phẩm</label>
                             <div class="col-lg-10 col-md-6 col-sm-12">
-                                <input name="name" value="{{ $storeData['store']->getName() }}" type="text" class="form-control">
+                                <input name="name" value="{{ $storeData['store']->name }}" type="text" class="form-control">
                             </div>
                         </div>
                     </div>
@@ -29,15 +29,15 @@
                         <div class="mb-3 row">
                             <label class="col-lg-2 col-md-6 col-sm-12 col-form-label">Loại:</label>
                             <div class="col-lg-10 col-md-6 col-sm-12">
-                                <input name="category" value="{{ $storeData['store']->getCategory() }}" type="text" class="form-control">
+                                <input name="category" value="{{ $storeData['store']->category }}" type="text" class="form-control">
                             </div>
                         </div>
                     </div>
                     <div class="col">
                         <div class="mb-3 row">
-                            <label class="col-lg-2 col-md-6 col-sm-12 col-form-label">Price:</label>
+                            <label class="col-lg-2 col-md-6 col-sm-12 col-form-label">Giá</label>
                             <div class="col-lg-10 col-md-6 col-sm-12">
-                                <input name="price" value="{{ $storeData['store']->getPrice() }}" type="number" class="form-control">
+                                <input name="price" value="{{ $storeData['store']->price }}" type="number" class="form-control">
                             </div>
                         </div>
                     </div>
@@ -45,7 +45,7 @@
                 <div class="row">
                     <div class="col">
                         <div class="mb-3 row">
-                            <label class="col-lg-2 col-md-6 col-sm-12 col-form-label">Image:</label>
+                            <label class="col-lg-2 col-md-6 col-sm-12 col-form-label">Hình ảnh</label>
                             <div class="col-lg-10 col-md-6 col-sm-12">
                                 <input class="form-control" type="file" name="image">
                             </div>
@@ -53,16 +53,24 @@
                     </div>
                     <div class="col">
                         <div class="mb-3 row">
-                            <label class="col-lg-2 col-md-6 col-sm-12 col-form-label">Quantity</label>
+                            <label class="col-lg-2 col-md-6 col-sm-12 col-form-label">Số lượng</label>
                             <div class="col-lg-10 col-md-6 col-sm-12">
-                                <input name="quantity" value="{{ $storeData['store']->getQuantity() }}" type="number" class="form-control">
+                                <input name="quantity" value="{{ $storeData['store']->quantity }}" type="number" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="mb-3 row">
+                            <label class="col-lg-2 col-md-6 col-sm-12 col-form-label">Trạng thái</label>
+                            <div class="col-lg-10 col-md-6 col-sm-12">
+                                <input name="condition" value="{{ $storeData['store']->condition}}" type="text" class="form-control">
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="mb-3">
-                    <label class="form-label">Description</label>
-                    <textarea class="form-control" name="description" rows="3">{{ $storeData['store']->getDescription() }}</textarea>
+                    <label class="form-label">Mô tả</label>
+                    <textarea class="form-control" name="description" rows="3">{{ $storeData['store']->description }}</textarea>
                 </div>
                 <button type="submit" class="btn btn-primary">Edit</button>
             </form>
