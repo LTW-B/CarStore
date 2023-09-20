@@ -85,6 +85,11 @@
                                     <i class="fa-solid fa-screwdriver-wrench me-2"></i>Linh Kiện
                                 </a>
                             </li>
+                            <li>
+                                <a class="dropdown-item " href="">
+                                    <i class="fa-solid fa-cart-plus me-2"></i>Giỏ hàng
+                                </a>
+                            </li>
                         </ul>
                     </li>
 

@@ -12,6 +12,7 @@
                         @php
                             $uniqueCategories = [];
                         @endphp
+                        
                         @foreach ($storeData['stores'] as $store)
                             @if (!in_array($store->category, $uniqueCategories))
                                 <option
@@ -48,7 +49,7 @@
                                     </div>
                                 </span>
                                 <div class="card-button">
-                                    <svg fill="#000000" height="46px" width="46px" version="1.1" id="Icons"
+                                    <svg fill="#000000" height="20px" width="20px" version="1.1" id="Icons"
                                         xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                                         viewBox="0 0 32 32" xml:space="preserve">
                                         <g id="SVGRepo_bgCarrier" stroke-width="0"></g>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th9 20, 2023 lúc 01:15 AM
+-- Thời gian đã tạo: Th9 20, 2023 lúc 02:07 AM
 -- Phiên bản máy phục vụ: 10.4.28-MariaDB
 -- Phiên bản PHP: 8.2.4
 
@@ -32,7 +32,7 @@ CREATE TABLE `stores` (
   `name` varchar(255) NOT NULL,
   `description` text NOT NULL,
   `image` varchar(255) NOT NULL,
-  `price` bigint(20) NOT NULL,
+  `price` decimal(20,2) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   `quantity` int(11) NOT NULL DEFAULT 0,
@@ -45,19 +45,11 @@ CREATE TABLE `stores` (
 --
 
 INSERT INTO `stores` (`id`, `name`, `description`, `image`, `price`, `created_at`, `updated_at`, `quantity`, `category`, `sale`) VALUES
-(2, 'g1', 'Best iPhone', '2.jpg', 4, '2021-09-30 17:00:00', '2023-09-06 05:27:09', 0, 'Automobile', 'Hết Hàng'),
-(4, 'husa3', 'steal', '4.jpg', 10014, '2021-09-30 17:00:00', '2023-09-04 17:10:17', 0, 'Automobile', 'Hết Hàng'),
-(5, 'Ferrari', 'xe mới nhập', '5.jpg', 10000000000, '2023-09-04 11:33:24', '2023-09-04 17:04:57', 0, 'Automobile', 'Hết Hàng'),
-(6, 'Ferrari', 'xe mới nhập', '6.jpg', 10000000000, '2023-09-04 11:35:58', '2023-09-04 17:10:37', 0, 'Automobile', 'Hết Hàng'),
-(7, 'lambor', 'minh họa', '7.jpg', 57183909913, '2023-09-04 11:36:39', '2023-09-04 17:05:07', 0, 'Automobile', 'Hết Hàng'),
-(8, 'Takagi', 'Takagi is the best', '8.jpg', 9999999999999, '2023-09-04 15:25:43', '2023-09-07 08:00:23', 12, 'Automobile', 'Hot'),
-(9, 'F40', 'white ferrari', '9.jpg', 10000, '2023-09-04 17:34:48', '2023-09-04 17:34:48', 0, 'Automobile', 'Hết Hàng'),
-(10, 'vien', 'con lon', '15.png', 13314180, '2023-09-06 09:09:44', '2023-09-06 09:09:44', 13, 'Automobile', 'Hot'),
-(16, 'Linh', 'svsdv', '16.jpg', 134, '2023-09-06 09:23:48', '2023-09-06 09:23:48', 2, 'Automobile', 'Hot'),
-(17, 'thinh', 'adv', '17.jpg', 74913, '2023-09-07 20:29:49', '2023-09-10 18:39:39', 14, 'Car parts', 'New'),
-(18, 'banh xe', 'banh xe', '18.jpg', 1578000, '2023-09-12 11:10:18', '2023-09-12 11:10:18', 1, 'Car parts', 'New'),
-(19, 'an', 'ascbas', '19.webp', 1419489, '2023-09-13 18:27:29', '2023-09-13 18:27:29', 24, 'Car parts', 'New'),
-(20, 'new car', 'cas', '20.jpg', 1479, '2023-09-13 18:34:16', '2023-09-13 18:34:16', 145, 'Automobile', 'Hot');
+(1, 'Argento Nurburgring', '', 'car1-removebg.png', 179950.00, '2021-09-30 17:00:00', '2023-09-06 05:27:09', 0, 'Automobile', 'Hết Hàng'),
+(6, 'McLaren P1', 'xe mới nhập', 'car2-removebg.png', 1350000.00, '2023-09-04 11:35:58', '2023-09-04 17:10:37', 0, 'Automobile', 'Hết Hàng'),
+(7, 'lambor', 'minh họa', '7.jpg', 57183909913.00, '2023-09-04 11:36:39', '2023-09-04 17:05:07', 0, 'Automobile', 'Hết Hàng'),
+(8, 'Takagi', 'Takagi is the best', '8.jpg', 9999999999999.00, '2023-09-04 15:25:43', '2023-09-07 08:00:23', 12, 'Automobile', 'Hot'),
+(19, 'an', 'ascbas', '19.webp', 1419489.00, '2023-09-13 18:27:29', '2023-09-13 18:27:29', 24, 'Car parts', 'New');
 
 --
 -- Chỉ mục cho các bảng đã đổ
