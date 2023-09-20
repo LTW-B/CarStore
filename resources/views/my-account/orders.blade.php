@@ -8,7 +8,11 @@
                 <h2>Danh sách hóa đơn</h2>
             </div>
         </div>
-        @forelse ($myOrder['orders'] as $order)
+        @php
+            // Đảo ngược danh sách đơn hàng
+            $reversedOrders = $myOrder['orders']->reverse();
+        @endphp
+        @forelse ($reversedOrders as $order)
             <div class="row text-wrap">
                 <div class="fs2">
                     <header>
@@ -37,7 +41,7 @@
                                             </a>
                                         </td>
                                         <td>${{ $item->price }}</td>
-                                        <td>{{ $item->quantity}}</td>
+                                        <td>{{ $item->quantity }}</td>
                                     </tr>
                                 @endforeach
                             </tbody>
