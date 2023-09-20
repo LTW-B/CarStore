@@ -13,7 +13,7 @@ class Item extends Model
         $request->validate([
             "price" => "required|numeric|gt:0",
             "quantity" => "required|numeric|gt:0",
-            "store_id" => "required|exists:store,id",
+            "product_id" => "required|exists:product,id",
             "order_id" => "required|exists:orders,id",
         ]);
     }
@@ -49,13 +49,13 @@ class Item extends Model
     {
         $this->attributes['order_id'] = $orderId;
     }
-    public function getStoreId()
+    public function getProductId()
     {
-        return $this->attributes['store_id'];
+        return $this->attributes['product_id'];
     }
-    public function setStoreId($Store)
+    public function setProductId($Store)
     {
-        $this->attributes['store_id'] = $Store;
+        $this->attributes['product_id'] = $Store;
     }
     public function getCreatedAt()
     {
@@ -85,16 +85,16 @@ class Item extends Model
     {
         $this->order = $order;
     }
-    public function store()
+    public function product()
     {
-        return $this->belongsTo(Store::class);
+        return $this->belongsTo(Product::class);
     }
-    public function getStore()
+    public function getProduct()
     {
-        return $this->store;
+        return $this->product;
     }
-    public function setStore($store)
+    public function setProd($product)
     {
-        $this->store = $store;
+        $this->product = $product;
     }
 }

@@ -22,7 +22,7 @@ class Product extends Model
     {
         $total = 0;
         foreach ($stores as $store) {
-            $total = $total + ($store->getPrice() * $CarsInSession[$store->getId()]);
+            $total = $total + ($store->price* $CarsInSession[$store->id]);
         }
         return $total;
     }

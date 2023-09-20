@@ -32,12 +32,12 @@
                                         <td>{{ $item->getId() }}</td>
                                         <td>
                                             <a class="link-success"
-                                                href="{{ route('store.show', ['id' => $item->getStore()->getId()]) }}">
-                                                {{ $item->getStore()->getName() }}
+                                                href="{{ route('store.show', ['id' => $item->getProduct()->id]) }}">
+                                                {{ $item->getProduct()->name }}
                                             </a>
                                         </td>
-                                        <td>${{ $item->getPrice() }}</td>
-                                        <td>{{ $item->getQuantity() }}</td>
+                                        <td>${{ $item->price }}</td>
+                                        <td>{{ $item->quantity}}</td>
                                     </tr>
                                 @endforeach
                             </tbody>

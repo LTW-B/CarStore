@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Auth;
-use App\Models\Store;
+use App\Models\Product;
 use App\Models\Order;
 use App\Models\Item;
 use App\Models\User;
@@ -16,8 +16,8 @@ class CartController extends Controller
         $CarsInCart = [];
         $CarsInSession = $request->session()->get('stores');
         if ($CarsInSession) {
-            $CarsInCart = Store::findMany(array_keys($CarsInSession));
-            $total = Store::sumCarsByQuantity($CarsInCart, $CarsInSession);
+            $CarsInCart = Product::findMany(array_keys($CarsInSession));
+            $total = Product::sumCarsByQuantity($CarsInCart, $CarsInSession);
         }
         $showCart = [];
         $showCart['title'] = 'Cart';
@@ -51,16 +51,16 @@ class CartController extends Controller
             $order->save();
 
             $total = 0;
-            $showCartInCart = Store::findMany(array_keys($showCartInSession));
+            $showCartInCart = Product::findMany(array_keys($showCartInSession));
             foreach ($showCartInCart as $store) {
-                $quantity = $showCartInSession[$store->getId()];
+                $quantity = $showCartInSession[$store->id];
                 $item = new Item();
                 $item->setQuantity($quantity);
-                $item->setPrice($store->getPrice());
-                $item->setStoreId($store->getId());
-                $item->setOrderId($order->getId());
+                $item->setPrice($store->price);
+                $item->setProductId($store->id);
+                $item->setOrderId($order->id);
                 $item->save();
-                $total = $total + ($store->getPrice() * $quantity);
+                $total = $total + ($store->price * $quantity);
             }
             $order->setTotal($total);
             $order->save();

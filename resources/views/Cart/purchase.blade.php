@@ -8,7 +8,7 @@
         <span class="fs-">
             <div class="alert alert-success" role="alert">
                 Congratulations, purchase completed. Order number is 
-                <b>#{{ $viewPurchase['order']->getId() }}</b>
+                <b>#{{ $viewPurchase['order']->id }}</b>
                 </div>
         </span>
     </div>

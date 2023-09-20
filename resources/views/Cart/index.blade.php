@@ -17,10 +17,10 @@
             <tbody>
                 @foreach ($showCart['stores'] as $store)
                     <tr>
-                        <td>{{ $store->getId() }}</td>
-                        <td>{{ $store->getName() }}</td>
-                        <td>{{ $store->getPrice() }}</td>
-                        <td>{{ session('stores')[$store->getId()] }}</td>
+                        <td>{{ $store->id }}</td>
+                        <td>{{ $store->name }}</td>
+                        <td>{{ $store->price }}</td>
+                        <td>{{ session('stores')[$store->id] }}</td>
                     </tr>
                 @endforeach
             </tbody>

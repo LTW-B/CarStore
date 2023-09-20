@@ -21,7 +21,7 @@ class MyAccountController extends Controller
         $myOrder = [];
         $myOrder["title"] = "My Orders - Online Store";
         $myOrder["subtitle"] = "My Orders";
-        $myOrder["orders"] = Order::with(['items.store'])->where('user_id', Auth::user()->id)->get();
+        $myOrder["orders"] = Order::with(['items.product'])->where('user_id', Auth::user()->id)->get();
         return view('my-account.orders')->with("myOrder", $myOrder);
     }
     public function MyProfile()
@@ -31,7 +31,7 @@ class MyAccountController extends Controller
         $myProfile["title"] = "My profile - Online Store";
         $myProfile["subtitle"] = "My Orders";
         $myProfile['profile'] = $profile;
-        $myProfile["orders"] = Order::with(['items.store'])->where('user_id', Auth::user()->id)->get();
+        $myProfile["orders"] = Order::with(['items.product'])->where('user_id', Auth::user()->id)->get();
         // $myProfile['avatarUrl'] = route('showAvatar', ['filename' => $profile->avatar]);
         return view('my-account.profile')->with("myProfile", $myProfile);
     }
