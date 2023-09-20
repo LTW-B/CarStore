@@ -8,7 +8,6 @@
         <table class="table table-bordered table-striped text-center">
             <thead>
                 <tr>
-                    <th class="col">Id</th>
                     <th class="col">Name</th>
                     <th class="col">Price</th>
                     <th class="col">Quantity</th>
@@ -17,7 +16,6 @@
             <tbody>
                 @foreach ($showCart['stores'] as $store)
                     <tr>
-                        <td>{{ $store->id }}</td>
                         <td>{{ $store->name }}</td>
                         <td>{{ $store->price }}</td>
                         <td>{{ session('stores')[$store->id] }}</td>
