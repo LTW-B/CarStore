@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th9 17, 2023 lúc 07:42 PM
+-- Thời gian đã tạo: Th9 20, 2023 lúc 08:58 AM
 -- Phiên bản máy phục vụ: 10.4.28-MariaDB
 -- Phiên bản PHP: 8.0.28
 
@@ -48,35 +48,10 @@ CREATE TABLE `items` (
   `quantity` int(11) NOT NULL,
   `price` bigint(20) NOT NULL,
   `order_id` bigint(20) UNSIGNED NOT NULL,
-  `store_id` bigint(20) UNSIGNED NOT NULL,
+  `product_id` bigint(20) UNSIGNED NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Đang đổ dữ liệu cho bảng `items`
---
-
-INSERT INTO `items` (`id`, `quantity`, `price`, `order_id`, `store_id`, `created_at`, `updated_at`) VALUES
-(1, 2, 10000000000, 1, 6, '2023-09-04 19:14:25', '2023-09-04 19:14:25'),
-(2, 2, 57183909913, 1, 7, '2023-09-04 19:14:25', '2023-09-04 19:14:25'),
-(3, 1, 9999999999999, 1, 8, '2023-09-04 19:14:25', '2023-09-04 19:14:25'),
-(4, 2, 10000000000, 2, 6, '2023-09-04 19:15:07', '2023-09-04 19:15:07'),
-(5, 2, 57183909913, 2, 7, '2023-09-04 19:15:07', '2023-09-04 19:15:07'),
-(6, 1, 9999999999999, 2, 8, '2023-09-04 19:15:07', '2023-09-04 19:15:07'),
-(7, 2, 10000000000, 3, 6, '2023-09-04 19:20:19', '2023-09-04 19:20:19'),
-(8, 2, 57183909913, 3, 7, '2023-09-04 19:20:19', '2023-09-04 19:20:19'),
-(9, 1, 9999999999999, 3, 8, '2023-09-04 19:20:19', '2023-09-04 19:20:19'),
-(10, 2, 10000000000, 4, 6, '2023-09-04 19:21:30', '2023-09-04 19:21:30'),
-(11, 2, 57183909913, 4, 7, '2023-09-04 19:21:30', '2023-09-04 19:21:30'),
-(12, 1, 9999999999999, 4, 8, '2023-09-04 19:21:30', '2023-09-04 19:21:30'),
-(13, 2, 10000000000, 5, 6, '2023-09-04 19:46:01', '2023-09-04 19:46:01'),
-(14, 2, 57183909913, 5, 7, '2023-09-04 19:46:01', '2023-09-04 19:46:01'),
-(15, 1, 9999999999999, 5, 8, '2023-09-04 19:46:01', '2023-09-04 19:46:01'),
-(16, 2, 10000000000, 6, 6, '2023-09-04 20:14:41', '2023-09-04 20:14:41'),
-(17, 2, 57183909913, 6, 7, '2023-09-04 20:14:41', '2023-09-04 20:14:41'),
-(18, 1, 9999999999999, 6, 8, '2023-09-04 20:14:41', '2023-09-04 20:14:41'),
-(19, 2, 9999999999999, 7, 8, '2023-09-06 09:25:35', '2023-09-06 09:25:35');
 
 -- --------------------------------------------------------
 
@@ -111,7 +86,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (14, '2023_09_06_163335_add_avatar_column_to_users', 10),
 (15, '2023_09_08_040232_sua_bang_sp', 11),
 (16, '2023_09_08_041528_suatencottronsp', 12),
-(17, '2023_09_11_011812_themloaisp', 13);
+(17, '2023_09_11_011812_themloaisp', 13),
+(18, '2023_09_20_045635_tai_cau_truc_d_a_t_a_b_a_s_e', 14);
 
 -- --------------------------------------------------------
 
@@ -127,19 +103,6 @@ CREATE TABLE `orders` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- Đang đổ dữ liệu cho bảng `orders`
---
-
-INSERT INTO `orders` (`id`, `total`, `user_id`, `created_at`, `updated_at`) VALUES
-(1, 10134367819825, 4, '2023-09-04 19:14:25', '2023-09-04 19:14:25'),
-(2, 10134367819825, 4, '2023-09-04 19:15:07', '2023-09-04 19:15:07'),
-(3, 10134367819825, 4, '2023-09-04 19:20:19', '2023-09-04 19:20:19'),
-(4, 10134367819825, 4, '2023-09-04 19:21:30', '2023-09-04 19:21:30'),
-(5, 10134367819825, 4, '2023-09-04 19:46:01', '2023-09-04 19:46:01'),
-(6, 10134367819825, 4, '2023-09-04 20:14:41', '2023-09-04 20:14:41'),
-(7, 19999999999998, 4, '2023-09-06 09:25:35', '2023-09-06 09:25:35');
-
 -- --------------------------------------------------------
 
 --
@@ -151,6 +114,14 @@ CREATE TABLE `password_resets` (
   `token` varchar(255) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `password_resets`
+--
+
+INSERT INTO `password_resets` (`email`, `token`, `created_at`) VALUES
+('napt@h.com', '$2y$10$Z.EyljarC.lroWl8vmneYOBD0LhVLKVAIufRF2tq4jFaLnPnI4loy', '2023-09-19 22:53:56'),
+('thinhnguyenphuc51@gmail.com', '$2y$10$OlpkZpkwI3ujZg.XmaU7dOVupBOiTo/b7hyrrkF09gvoKHaxJ2CP2', '2023-09-19 22:49:40');
 
 -- --------------------------------------------------------
 
@@ -170,6 +141,38 @@ CREATE TABLE `personal_access_tokens` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `products`
+--
+
+CREATE TABLE `products` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `description` text NOT NULL,
+  `image` varchar(255) NOT NULL,
+  `price` bigint(20) NOT NULL,
+  `quantity` int(11) NOT NULL DEFAULT 0,
+  `category` varchar(255) NOT NULL DEFAULT 'car',
+  `condition` varchar(255) NOT NULL DEFAULT 'Hot',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `products`
+--
+
+INSERT INTO `products` (`id`, `name`, `description`, `image`, `price`, `quantity`, `category`, `condition`, `created_at`, `updated_at`) VALUES
+(2, 'Ferrari', 'âcs', '2.jpg', 145678, 3142, 'car', 'hot', '2023-09-19 22:40:50', '2023-09-19 23:55:17'),
+(3, 'TOYOTA YARIS 2023', 'Toyota Yaris 2023 là mẫu xe Hatchbach duy nhất của Toyota được nhập khẩu nguyên chiếc từ Thái Lan và bán ra duy nhất 1 phiên bản là Yaris 1.5G 2023. Xe Yaris 2023 có thiết kế trẻ trung, bắt mắt, nhiều màu xe lựa chọn cùng với đó là tính năng vận hành, khả năng tiết kiệm nhiên liệu, tính năng an toàn vượt trội cùng những tiện nghi đầy đủ trên xe. Cùng Thế Giới Xe Ô Tô tìm hiểu chi tiết về giá xe Yaris 2023, giá xe Yaris 2023 lăn bánh, hình ảnh chi tiết về nội ngoại thất, màu xe, thông số kỹ thuật mới nhất.', '3.jpg', 684000000, 1314, 'TOYOTA', 'hot', '2023-09-19 23:21:47', '2023-09-19 23:21:47'),
+(4, 'MERCEDES-BENZ GLC ALL NEW 2023', 'Mercedes-Benz GLC 2023 được chính thức ra mắt tại Việt Nam với 2 phiên bản được lắp ráp chính hãng bởi Mercedes Benz Việt Nam bao gồm Mercedes GLC 200 4Matic có giá 2,299 tỷ, Mercedes GLC 300 AMG có giá 2,799 tỷ. Tất cả các phiên bản Mercedes GLC 2023 đều được trang bị options cao cấp nhất và đầy đủ nhất với tính năng an toàn và vận hành vượt trội. Cùng Thế Giới Xe Ô Tô tìm hiểu chi tiết về giá xe Mercedes GLC 2023, giá xe Mercedes GLC lăn bánh, hình ảnh, thông số kỹ thuật và đánh giá xe Mercedes GLC 2023 chi tiết nhất để khách hàng lựa chọn khi mua xe', '4.jpg', 2299000000, 179, 'MERCEDES-BENZ GLC', 'hot', '2023-09-19 23:24:47', '2023-09-19 23:24:47'),
+(5, 'MERCEDES-BENZ GLC ALL NEW Xe Toyota Camry 2.5HV 2022', '\"Xe trang bị:\r\nĐộng cơ xăng 2.5L kết hợp động cơ điện, Hộp số vô cấp E-CVT\r\nGói an toàn Toyota Safety Sensen: Phanh khoảng cách, cảnh báo lệch làn, giữ làn, Ga tự động, điều khiển hành trình chủ động (bám đuổi xe phía trước), đèn pha tự động điều chỉnh cường độ và góc chiếu mở rộng\r\nĐèn full led, auto, đèn chờ dẫn đường, 4 ghế chỉnh điện, ghế lái nhớ 2 vị trí, Vô lăng chỉnh điện, tích hợp nút điều chỉnh âm thanh, đàm thoại rảnh tay, nút an toàn phanh khoảng cách, giữ làn đường, Đề start/stop khoá thông minh.\"', '5.jpg', 1355000000, 1456, 'Toyata Camry', 'hot', '2023-09-19 23:26:24', '2023-09-19 23:26:25'),
+(6, 'Mazda 3 2023', 'Mazda 3 là dòng xe hạng C được nhập khẩu từ Thái Lan, cạnh tranh với đối thủ như Kia K3, Hyundai Elantra, Toyota Altis, Honda Civic...Trong năm 2022, Mazda 3 gây ấn tượng khi bán được đến 9812 xe (817 xe/tháng), đứng thứ 2 sau Kia K3 (11.404 xe). Mazda3 thế hệ thứ 4 trình làng đầu tiên tại Los Angeles Auto Show tháng 11/2018. Xe được phát triển dựa trên nền tảng khung gầm Skyactiv-Vehicle Architecture, với hai bản sedan 4 cửa và hatchback 5 cửa.', 'Mazda 3 2023.jpg', 789000000, 14, 'Mazda', 'còn hàng', '2023-09-19 23:46:14', '2023-09-19 23:46:14'),
+(7, 'Mitsubishi Xpander 2024', '\"Mitsubishi Xpander là mẫu xe SUV lai MPV 7 chỗ cạnh tranh với các đối thủ như Toyota Avanza/Veloz, Honda HRV, Suzuki Ertiga/XL7... Trong năm 2022, Xpander bán được 21.803 xe, đứng thứ 3 trong top 10 xe bán chạy nhất Việt Nam. Ra mắt lần đầu năm 2017, đến nay Xpander vừa bước vào thế hệ thứ 2. Mitsubishi Xpander facelift ra mắt tại Việt Nam tháng 06-2022 với tạo hình bộ đèn chữ T mới. Xe có 20 điểm mới so với bản tiền nhiệm của năm 2021.Phiên bản Xpander 2024 vẫn chưa có gì thay đổi so với bản facelift kể trên. Đối thủ của mẫu xe đa dụng Mitsubishi Xpander là Toyota Avanza, Suzuki Ertiga...Xpander Cross 2024 cũng được ra mắt trong tháng 03-2023 với nhiều nâng cấp về thiết kế cũng như trang bị, điều này giúp tạo thêm sức ép lên đối thủ Toyota Veloz, Suzuki XL7..\r\n\r\n\r\n\r\n\r\n\"', 'Mitsubishi Xpander 2024.jpg', 680000000, 4, 'Mitsubishi', 'còn hàng', '2023-09-19 23:53:14', '2023-09-19 23:53:14'),
+(8, 'Vinfast VF8 2023', '\"Đánh giá sơ bộ Vinfast VF8 của Giaxeotovn\r\nPhong cách thiết kế của Vinfast VF8 do hãng thiết kế hàng đầu Châu Âu là Pininfarina chấp bút, quả thực rất lôi cuốn, đậm chất châu Âu dù nhiều người vẫn chê xe điện đơn điệu phần đầu xe. Vẻ lai SUV Coupe đầy hào nhoáng mà tinh tế. Độ hoàn thiện thân vỏ tuyệt vời. Độ nhận diện thương hiệu Việt ở mọi góc nhìn khiến team đánh giá của chúng tôi rất tâm đắc.Đánh giá chung VF8 (4.7/5): Mức giá của VF8 rất tốt, nhất là còn linh hoạt do chính sách ưu đãi và dùng Voucher của VinGroup. Hạn chế là nguồn cung và hệ thống trạm sạc cần rộng khắp hơn. Bản thân team đánh giá xe của chúng tôi có 5/5 người ở chung cư nhưng chỉ có 3/5 người có thể thấy trạm xạc trong phạm vi cách nhà 500m.\"', 'Vinfast VF8 2023.jpg', 1344000000, 1, 'Vinfast', 'hết hàng', '2023-09-19 23:54:28', '2023-09-19 23:54:28');
 
 -- --------------------------------------------------------
 
@@ -202,43 +205,6 @@ INSERT INTO `sanphams` (`id`, `name`, `image`, `price`, `description`, `quantity
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `stores`
---
-
-CREATE TABLE `stores` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `description` text NOT NULL,
-  `image` varchar(255) NOT NULL,
-  `price` bigint(20) NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  `quantity` int(11) NOT NULL DEFAULT 0,
-  `category` varchar(255) NOT NULL DEFAULT 'car'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Đang đổ dữ liệu cho bảng `stores`
---
-
-INSERT INTO `stores` (`id`, `name`, `description`, `image`, `price`, `created_at`, `updated_at`, `quantity`, `category`) VALUES
-(2, 'g1', 'Best iPhone', '2.jpg', 4, '2021-09-30 17:00:00', '2023-09-06 05:27:09', 0, 'car'),
-(4, 'husa3', 'steal', '4.jpg', 10014, '2021-09-30 17:00:00', '2023-09-04 17:10:17', 0, 'car'),
-(5, 'Ferrari', 'xe mới nhập', '5.jpg', 10000000000, '2023-09-04 11:33:24', '2023-09-04 17:04:57', 0, 'car'),
-(6, 'Ferrari', 'xe mới nhập', '6.jpg', 10000000000, '2023-09-04 11:35:58', '2023-09-04 17:10:37', 0, 'car'),
-(7, 'lambor', 'minh họa', '7.jpg', 57183909913, '2023-09-04 11:36:39', '2023-09-04 17:05:07', 0, 'car'),
-(8, 'Takagi', 'Takagi is the best', '8.jpg', 9999999999999, '2023-09-04 15:25:43', '2023-09-07 08:00:23', 12, 'car'),
-(9, 'F40', 'white ferrari', '9.jpg', 10000, '2023-09-04 17:34:48', '2023-09-04 17:34:48', 0, 'car'),
-(10, 'vien', 'con lon', '15.png', 13314180, '2023-09-06 09:09:44', '2023-09-06 09:09:44', 13, 'car'),
-(16, 'Linh', 'svsdv', '16.jpg', 134, '2023-09-06 09:23:48', '2023-09-06 09:23:48', 2, 'car'),
-(17, 'thinh', 'adv', '17.jpg', 74913, '2023-09-07 20:29:49', '2023-09-10 18:39:39', 14, 'linhkien'),
-(18, 'banh xe', 'banh xe', '18.jpg', 1578000, '2023-09-12 11:10:18', '2023-09-12 11:10:18', 1, 'linhkien'),
-(19, 'an', 'ascbas', '19.webp', 1419489, '2023-09-13 18:27:29', '2023-09-13 18:27:29', 24, 'linhkien'),
-(20, 'new car', 'cas', '20.jpg', 1479, '2023-09-13 18:34:16', '2023-09-13 18:34:16', 145, 'car');
-
--- --------------------------------------------------------
-
---
 -- Cấu trúc bảng cho bảng `users`
 --
 
@@ -267,7 +233,7 @@ INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `re
 (4, 'Oranty', 'abc@beta.com', NULL, '$2y$10$9dfZE9cpipktV6K296.wFuVM5u41tLNlp4XmAPLYySGCDascwsDFq', NULL, '2023-09-03 00:05:25', '2023-09-06 09:25:35', '0', -60537471274298, 'user.png'),
 (5, 'Oranty', 'qw@hfsmlk.cpm', NULL, '$2y$10$YOos6bwX8TvPVcQkB/QdS.CyjweAgXKLc8i2e1yRTExicHliPtJMG', NULL, '2023-09-10 21:17:01', '2023-09-10 21:17:01', '0', 5000, 'user.png'),
 (6, 'beslinh', 'asbc@thas.asc', NULL, '$2y$10$Hdcynrc8NK0Zm66SqMO3PeE5/Vc9mxSVH51zFosbKpzpgY1qaZawO', NULL, '2023-09-11 00:54:09', '2023-09-11 00:54:09', '0', 5000, 'asbc@thas.asc.jpg'),
-(7, 'hao', 'hao@ha.m', NULL, '$2y$10$BXXJdihSO7sfA370pmaYcOE9orIopshYp53cjsHAKP1JNC2rZ0l2S', NULL, '2023-09-11 01:17:08', '2023-09-11 01:17:08', '0', 5000, 'hao.jpg'),
+(7, 'hao', 'hao@ha.m', NULL, '$2y$10$BXXJdihSO7sfA370pmaYcOE9orIopshYp53cjsHAKP1JNC2rZ0l2S', NULL, '2023-09-11 01:17:08', '2023-09-19 11:41:55', '0', -144826, 'hao.jpg'),
 (8, 'hoanh', 'ha@nh.ol', NULL, '$2y$10$GuCMZmyIVRJ65HixVVDrtuy06xCNY4zfZGqRRGQJDW6enF371egA2', NULL, '2023-09-11 01:19:19', '2023-09-11 01:19:19', '0', 5000, 'hoanh.jpg'),
 (9, 'ngu', 'ngu@game.choi', NULL, '$2y$10$Eq9AiHSeTptFtbQBhbkV7uCwG39c.e5Xt00bWB8BgexipqdTo3l16', NULL, '2023-09-11 10:53:00', '2023-09-11 10:53:00', '0', 5000, 'ngu@game.choi.jpg'),
 (10, 'napt', 'napt@h.com', NULL, '$2y$10$6AV4StguCvnLDX1/dzgoXe/3MhCXCfRvCjiHgGiE2ewGsB4fwJyR.', NULL, '2023-09-11 17:15:51', '2023-09-11 17:15:51', 'admin', 5000, 'napt@h.com.jpg'),
@@ -293,7 +259,7 @@ ALTER TABLE `failed_jobs`
 ALTER TABLE `items`
   ADD PRIMARY KEY (`id`),
   ADD KEY `items_order_id_foreign` (`order_id`),
-  ADD KEY `items_store_id_foreign` (`store_id`);
+  ADD KEY `items_product_id_foreign` (`product_id`);
 
 --
 -- Chỉ mục cho bảng `migrations`
@@ -323,15 +289,15 @@ ALTER TABLE `personal_access_tokens`
   ADD KEY `personal_access_tokens_tokenable_type_tokenable_id_index` (`tokenable_type`,`tokenable_id`);
 
 --
--- Chỉ mục cho bảng `sanphams`
+-- Chỉ mục cho bảng `products`
 --
-ALTER TABLE `sanphams`
+ALTER TABLE `products`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `stores`
+-- Chỉ mục cho bảng `sanphams`
 --
-ALTER TABLE `stores`
+ALTER TABLE `sanphams`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -355,19 +321,19 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT cho bảng `items`
 --
 ALTER TABLE `items`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT cho bảng `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT cho bảng `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT cho bảng `personal_access_tokens`
@@ -376,16 +342,16 @@ ALTER TABLE `personal_access_tokens`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT cho bảng `products`
+--
+ALTER TABLE `products`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
 -- AUTO_INCREMENT cho bảng `sanphams`
 --
 ALTER TABLE `sanphams`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
---
--- AUTO_INCREMENT cho bảng `stores`
---
-ALTER TABLE `stores`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT cho bảng `users`
@@ -402,7 +368,7 @@ ALTER TABLE `users`
 --
 ALTER TABLE `items`
   ADD CONSTRAINT `items_order_id_foreign` FOREIGN KEY (`order_id`) REFERENCES `orders` (`id`),
-  ADD CONSTRAINT `items_store_id_foreign` FOREIGN KEY (`store_id`) REFERENCES `stores` (`id`);
+  ADD CONSTRAINT `items_product_id_foreign` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`);
 
 --
 -- Các ràng buộc cho bảng `orders`
