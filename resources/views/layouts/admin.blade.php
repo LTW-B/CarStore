@@ -58,9 +58,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('home.linhkien') }}">Linh kiện</a>
                     </li>
-                    {{-- <li class="nav-item">
-                        <a class="nav-link" href="{{ route('home.AboutPage') }}">About Us</a>
-                    </li> --}}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('admin.user') }}">Người dùng </a>
+                    </li>
                     <!-- Dropdown menu -->
                 </ul>
                 <!-- /nav left -->
