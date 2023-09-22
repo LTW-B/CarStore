@@ -28,6 +28,9 @@
             </div>
         </div>
 
+
+
+
         <div class="row row-cols-1 row-cols-md-3 row-cols-sm-2 row-cols-lg-4 gap-3">
             @isset($storeData['selectedResults'])
                 @foreach ($storeData['selectedResults'] as $store)
@@ -36,8 +39,8 @@
                             <div class="image-container" style="height: 350px; overflow: hidden; margin-top: 10px;">
                                 <img src="{{ route('store.showImage', ['filename' => $store['image']]) }}" alt="image"
                                     class="card-img-top img-card">
-
                             </div>
+
                             <div class="position-absolute">
                                 <svg height="100px" width="100px" version="1.1" id="_x32_"
                                     xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -76,15 +79,12 @@
                                             {{ $store->price }}$
                                         </div>
                                         <div class="col text-muted">
-                                            <del>{{ $store->price + rand(10000000, 100000000) }}$</del>
+                                            <del>{{ $store->sale_price }}$</del>
                                         </div>
                                     </div>
                                 </span>
-                                <input type="number" name="quantity" min="1" max="20" id="quantity"
-                                    class="d-none" value="1" style="width: 50px">
-
-                                    <a href="{{ route('store.show', ['id' => $store->id]) }}"
-                                        class="text-capitalize">
+                           
+                                    <a href="{{ route('store.show', ['id' => $store->id]) }}" class="text-capitalize">
                                         <div class="card-button" type="submit">
                                             <svg fill="#000000" height="30px" width="30px" version="1.1" id="Icons"
                                                 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -103,11 +103,11 @@
                                             </svg>
                                         </div>
                                     </a>
-                                
-
+                            
 
 
                             </div>
+                            
                         </div>
                     </div>
                 @endforeach

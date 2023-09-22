@@ -7,7 +7,6 @@
     <div class="container-fluid p-0 mb-5">
         <div id="header-carousel" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
-
                 <div class="carousel-item active">
                     <img src="./img/bg-carosel-2.jpg" alt="Image" style="width: 100%; height: 100vh;">
                     <div class="carousel-caption d-flex align-items-center">
@@ -19,7 +18,7 @@
                                     <h1 class="display-3 text-white mb-4 pb-3 animated slideInDown"
                                         style="font-family:Body-Font">Mercedes-AMG S63E
                                         Performance 2023</h1>
-                                    <a href="" class="btn btn-primary py-3 px-5 animated slideInDown">Xem thêm <i
+                                    <a href="/store/show/1" class="btn btn-primary py-3 px-5 animated slideInDown">Xem thêm <i
                                             class="fa fa-arrow-right ms-3"></i></a>
                                 </div>
                                 <div class="col-lg-5 d-none d-lg-flex animated zoomIn" style=" height: 40vh;">
@@ -42,7 +41,7 @@
                                     <h1 class="display-3 text-white mb-4 pb-3 animated slideInDown"
                                         style="font-family:Body-Font"> Mercedes-AMG GT Black
                                         Series 2021</h1>
-                                    <a href="" class="btn btn-primary py-3 px-5 animated slideInDown">Xem thêm<i
+                                    <a href="/store/show/2" class="btn btn-primary py-3 px-5 animated slideInDown">Xem thêm<i
                                             class="fa fa-arrow-right ms-3"></i></a>
                                 </div>
                                 <div class="col-lg-5 d-none d-lg-flex animated zoomIn" style=" height: 40vh;">
