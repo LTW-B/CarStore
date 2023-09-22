@@ -63,10 +63,9 @@ Route::middleware('auth')->group(function () {
         ->name('my-account.orders');
     Route::get('/myProfile', 'App\Http\Controllers\MyAccountController@MyProfile')
         ->name('myProfile');
-    
 });
 Route::get('/profile/avatar/{filename}', 'App\http\Http\Controllers\MyAccountController@showImage')
-        ->name('showAvatar');
+    ->name('showAvatar');
 //admin routes
 Route::middleware('admin')->group(function () {
     Route::get('/admin', 'App\Http\Controllers\Admin\AdminStoreHomeController@index')
@@ -81,6 +80,10 @@ Route::middleware('admin')->group(function () {
         ->name("admin.store.edit");
     Route::put('admin/store/{id}/update', 'App\Http\Controllers\Admin\AdminStorePageController@updateStore')
         ->name("admin.store.update");
+    Route::get('admin/user', 'App\Http\Controllers\Admin\AdminUsersController@index')
+        ->name("admin.user");
+    Route::post('createUser', 'App\Http\Controllers\Admin\AdminUsersController@create')
+    ->name('createUser');
 });
 
 Route::get('/linhkien', 'App\Http\Controllers\LinhkienController@index')
