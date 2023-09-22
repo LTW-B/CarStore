@@ -86,7 +86,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a class="dropdown-item " href="">
+                                <a class="dropdown-item " href="/cart">
                                     <i class="fa-solid fa-cart-plus me-2"></i>Giỏ hàng
                                 </a>
                             </li>
