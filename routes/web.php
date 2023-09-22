@@ -63,6 +63,10 @@ Route::middleware('auth')->group(function () {
         ->name('my-account.orders');
     Route::get('/myProfile', 'App\Http\Controllers\MyAccountController@MyProfile')
         ->name('myProfile');
+    Route::get('/edit/info', 'App\Http\Controllers\MyAccountController@editAccount')
+        ->name('editAccount');
+    Route::get('/update/{id}/info', 'App\Http\Controllers\MyAccountController@updateAccount')
+        ->name('editAccount.update');
 });
 Route::get('/profile/avatar/{filename}', 'App\http\Http\Controllers\MyAccountController@showImage')
     ->name('showAvatar');
@@ -88,8 +92,10 @@ Route::middleware('admin')->group(function () {
         ->name("admin.user.delete");
     Route::get('/userProfile/{id}', 'App\Http\Controllers\Admin\AdminUsersController@userProfile')
         ->name('userProfile');
-    Route::get('/store/show/{id}', 'App\Http\Controllers\ProductController@show')
-        ->name("store.show");
+    Route::get('/userProfile/{id}/edit', 'App\Http\Controllers\Admin\AdminUsersController@editUser')
+        ->name("userProfile.edit");
+    Route::put('/userProfile/{id}/update', 'App\Http\Controllers\Admin\AdminUsersController@updateUser')
+        ->name("userProfile.update");
 });
 
 Route::get('/linhkien', 'App\Http\Controllers\LinhkienController@index')

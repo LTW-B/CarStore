@@ -4,18 +4,21 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/3.6.95/css/materialdesignicons.css">
     {{-- <img src="{{ asset('upload/' .$userInfo['user']->avatar) }}" alt=""> --}}
     <div class="row row-cols-1 row-cols-md-2">
-        <div class="col col-lg-4" style="background-color: #a365f3">
+        <div class="col col-lg-4" style="background-color: #a8eee1">
             <div class="card-block text-center text-white">
                 <div class="row row-cols-lg-1">
                     <div class="col m-b-25">
-                        <img src="{{ asset('avatars/' . $userInfo['user']->avatar) }}" alt="" class="img-fluid rounded"
+                        <img src="{{ asset($userInfo['user']->avatar) }}" alt="" class="img-fluid rounded"
                             style="height: 100px" width="100px">
-    
+
                     </div>
                     <div class="col text-lg-center text-start">
-                        <h6 class="f-w-600">{{ $userInfo['user']->name }}</h6>
-                        <p>{{ $userInfo['user']->role }}</p>
-                        <i class=" mdi mdi-square-edit-outline feather icon-edit m-t-10 f-16"></i>
+                        <h3 class="f-w-600">{{ $userInfo['user']->name }}</h3>
+                        <p class="fs-4">{{ $userInfo['user']->role }}</p>
+                        <a href="{{ route('userProfile.edit', $userInfo['user']->id) }}">
+                            <i class=" mdi mdi-square-edit-outline feather icon-edit m-t-10 f-16 fs-4"></i>
+
+                        </a>
                     </div>
                 </div>
             </div>

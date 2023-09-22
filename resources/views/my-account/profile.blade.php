@@ -8,14 +8,17 @@
             <div class="card-block text-center text-white">
                 <div class="row row-cols-lg-1">
                     <div class="col m-b-25">
-                        <img src="{{ asset('avatars/' . $myProfile['profile']->avatar) }}" alt="" class="img-fluid rounded"
+                        <img src="{{ asset( $myProfile['profile']->avatar) }}" alt="" class="img-fluid rounded"
                             style="height: 100px" width="100px">
     
                     </div>
                     <div class="col text-lg-center text-start">
                         <h6 class="f-w-600">{{ $myProfile['profile']->name }}</h6>
                         <p>{{ $myProfile['profile']->getRole() }}</p>
-                        <i class=" mdi mdi-square-edit-outline feather icon-edit m-t-10 f-16"></i>
+                        <a href="{{ route('editAccount') }}">
+                            <i class=" mdi mdi-square-edit-outline feather icon-edit m-t-10 f-16 fs-4"></i>
+
+                        </a>
                     </div>
                 </div>
             </div>

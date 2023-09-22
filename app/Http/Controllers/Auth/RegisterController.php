@@ -65,32 +65,13 @@ class RegisterController extends Controller
      * @return \App\Models\User
      */
     protected function create(array $data)
-{
-    $avatarName = null;
-
-    if (isset($data['avatar'])) {
-        $avatar = $data['avatar'];
-
-        // Kiểm tra xem tệp tồn tại và có thể đọc được
-        if (is_file($avatar) && is_readable($avatar)) {
-            // Đặt tên cho ảnh dựa trên user id và đuôi mở rộng
-            $avatarName = $data['name'] . '.' . $avatar->getClientOriginalExtension();
-
-            // Lưu ảnh vào thư mục storage/app/avatars
-            Storage::disk('upload')->put($avatarName, file_get_contents($avatar->getRealPath()));
-        } else {
-            // Xử lý lỗi khi tệp không tồn tại hoặc không đọc được
-            // (ví dụ: thông báo cho người dùng hoặc thực hiện hành động phù hợp)
-        }
+    {
+        return User::create([
+            'name' => $data['name'],
+            'email' => $data['email'],
+            'password' => Hash::make($data['password']),
+            'balance' => 5000,
+            'avatar' => $data['avatar']->store('avatars'),
+        ]);
     }
-
-    return User::create([
-        'name' => $data['name'],
-        'email' => $data['email'],
-        'password' => Hash::make($data['password']),
-        'balance' => 5000,
-        'avatar' => $avatarName,
-    ]);
-}
-
 }

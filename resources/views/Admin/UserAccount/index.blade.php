@@ -23,7 +23,7 @@
                                             <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                 aria-label="Close"></button>
                                         </div>
-                                        <div class="modal-body">
+                                        <div class="modal-body container">
                                             @if ($errors->any())
                                                 <ul class="alert alert-danger list-unstyled">
                                                     @foreach ($errors->all() as $error)
@@ -60,6 +60,17 @@
                                                     <input name="balance" value="{{ old('balance') }}" type="number"
                                                         class="form-control">
                                                 </div>
+                                                <label class="col-lg-2 col-md-6 col-sm-12 col-form-label">Số điện
+                                                    thoại</label>
+                                                <div class="col-lg-10 col-md-6 col-sm-12">
+                                                    <input name="phone" value="{{ old('phone') }}" type="number"
+                                                        class="form-control">
+                                                </div>
+                                                <label class="col-lg-2 col-md-6 col-sm-12 col-form-label">Địa chỉ</label>
+                                                <div class="col-lg-10 col-md-6 col-sm-12">
+                                                    <input name="address" value="{{ old('address') }}" type="text"
+                                                        class="form-control">
+                                                </div>
                                                 <label class="col-lg-2 col-md-6 col-sm-12 col-form-label">avatar</label>
                                                 <div class="col-lg-10 col-md-6 col-sm-12">
                                                     <input class="form-control" type="file" name="avatar">
@@ -92,6 +103,7 @@
                         <th scope="col">Tên</th>
                         <th scope="col">Email</th>
                         <th scope="col">Quyền hạn</th>
+                        <th scope="col">Xem</th>
                         <th scope="col">Sửa</th>
                         <th scope="col">Xóa</th>
                     </tr>
@@ -107,24 +119,33 @@
                                 {{-- <a href="{{ route('store.show', ['id' => $user->id]) }}" class="text-capitalize text-decoration-none">
                                     {{ $user->id }}
                                 </a> --}}
-                                {{$user->id}}
+                                {{ $user->id }}
                             </td>
                             <td>
-                                <img src={{ asset('avatars/' . $user->avatar) }} alt="avatar" class="img-fluid rounded"
-                                style="height: 100px" width="100px">
+                                <img src={{ asset($user->avatar) }} alt="avatar" class="img-fluid rounded"
+                                    style="height: 100px" width="100px">
                             </td>
                             <td>{{ $user->name }}</td>
                             <td>{{ $user->email }}</td>
-                        
-                            <td>{{ $user->role}}</td>
+
+                            <td>{{ $user->role }}</td>
                             <td>
-                                <form action="{{ route('userProfile/', $user->id) }}" method="get">
+                                <form action="{{ route('userProfile', $user->id) }}" method="get">
                                     @csrf
                                     <button class="btn btn-primary">
-                                        <i class="bi-pencil"></i>
+                                        <i class="bi bi-eye"></i>
                                     </button>
                                 </form>
                             </td>
+                            <td>
+                                <form action="{{ route('userProfile.edit', $user->id) }}" method="get">
+                                    @csrf
+                                    <button class="btn btn-primary">
+                                        <i class="bi bi-pen"></i>
+                                    </button>
+                                </form>
+                            </td>
+
                             <td>
                                 <form action="{{ route('admin.user.delete', $user->id) }}" method="post">
                                     @csrf
