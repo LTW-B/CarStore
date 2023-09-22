@@ -9,6 +9,7 @@ use App\Models\Item;
 class Store extends Model
 {
     use HasFactory;
+    
     public function getId()
     {
         return $this->attributes['id'];

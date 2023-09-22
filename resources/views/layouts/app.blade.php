@@ -86,7 +86,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a class="dropdown-item " href="">
+                                <a class="dropdown-item " href="/cart">
                                     <i class="fa-solid fa-cart-plus me-2"></i>Giỏ hàng
                                 </a>
                             </li>
@@ -293,12 +293,12 @@
 
     <div class="container"> </div>
 
-    <section>
+    {{-- <section>
         <button ref="#top" class="btn btn-lg btn-primary btn-lg-square back-to-top">
             <i class="bi bi-arrow-up"></i>
         </button>
 
-    </section>
+    </section> --}}
 
     <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
         <div class="container py-5" id="contact">

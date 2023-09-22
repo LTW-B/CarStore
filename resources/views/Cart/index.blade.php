@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('sect5')
-<div class="card">
+<div class="card ">
     <div class="card-header">
         Products in cart
     </div>
