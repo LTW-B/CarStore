@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th9 20, 2023 lúc 08:58 AM
+-- Thời gian đã tạo: Th9 22, 2023 lúc 07:26 PM
 -- Phiên bản máy phục vụ: 10.4.28-MariaDB
--- Phiên bản PHP: 8.0.28
+-- Phiên bản PHP: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -158,21 +158,20 @@ CREATE TABLE `products` (
   `category` varchar(255) NOT NULL DEFAULT 'car',
   `condition` varchar(255) NOT NULL DEFAULT 'Hot',
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `sale_price` decimal(10,2) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `products`
 --
 
-INSERT INTO `products` (`id`, `name`, `description`, `image`, `price`, `quantity`, `category`, `condition`, `created_at`, `updated_at`) VALUES
-(2, 'Ferrari', 'âcs', '2.jpg', 145678, 3142, 'car', 'hot', '2023-09-19 22:40:50', '2023-09-19 23:55:17'),
-(3, 'TOYOTA YARIS 2023', 'Toyota Yaris 2023 là mẫu xe Hatchbach duy nhất của Toyota được nhập khẩu nguyên chiếc từ Thái Lan và bán ra duy nhất 1 phiên bản là Yaris 1.5G 2023. Xe Yaris 2023 có thiết kế trẻ trung, bắt mắt, nhiều màu xe lựa chọn cùng với đó là tính năng vận hành, khả năng tiết kiệm nhiên liệu, tính năng an toàn vượt trội cùng những tiện nghi đầy đủ trên xe. Cùng Thế Giới Xe Ô Tô tìm hiểu chi tiết về giá xe Yaris 2023, giá xe Yaris 2023 lăn bánh, hình ảnh chi tiết về nội ngoại thất, màu xe, thông số kỹ thuật mới nhất.', '3.jpg', 684000000, 1314, 'TOYOTA', 'hot', '2023-09-19 23:21:47', '2023-09-19 23:21:47'),
-(4, 'MERCEDES-BENZ GLC ALL NEW 2023', 'Mercedes-Benz GLC 2023 được chính thức ra mắt tại Việt Nam với 2 phiên bản được lắp ráp chính hãng bởi Mercedes Benz Việt Nam bao gồm Mercedes GLC 200 4Matic có giá 2,299 tỷ, Mercedes GLC 300 AMG có giá 2,799 tỷ. Tất cả các phiên bản Mercedes GLC 2023 đều được trang bị options cao cấp nhất và đầy đủ nhất với tính năng an toàn và vận hành vượt trội. Cùng Thế Giới Xe Ô Tô tìm hiểu chi tiết về giá xe Mercedes GLC 2023, giá xe Mercedes GLC lăn bánh, hình ảnh, thông số kỹ thuật và đánh giá xe Mercedes GLC 2023 chi tiết nhất để khách hàng lựa chọn khi mua xe', '4.jpg', 2299000000, 179, 'MERCEDES-BENZ GLC', 'hot', '2023-09-19 23:24:47', '2023-09-19 23:24:47'),
-(5, 'MERCEDES-BENZ GLC ALL NEW Xe Toyota Camry 2.5HV 2022', '\"Xe trang bị:\r\nĐộng cơ xăng 2.5L kết hợp động cơ điện, Hộp số vô cấp E-CVT\r\nGói an toàn Toyota Safety Sensen: Phanh khoảng cách, cảnh báo lệch làn, giữ làn, Ga tự động, điều khiển hành trình chủ động (bám đuổi xe phía trước), đèn pha tự động điều chỉnh cường độ và góc chiếu mở rộng\r\nĐèn full led, auto, đèn chờ dẫn đường, 4 ghế chỉnh điện, ghế lái nhớ 2 vị trí, Vô lăng chỉnh điện, tích hợp nút điều chỉnh âm thanh, đàm thoại rảnh tay, nút an toàn phanh khoảng cách, giữ làn đường, Đề start/stop khoá thông minh.\"', '5.jpg', 1355000000, 1456, 'Toyata Camry', 'hot', '2023-09-19 23:26:24', '2023-09-19 23:26:25'),
-(6, 'Mazda 3 2023', 'Mazda 3 là dòng xe hạng C được nhập khẩu từ Thái Lan, cạnh tranh với đối thủ như Kia K3, Hyundai Elantra, Toyota Altis, Honda Civic...Trong năm 2022, Mazda 3 gây ấn tượng khi bán được đến 9812 xe (817 xe/tháng), đứng thứ 2 sau Kia K3 (11.404 xe). Mazda3 thế hệ thứ 4 trình làng đầu tiên tại Los Angeles Auto Show tháng 11/2018. Xe được phát triển dựa trên nền tảng khung gầm Skyactiv-Vehicle Architecture, với hai bản sedan 4 cửa và hatchback 5 cửa.', 'Mazda 3 2023.jpg', 789000000, 14, 'Mazda', 'còn hàng', '2023-09-19 23:46:14', '2023-09-19 23:46:14'),
-(7, 'Mitsubishi Xpander 2024', '\"Mitsubishi Xpander là mẫu xe SUV lai MPV 7 chỗ cạnh tranh với các đối thủ như Toyota Avanza/Veloz, Honda HRV, Suzuki Ertiga/XL7... Trong năm 2022, Xpander bán được 21.803 xe, đứng thứ 3 trong top 10 xe bán chạy nhất Việt Nam. Ra mắt lần đầu năm 2017, đến nay Xpander vừa bước vào thế hệ thứ 2. Mitsubishi Xpander facelift ra mắt tại Việt Nam tháng 06-2022 với tạo hình bộ đèn chữ T mới. Xe có 20 điểm mới so với bản tiền nhiệm của năm 2021.Phiên bản Xpander 2024 vẫn chưa có gì thay đổi so với bản facelift kể trên. Đối thủ của mẫu xe đa dụng Mitsubishi Xpander là Toyota Avanza, Suzuki Ertiga...Xpander Cross 2024 cũng được ra mắt trong tháng 03-2023 với nhiều nâng cấp về thiết kế cũng như trang bị, điều này giúp tạo thêm sức ép lên đối thủ Toyota Veloz, Suzuki XL7..\r\n\r\n\r\n\r\n\r\n\"', 'Mitsubishi Xpander 2024.jpg', 680000000, 4, 'Mitsubishi', 'còn hàng', '2023-09-19 23:53:14', '2023-09-19 23:53:14'),
-(8, 'Vinfast VF8 2023', '\"Đánh giá sơ bộ Vinfast VF8 của Giaxeotovn\r\nPhong cách thiết kế của Vinfast VF8 do hãng thiết kế hàng đầu Châu Âu là Pininfarina chấp bút, quả thực rất lôi cuốn, đậm chất châu Âu dù nhiều người vẫn chê xe điện đơn điệu phần đầu xe. Vẻ lai SUV Coupe đầy hào nhoáng mà tinh tế. Độ hoàn thiện thân vỏ tuyệt vời. Độ nhận diện thương hiệu Việt ở mọi góc nhìn khiến team đánh giá của chúng tôi rất tâm đắc.Đánh giá chung VF8 (4.7/5): Mức giá của VF8 rất tốt, nhất là còn linh hoạt do chính sách ưu đãi và dùng Voucher của VinGroup. Hạn chế là nguồn cung và hệ thống trạm sạc cần rộng khắp hơn. Bản thân team đánh giá xe của chúng tôi có 5/5 người ở chung cư nhưng chỉ có 3/5 người có thể thấy trạm xạc trong phạm vi cách nhà 500m.\"', 'Vinfast VF8 2023.jpg', 1344000000, 1, 'Vinfast', 'hết hàng', '2023-09-19 23:54:28', '2023-09-19 23:54:28');
+INSERT INTO `products` (`id`, `name`, `description`, `image`, `price`, `quantity`, `category`, `condition`, `created_at`, `updated_at`, `sale_price`) VALUES
+(1, 'Mercedes-AMG S63E', '', 'store-1.png', 112950, 10, 'Mercedes', 'Hot', '2023-09-19 22:40:50', '2023-09-19 23:55:17', 135000.00),
+(2, 'Mercedes AMG GT Black Series', '', 'store-2.png', 105000, 10, 'Mercedes', 'hot', '2023-09-19 23:21:47', '2023-09-19 23:21:47', 125000.00),
+(3, 'Aston Martin V12', '', 'store-3.png', 144000, 1456, 'Aston Martin', 'hot', '2023-09-19 23:26:24', '2023-09-19 23:26:25', 164000.00),
+(4, 'Aston Martin Superleggera', '', 'store-4.png', 213000, 15, 'Aston Martin', 'Sold', '2023-09-19 23:24:47', '2023-09-19 23:24:47', 255000.00),
+(5, 'Ferrari 430 Scuderia', '', 'store-5.png', 226000, 14, 'Ferrari', 'Best ', '2023-09-19 23:46:14', '2023-09-19 23:46:14', 240000.00);
 
 -- --------------------------------------------------------
 
