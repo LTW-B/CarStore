@@ -88,37 +88,45 @@
                     <tr>
                         <th scope="col">STT</th>
                         <th scope="col">ID</th>
+                        <th scope="col">Avatar</th>
                         <th scope="col">Tên</th>
                         <th scope="col">Email</th>
-                        <th scope="col">Password</th>
                         <th scope="col">Quyền hạn</th>
+                        <th scope="col">Sửa</th>
                         <th scope="col">Xóa</th>
                     </tr>
                 </thead>
-                {{-- <tbody>
+                <tbody>
                     @php
                         $counter = 1;
                     @endphp
-                    @foreach ($data['stores'] as $store)
+                    @foreach ($data['users'] as $user)
                         <tr>
                             <td>{{ $counter }}</td>
                             <td>
-                                <a href="{{ route('store.show', ['id' => $store->id]) }}" class="text-capitalize text-decoration-none">
-                                    {{ $store->id }}
-                                </a>
-                            </td>
-                            <td>{{ $store->name }}</td>
-                            <td>{{ $store->category }}</td>
-                            <td>{{ $store->quantity }}</td>
-                            <td>{{ $store->condition}}</td>
-                            <td>
-                                <a class="btn btn-primary"
-                                    href="{{ route('admin.store.edit', ['id' => $store->id]) }}">
-                                    <i class="bi-pencil"></i>
-                                </a>
+                                {{-- <a href="{{ route('store.show', ['id' => $user->id]) }}" class="text-capitalize text-decoration-none">
+                                    {{ $user->id }}
+                                </a> --}}
+                                {{$user->id}}
                             </td>
                             <td>
-                                <form action="{{ route('admin.store.delete', $store->id) }}" method="post">
+                                <img src={{ asset('avatars/' . $user->avatar) }} alt="avatar" class="img-fluid rounded"
+                                style="height: 100px" width="100px">
+                            </td>
+                            <td>{{ $user->name }}</td>
+                            <td>{{ $user->email }}</td>
+                        
+                            <td>{{ $user->role}}</td>
+                            <td>
+                                <form action="{{ route('userProfile/', $user->id) }}" method="get">
+                                    @csrf
+                                    <button class="btn btn-primary">
+                                        <i class="bi-pencil"></i>
+                                    </button>
+                                </form>
+                            </td>
+                            <td>
+                                <form action="{{ route('admin.user.delete', $user->id) }}" method="post">
                                     @csrf
                                     @method('DELETE')
                                     <button class="btn btn-danger">
@@ -131,7 +139,7 @@
                             $counter++;
                         @endphp
                     @endforeach
-                </tbody> --}}
+                </tbody>
             </table>
         </div>
     </div>

@@ -83,7 +83,13 @@ Route::middleware('admin')->group(function () {
     Route::get('admin/user', 'App\Http\Controllers\Admin\AdminUsersController@index')
         ->name("admin.user");
     Route::post('createUser', 'App\Http\Controllers\Admin\AdminUsersController@create')
-    ->name('createUser');
+        ->name('createUser');
+    Route::delete('admin/user/{id}/delete', 'App\Http\Controllers\Admin\AdminUsersController@deleteUser')
+        ->name("admin.user.delete");
+    Route::get('/userProfile/{id}', 'App\Http\Controllers\Admin\AdminUsersController@userProfile')
+        ->name('userProfile');
+    Route::get('/store/show/{id}', 'App\Http\Controllers\ProductController@show')
+        ->name("store.show");
 });
 
 Route::get('/linhkien', 'App\Http\Controllers\LinhkienController@index')
