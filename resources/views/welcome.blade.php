@@ -1,8 +1,7 @@
 @extends('layouts.app')
 @section('title', $homeData['title'])
 @section('beta')
-    {{-- Fav icon --}}
-    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+
     <!-- Carousel Start -->
     <div class="container-fluid p-0 mb-5">
         <div id="header-carousel" class="carousel slide" data-bs-ride="carousel">
@@ -98,7 +97,7 @@
                                 <div class="row row-cols-1 row-cols-lg-1">
                                     <a href="#" class="col-12 text-decoration-none fs-6 link-info">Thông số</a>
                                     <hr>
-                                    <a href="#" class="col-12 text-decoration-none fs-6 link-info">Chi Tiết</a>
+                                    <a href="/store/show/3" class="col-12 text-decoration-none fs-6 link-info">Chi Tiết</a>
                                     <hr>
                                 </div>
                             </div>
@@ -179,7 +178,7 @@
                                 <div class="row row-cols-1 row-cols-lg-1">
                                     <a href="#" class="col-12 text-decoration-none fs-6 link-info">Thông số</a>
                                     <hr>
-                                    <a href="#" class="col-12 text-decoration-none fs-6 link-info">Chi Tiết</a>
+                                    <a href="/store/show/4" class="col-12 text-decoration-none fs-6 link-info">Chi Tiết</a>
                                     <hr>
                                 </div>
                             </div>
@@ -264,7 +263,7 @@
                                 <div class="row row-cols-1 row-cols-lg-1">
                                     <a href="#" class="col-12 text-decoration-none fs-6 link-info">Thông số</a>
                                     <hr>
-                                    <a href="#" class="col-12 text-decoration-none fs-6 link-info">Chi Tiết</a>
+                                    <a href="/store/show/5" class="col-12 text-decoration-none fs-6 link-info">Chi Tiết</a>
                                     <hr>
                                 </div>
                             </div>
