@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th9 22, 2023 lúc 07:29 PM
+-- Thời gian đã tạo: Th9 23, 2023 lúc 04:37 AM
 -- Phiên bản máy phục vụ: 10.4.28-MariaDB
 -- Phiên bản PHP: 8.2.4
 
@@ -167,11 +167,11 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `name`, `description`, `image`, `price`, `quantity`, `category`, `condition`, `created_at`, `updated_at`, `sale_price`) VALUES
-(1, 'Mercedes-AMG S63E', '', 'store-1.png', 112950, 10, 'Mercedes', 'Hot', '2023-09-19 22:40:50', '2023-09-19 23:55:17', 135000.00),
-(2, 'Mercedes AMG GT Black Series', '', 'store-2.png', 105000, 10, 'Mercedes', 'hot', '2023-09-19 23:21:47', '2023-09-19 23:21:47', 125000.00),
-(3, 'Aston Martin V12', '', 'store-3.png', 144000, 1456, 'Aston Martin', 'hot', '2023-09-19 23:26:24', '2023-09-19 23:26:25', 164000.00),
-(4, 'Aston Martin Superleggera', '', 'store-4.png', 213000, 15, 'Aston Martin', 'Sold', '2023-09-19 23:24:47', '2023-09-19 23:24:47', 255000.00),
-(5, 'Ferrari 430 Scuderia', '', 'store-5.png', 226000, 14, 'Ferrari', 'Best ', '2023-09-19 23:46:14', '2023-09-19 23:46:14', 240000.00);
+(1, 'Mercedes-AMG S63E', '', 'store-1.png', 112950, 10, 'Mercedes', 'NEW 2023', '2023-09-19 22:40:50', '2023-09-19 23:55:17', 135000.00),
+(2, 'Mercedes AMG GT Black Series', '', 'store-2.png', 105000, 10, 'Mercedes', 'HOT', '2023-09-19 23:21:47', '2023-09-19 23:21:47', 125000.00),
+(3, 'Aston Martin V12', '', 'store-3.png', 144000, 1456, 'Aston Martin', 'NEW 2023', '2023-09-19 23:26:24', '2023-09-19 23:26:25', 164000.00),
+(4, 'Aston Martin Superleggera', '', 'store-4.png', 213000, 15, 'Aston Martin', 'LIÊN HỆ', '2023-09-19 23:24:47', '2023-09-19 23:24:47', 255000.00),
+(5, 'Ferrari 430 Scuderia', '', 'store-5.png', 226000, 14, 'Ferrari', 'LIÊN HỆ', '2023-09-19 23:46:14', '2023-09-19 23:46:14', 240000.00);
 
 -- --------------------------------------------------------
 
@@ -239,7 +239,8 @@ INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `re
 (11, 'Oranty', 'asss@g.com', NULL, '$2y$10$v6SNbKM/Gf3fuh1VV0HzJ.mQR9b7.cvZVeELemfcuxrkliuiiD2AS', NULL, '2023-09-11 22:22:56', '2023-09-11 22:22:56', NULL, 5000, 'asss@g.com.jpg'),
 (12, 'newAccount', 'account@gmail.com', NULL, '$2y$10$4VCUH4DbEkpZI/6yw0IcHO.toQ2Y8i/5alCMMO5ODrGuF0tdxKQza', NULL, '2023-09-13 18:32:36', '2023-09-13 18:32:36', 'admin', 5000, 'account@gmail.com.jpg'),
 (13, 'Oranty', 'hieu@bui.com', NULL, '$2y$10$LjpKvnfwOYcT5f.3hCqMIusYsvP9PGng/.gXT3tQQRJzDKGWqRQ.y', NULL, '2023-09-13 19:01:48', '2023-09-13 19:01:48', 'client', 5000, 'hieu@bui.com.jpg'),
-(14, 'logg', 'log@s.com', NULL, '$2y$10$sxuUxwQVun519vBIV0dCjO2JHuRTno5jH36.JtUDtASm3Hlny8O9G', NULL, '2023-09-13 19:04:03', '2023-09-13 19:04:03', 'client', 5000, 'logg.jpg');
+(14, 'logg', 'log@s.com', NULL, '$2y$10$sxuUxwQVun519vBIV0dCjO2JHuRTno5jH36.JtUDtASm3Hlny8O9G', NULL, '2023-09-13 19:04:03', '2023-09-13 19:04:03', 'client', 5000, 'logg.jpg'),
+(15, 'john', 'john@gmail.com', NULL, '$2y$10$zTHxGH8q17FNs0bMLDinCOnlI3wDeIo2R0Luqt4EnMw.bup/fnJZK', NULL, '2023-09-22 19:14:24', '2023-09-22 19:14:24', 'client', 5000, 'avatars/h8byodfadgzk8QPIz7hCwPUhpgOxPB5EvvicNL9d.ico');
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -356,7 +357,7 @@ ALTER TABLE `sanphams`
 -- AUTO_INCREMENT cho bảng `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- Các ràng buộc cho các bảng đã đổ
