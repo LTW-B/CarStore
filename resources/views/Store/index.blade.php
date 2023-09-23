@@ -1,5 +1,6 @@
 @extends('layouts.app')
 @section('title', $storeData['title'])
+
 @section('sect5')
     <div class="container-fluid bg-dark-subtle py-4 my-2 rounded-5 d-flex align-items-center ">
         <div class="container ">

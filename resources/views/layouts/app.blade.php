@@ -110,7 +110,7 @@
                     @if (auth()->check() &&
                             auth()->user()->isAdmin())
                         <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="{{ route('admin.home.index') }}">Admin</a>
+                            <a class="nav-link" aria-current="page" href="{{ route('admin.home.index') }}">Admin <i class="fa-solid fa-screwdriver-wrench"></i></a>
                         </li>
                         {{-- @else --}}
                     @endif

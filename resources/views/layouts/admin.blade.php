@@ -19,7 +19,7 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container text-black-50">
-            <a href="{{ route('home') }}" class="" data-event-module-slug="header"data-event-label="logo">
+            <a href="" class="" data-event-module-slug="header"data-event-label="logo">
                 <svg role="img" aria-labelledby="ferrari-logo-svg-title" viewBox="0 0 162 224"
                     style="height: 62px; width:41px;">
                     <title>Ferrari logo</title>
@@ -47,61 +47,30 @@
                 <!-- Nav right -->
                 <ul class="navbar-nav me-auto text-uppercase ">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{{ route('admin.home.index') }}">Admin</a>
+                        <a class="nav-link active" aria-current="page" href="{{ route('admin.home.index') }}">Admin <i class="fa-solid fa-screwdriver-wrench"></i></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('admin.store.index') }}">Tùy chỉnh sản phẩm</a>
+                        <a class="nav-link" href="{{ route('admin.store.index') }}">Tùy chỉnh sản phẩm <i class="fa-solid fa-gear"></i></a>
+                    </li>
+                   
+                    <li class="nav-item">
+                        <a class="nav-link" href="">Tùy chỉnh linh kiện <i class="fa-solid fa-gear"></i></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('home') }}">Khách</a>
+                        <a class="nav-link" href="{{ route('admin.user') }}">tùy chỉnh Người dùng  <i class="fa-solid fa-gear"></i></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('home.linhkien') }}">Linh kiện</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('admin.user') }}">Người dùng </a>
+                        <a class="nav-link" href="{{ route('home') }}">Về trang chủ</a>
                     </li>
                     <!-- Dropdown menu -->
                 </ul>
                 <!-- /nav left -->
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            Bảo tàng
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
-                            <li>
-                                <a class="dropdown-item" href="#">Service 1</a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="#">Service 2</a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="#">Service 3</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="StoreDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">Store</a>
-                        <ul class="dropdown-menu" aria-labelledby="StoreDropdown">
-                            <li>
-                                <a class="dropdown-item" href="{{ route('store.index') }}">Xe</a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="{{ route('home.linhkien') }}">Linh Kiện</a>
-                            </li>
-                        </ul>
-                    </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#"><i class="fa-regular fa-comments"></i></a>
                     </li>
 
-
-
-
-                    <li class="nav-item">
+                    {{-- <li class="nav-item">
                         <form action="{{ route('search') }}" method="GET" class="nav-link">
                             @csrf
                             <input type="text" name="SearchValue" id="SearchInput" autocomplete="off">
@@ -201,7 +170,7 @@
                             </ul>
                         @endguest
 
-                    </li>
+                    </li> --}}
                 </ul>
 
 
