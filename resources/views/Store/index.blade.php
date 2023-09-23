@@ -70,10 +70,6 @@
                                             <div class="col" style="color: #d03809">
                                                 {{ $store->price }}$
                                             </div>
-
-                                            <div class="col text-muted">
-                                                <del>{{ $store->sale_price }}$</del>
-                                            </div>
                                         </div>
                                     </span>
                                 </div>

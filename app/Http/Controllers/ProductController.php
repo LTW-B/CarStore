@@ -59,7 +59,7 @@ class ProductController extends Controller
         $searchValue = $request->input('SearchValue');
 
         if ($searchValue !== null && $searchValue !== '') {
-            $store = Product::where('name', 'like', '%' . $searchValue . '%')
+            $product = Product::where('name', 'like', '%' . $searchValue . '%')
                 ->orWhere('price', $searchValue)
                 ->get();
         } else {
@@ -67,7 +67,7 @@ class ProductController extends Controller
             return back();
         }
 
-        return view('Store.Search')->with('store', $store);
+        return view('Store.Search')->with('product', $product);
     }
 
     public function suggest_ajax(Request $request)
@@ -83,7 +83,7 @@ class ProductController extends Controller
                     $output .= '<li class="list-group-item">' . $row->name . '</li>';
                 }
             } else {
-                $output = '<li class="list-group-item">No data found</li>';
+                $output = '<li class="list-group-item">Không tìm thấy sản phẩm</li>';
             }
             return $output;
         }

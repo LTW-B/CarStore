@@ -41,10 +41,10 @@ Route::get('/store/showItem/{filename}', 'App\Http\Controllers\ProductController
 //search
 Route::get('search', [
     'as' => 'search',
-    'uses' => 'App\Http\Controllers\StoreController@getSearch',
+    'uses' => 'App\Http\Controllers\ProductController@getSearch',
 ]);
 //suggest
-Route::get('/suggest', 'App\Http\Controllers\StoreController@suggest_ajax')->name('suggest_ajax');
+Route::get('/suggest', 'App\Http\Controllers\ProductController@suggest_ajax')->name('suggest_ajax');
 
 //Cart routes
 Route::get('/cart', 'App\Http\Controllers\CartController@index')
