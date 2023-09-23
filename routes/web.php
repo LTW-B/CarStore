@@ -37,8 +37,8 @@ Route::post('/filter-carparts', 'App\Http\Controllers\ProductController@filterCa
 //get images
 Route::get('/store/showItem/{filename}', 'App\Http\Controllers\ProductController@showImage')
     ->name('store.showImage');
-    
-    Route::get('/carpart/showItem/{filename}', 'App\Http\Controllers\ProductController@carpartshowImage')
+
+Route::get('/carpart/showItem/{filename}', 'App\Http\Controllers\ProductController@carpartshowImage')
     ->name('carpart.showImage');
 //search
 Route::get('search', [
@@ -55,8 +55,13 @@ Route::get('/cart/delete', 'App\Http\Controllers\CartController@delete')
     ->name('cart.delete');
 Route::post('/cart/add/{id}', 'App\Http\Controllers\CartController@add')
     ->name('cart.add');
+
 Route::post('/cart/addToCard{id}', 'App\Http\Controllers\CartController@addToCard')
     ->name('cart.addNew');
+
+// Route::post('/cart/addToCard{id}', 'App\Http\Controllers\CartController@carpartAdd')
+//     ->name('carpart.addNew');
+
 Route::middleware('auth')->group(function () {
     Route::get('/cart/purchase', 'App\Http\Controllers\CartController@purchase')
         ->name('cart.purchase');

@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Sanpham;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Product;
 use App\Models\Order;
@@ -35,6 +35,7 @@ class CartController extends Controller
         $request->session()->put("stores", $stores);
         return redirect()->route('cart.index');
     }
+
     public function addToCard(Request $request, $id)
     {
         $stores = $request->session()->get("stores");
@@ -43,6 +44,18 @@ class CartController extends Controller
         $request->session()->put("stores", $stores);
         return redirect()->back();
     }
+
+    // public function carpartAdd(Request $request, $id)
+    // {
+    //     $carpart = Sanpham::findorFail($id);
+    //     $store = $request->session()->get("store");
+    //     $quantity = $request->input('quantity') ?? 1;
+    //     $store[$id] = $quantity;
+    //     $request->session()->put("stores", $stores);
+    //     return redirect()->back();
+    // }
+
+
     public function delete(Request $request)
     {
         $request->session()->forget('stores');

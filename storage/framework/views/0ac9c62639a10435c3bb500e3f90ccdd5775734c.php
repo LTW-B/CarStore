@@ -75,7 +75,7 @@
                                             </div>
                                         </div>
                                     </span>
-                                </div>
+                                </div>  
                                 <div class="row-cols card-footer">
                                     <a class="btn btn-warning my-2 mx-2 text-white">
                                         <form action="<?php echo e(route('cart.addNew', ['id' => $store->id])); ?>" method="post" style="margin: 0">
