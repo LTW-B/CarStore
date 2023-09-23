@@ -2,6 +2,41 @@
 <html lang="en">
 
 <head>
+    {{-- Meta and fonawesome + bootstrap  --}}
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{{ asset('plugins/font-awesome/css/all.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('plugins/bootstrap/css/bootstrap.min.css') }}">
+    {{-- Fav icon --}}
+    <link rel="icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@600;700&family=Ubuntu:wght@400;500&display=swap"
+        rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="{{ asset('lib/animate/animate.min.css') }}"rel="stylesheet">
+    <link href="{{ asset('lib/owlcarousel/assets/owl.carousel.min.css') }}"rel="stylesheet">
+    <link href="{{ asset('lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css') }}"rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script src="{{ asset('plugins/bootstrap/js/bootstrap.bundle.js') }}"></script>
+    <script src="{{ asset('plugins/bootstrap/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href='{{ asset('css/style.css') }}'>
+
+    <!-- Bao gồm CSS của Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.5.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>
+        @yield('title', 'Official LexuZ Website')
+    </title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="{{ asset('plugins/font-awesome/css/all.min.css') }}">
@@ -14,6 +49,20 @@
     <!-- Bao gồm CSS của Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.5.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <title>@yield('title', 'Admin')</title>
+    {{-- Script Component --}}
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ asset('lib/wow/wow.min.js') }}"></script>
+    <script src="{{ asset('lib/easing/easing.min.js') }}"></script>
+    <script src="{{ asset('lib/waypoints/waypoints.min.js') }}"></script>
+    <script src="{{ asset('lib/counterup/counterup.min.js') }}"></script>
+    <script src="{{ asset('lib/owlcarousel/owl.carousel.min.js') }}"></script>
+    <script src="{{ asset('lib/tempusdominus/js/moment.min.js') }}"></script>
+    <script src="{{ asset('lib/tempusdominus/js/moment-timezone.min.js') }}"></script>
+    <script src="{{ asset('lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js') }}"></script>
+
+    <!-- Template Javascript -->
+    <script src="{{ asset('js/main.js') }}"></script>
 </head>
 
 <body>
@@ -47,17 +96,20 @@
                 <!-- Nav right -->
                 <ul class="navbar-nav me-auto text-uppercase ">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{{ route('admin.home.index') }}">Admin <i class="fa-solid fa-screwdriver-wrench"></i></a>
+                        <a class="nav-link active" aria-current="page" href="{{ route('admin.home.index') }}">Admin <i
+                                class="fa-solid fa-screwdriver-wrench"></i></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('admin.store.index') }}">Tùy chỉnh sản phẩm <i class="fa-solid fa-gear"></i></a>
+                        <a class="nav-link" href="{{ route('admin.store.index') }}">Tùy chỉnh sản phẩm <i
+                                class="fa-solid fa-gear"></i></a>
                     </li>
-                   
-                    <li class="nav-item">
+
+                    {{-- <li class="nav-item">
                         <a class="nav-link" href="">Tùy chỉnh linh kiện <i class="fa-solid fa-gear"></i></a>
-                    </li>
+                    </li> --}}
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('admin.user') }}">tùy chỉnh Người dùng  <i class="fa-solid fa-gear"></i></a>
+                        <a class="nav-link" href="{{ route('admin.user') }}">tùy chỉnh Người dùng <i
+                                class="fa-solid fa-gear"></i></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('home') }}">Về trang chủ</a>
@@ -181,7 +233,7 @@
         </div>
 
     </nav>
-    
+
     <div class="container" style="margin-top: 80px">
         @yield('content')
     </div>

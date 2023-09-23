@@ -57,6 +57,14 @@ class Item extends Model
     {
         $this->attributes['product_id'] = $Store;
     }
+    public function getSPId()
+    {
+        return $this->attributes['sp_id'];
+    }
+    public function setSPId($Store)
+    {
+        $this->attributes['sp_id'] = $Store;
+    }
     public function getCreatedAt()
     {
         return $this->attributes['created_at'];
@@ -85,6 +93,10 @@ class Item extends Model
     {
         $this->order = $order;
     }
+    public function sanpham(){
+        return $this->belongsTo(Sanpham::class);
+
+    }
     public function product()
     {
         return $this->belongsTo(Product::class);
@@ -93,7 +105,7 @@ class Item extends Model
     {
         return $this->product;
     }
-    public function setProd($product)
+    public function setProduct($product)
     {
         $this->product = $product;
     }

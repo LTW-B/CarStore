@@ -1,9 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\Sanpham;
-use Illuminate\Support\Facades\Auth;
 use App\Models\Product;
+use Illuminate\Support\Facades\Auth;
 use App\Models\Order;
 use App\Models\Item;
 use App\Models\User;
@@ -26,6 +25,7 @@ class CartController extends Controller
         $showCart['stores'] = $CarsInCart;
         return view('cart.index')->with('showCart', $showCart);
     }
+    
     
     public function add(Request $request, $id)
     {

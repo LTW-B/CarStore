@@ -76,7 +76,7 @@
                                 </div>  
                                 <div class="row-cols card-footer">
                                     <a class="btn btn-warning my-2 mx-2 text-white">
-                                        <form action="{{ route('cart.addNew', ['id' => $store->id]) }}" method="post" style="margin: 0">
+                                        <form action="{{ route('cart.addNewlk', ['id' => $store->id]) }}" method="post" style="margin: 0">
                                             @csrf
                                             <input type="number" name="quantity" min="1" max="20" id="quantity"
                                             class="d-none" value="1" style="width: 50px">
@@ -86,7 +86,7 @@
                                         </form>
                                     </a>
                                     <a href="" class="btn btn-primary my-2 mx-2">
-                                        <form action="{{ route('cart.add', ['id' => $store->id]) }}" method="post" style="margin: 0">
+                                        <form action="{{ route('cart.addlk', ['id' => $store->id]) }}" method="post" style="margin: 0">
                                             @csrf
                                             <input type="number" name="quantity" min="1" max="20" id="quantity"
                                             class="d-none" value="1" style="width: 50px">

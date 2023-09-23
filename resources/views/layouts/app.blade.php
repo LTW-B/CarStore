@@ -80,11 +80,11 @@
                                     <i class="fa-solid fa-car me-2"></i>Xe oto
                                 </a>
                             </li>
-                            <li>
+                            {{-- <li>
                                 <a class="dropdown-item " href="{{ route('home.linhkien') }}">
                                     <i class="fa-solid fa-screwdriver-wrench me-2"></i>Linh Kiện
                                 </a>
-                            </li>
+                            </li> --}}
                             <li>
                                 <a class="dropdown-item " href="/cart">
                                     <i class="fa-solid fa-cart-plus me-2"></i>Giỏ hàng

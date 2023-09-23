@@ -31,16 +31,16 @@ Route::get('/carpart/show/{id}', 'App\Http\Controllers\ProductController@carpart
 Route::post('/filter-stores', 'App\Http\Controllers\ProductController@filterStores')
     ->name('filterStores');
 
-Route::post('/filter-carparts', 'App\Http\Controllers\ProductController@filterCarparts')
-    ->name('filterCarparts');
+// Route::post('/filter-carparts', 'App\Http\Controllers\ProductController@filterCarparts')
+//     ->name('filterCarparts');
 
 //get images
 Route::get('/store/showItem/{filename}', 'App\Http\Controllers\ProductController@showImage')
     ->name('store.showImage');
 
-Route::get('/carpart/showItem/{filename}', 'App\Http\Controllers\ProductController@carpartshowImage')
-    ->name('carpart.showImage');
-//search
+// Route::get('/carpart/showItem/{filename}', 'App\Http\Controllers\ProductController@carpartshowImage')
+//     ->name('carpart.showImage');
+// //search
 Route::get('search', [
     'as' => 'search',
     'uses' => 'App\Http\Controllers\ProductController@getSearch',
@@ -53,14 +53,12 @@ Route::get('/cart', 'App\Http\Controllers\CartController@index')
     ->name('cart.index');
 Route::get('/cart/delete', 'App\Http\Controllers\CartController@delete')
     ->name('cart.delete');
+
 Route::post('/cart/add/{id}', 'App\Http\Controllers\CartController@add')
     ->name('cart.add');
 
 Route::post('/cart/addToCard{id}', 'App\Http\Controllers\CartController@addToCard')
     ->name('cart.addNew');
-
-// Route::post('/cart/addToCard{id}', 'App\Http\Controllers\CartController@carpartAdd')
-//     ->name('carpart.addNew');
 
 Route::middleware('auth')->group(function () {
     Route::get('/cart/purchase', 'App\Http\Controllers\CartController@purchase')
@@ -104,11 +102,11 @@ Route::middleware('admin')->group(function () {
         ->name("userProfile.update");
 });
 
-Route::get('/linhkien', 'App\Http\Controllers\LinhkienController@index')
-    ->name("home.linhkien");
+// Route::get('/linhkien', 'App\Http\Controllers\LinhkienController@index')
+//     ->name("home.linhkien");
 
-Route::get('/linhkien/upload/{filename}', 'App\Http\Controllers\LinhkienController@showImage')
-    ->name("upload.show");
+// Route::get('/linhkien/upload/{filename}', 'App\Http\Controllers\LinhkienController@showImage')
+//     ->name("upload.show");
 
 Auth::routes();
 Route::post('/register', 'App\Http\Controllers\Auth\RegisterController@register')->name('register');
