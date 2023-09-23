@@ -74,11 +74,25 @@
                                     </span>
                                 </div>
                                 <div class="row-cols card-footer">
-                                    <a href="" class="btn btn-warning my-2 mx-2 text-white">
-                                        Thêm vào giỏ hàng
+                                    <a class="btn btn-warning my-2 mx-2 text-white">
+                                        <form action="{{ route('cart.addNew', ['id' => $store->id]) }}" method="post" style="margin: 0">
+                                            @csrf
+                                            <input type="number" name="quantity" min="1" max="20" id="quantity"
+                                            class="d-none" value="1" style="width: 50px">
+                                            <button type="submit" style="border: none; padding:0; margin:0;" class=" bg-warning text-uppercase text-white fw-bold">
+                                                Thêm vào giỏ hàng
+                                            </button>
+                                        </form>
                                     </a>
                                     <a href="" class="btn btn-primary my-2 mx-2">
-                                        Mua ngay
+                                        <form action="{{ route('cart.add', ['id' => $store->id]) }}" method="post" style="margin: 0">
+                                            @csrf
+                                            <input type="number" name="quantity" min="1" max="20" id="quantity"
+                                            class="d-none" value="1" style="width: 50px">
+                                            <button type="submit" style="border: none; padding:0; margin:0;" class=" bg-primary text-uppercase text-white fw-bold">
+                                                Mua ngay
+                                            </button>
+                                        </form>
                                     </a>
                                     <a href="{{ route('store.show', ['id' => $store->id]) }}" class="text-capitalize col">
                                         <div class="card-button" type="submit">

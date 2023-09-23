@@ -7,6 +7,7 @@ use App\Models\Product;
 use App\Models\Order;
 use App\Models\Item;
 use App\Models\User;
+use Illuminate\Console\View\Components\Alert;
 use Illuminate\Http\Request;
 
 class CartController extends Controller
@@ -33,6 +34,14 @@ class CartController extends Controller
         $stores[$id] = $quantity;
         $request->session()->put("stores", $stores);
         return redirect()->route('cart.index');
+    }
+    public function addToCard(Request $request, $id)
+    {
+        $stores = $request->session()->get("stores");
+        $quantity = $request->input('quantity') ?? 1;
+        $stores[$id] = $quantity;
+        $request->session()->put("stores", $stores);
+        return redirect()->back();
     }
     public function delete(Request $request)
     {

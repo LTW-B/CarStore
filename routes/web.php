@@ -53,6 +53,8 @@ Route::get('/cart/delete', 'App\Http\Controllers\CartController@delete')
     ->name('cart.delete');
 Route::post('/cart/add/{id}', 'App\Http\Controllers\CartController@add')
     ->name('cart.add');
+Route::post('/cart/addToCard{id}', 'App\Http\Controllers\CartController@addToCard')
+    ->name('cart.addNew');
 Route::middleware('auth')->group(function () {
     Route::get('/cart/purchase', 'App\Http\Controllers\CartController@purchase')
         ->name('cart.purchase');

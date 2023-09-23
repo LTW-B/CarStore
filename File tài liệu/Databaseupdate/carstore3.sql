@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th9 23, 2023 lúc 04:37 AM
+-- Thời gian đã tạo: Th9 23, 2023 lúc 05:38 AM
 -- Phiên bản máy phục vụ: 10.4.28-MariaDB
--- Phiên bản PHP: 8.2.4
+-- Phiên bản PHP: 8.0.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Cơ sở dữ liệu: `carstore`
+-- Cơ sở dữ liệu: `carstore3`
 --
 
 -- --------------------------------------------------------
@@ -218,29 +218,31 @@ CREATE TABLE `users` (
   `updated_at` timestamp NULL DEFAULT NULL,
   `role` varchar(255) DEFAULT 'client',
   `balance` bigint(20) NOT NULL,
-  `avatar` varchar(255) NOT NULL
+  `avatar` varchar(255) NOT NULL DEFAULT 'avatars/user.png',
+  `phone` bigint(20) NOT NULL DEFAULT 3921432924,
+  `address` varchar(255) NOT NULL DEFAULT 'address'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`, `role`, `balance`, `avatar`) VALUES
-(1, 'thinh', 'admin@demo.com', NULL, '$2y$10$C/wReFypegkHDIBM3GeJO.6a8Y97WhqG1JH4NWzl/wsHUf/jld9xG', NULL, '2023-09-02 11:25:55', '2023-09-02 11:25:55', '0', 10000, 'user.png'),
-(2, 'thinh', 'thinhnguyenphuc51@gmail.com', NULL, '$2y$10$dntXylK0MyE4bqof3bMPduwLqm/95OAz8q/BVAzWMmDeKbS3.gX2e', NULL, '2023-09-02 12:09:33', '2023-09-02 12:09:33', '0', 0, 'user.png'),
-(3, 'thinh', 'beta@beta.com', NULL, '$2y$10$5Ufdao65J20VJozYsClKkeT43QNNeO5XeOCv0vcC0LyocUKEcmM8e', NULL, '2023-09-02 12:20:33', '2023-09-02 12:20:33', '0', 0, 'user.png'),
-(4, 'Oranty', 'abc@beta.com', NULL, '$2y$10$9dfZE9cpipktV6K296.wFuVM5u41tLNlp4XmAPLYySGCDascwsDFq', NULL, '2023-09-03 00:05:25', '2023-09-06 09:25:35', '0', -60537471274298, 'user.png'),
-(5, 'Oranty', 'qw@hfsmlk.cpm', NULL, '$2y$10$YOos6bwX8TvPVcQkB/QdS.CyjweAgXKLc8i2e1yRTExicHliPtJMG', NULL, '2023-09-10 21:17:01', '2023-09-10 21:17:01', '0', 5000, 'user.png'),
-(6, 'beslinh', 'asbc@thas.asc', NULL, '$2y$10$Hdcynrc8NK0Zm66SqMO3PeE5/Vc9mxSVH51zFosbKpzpgY1qaZawO', NULL, '2023-09-11 00:54:09', '2023-09-11 00:54:09', '0', 5000, 'asbc@thas.asc.jpg'),
-(7, 'hao', 'hao@ha.m', NULL, '$2y$10$BXXJdihSO7sfA370pmaYcOE9orIopshYp53cjsHAKP1JNC2rZ0l2S', NULL, '2023-09-11 01:17:08', '2023-09-19 11:41:55', '0', -144826, 'hao.jpg'),
-(8, 'hoanh', 'ha@nh.ol', NULL, '$2y$10$GuCMZmyIVRJ65HixVVDrtuy06xCNY4zfZGqRRGQJDW6enF371egA2', NULL, '2023-09-11 01:19:19', '2023-09-11 01:19:19', '0', 5000, 'hoanh.jpg'),
-(9, 'ngu', 'ngu@game.choi', NULL, '$2y$10$Eq9AiHSeTptFtbQBhbkV7uCwG39c.e5Xt00bWB8BgexipqdTo3l16', NULL, '2023-09-11 10:53:00', '2023-09-11 10:53:00', '0', 5000, 'ngu@game.choi.jpg'),
-(10, 'napt', 'napt@h.com', NULL, '$2y$10$6AV4StguCvnLDX1/dzgoXe/3MhCXCfRvCjiHgGiE2ewGsB4fwJyR.', NULL, '2023-09-11 17:15:51', '2023-09-11 17:15:51', 'admin', 5000, 'napt@h.com.jpg'),
-(11, 'Oranty', 'asss@g.com', NULL, '$2y$10$v6SNbKM/Gf3fuh1VV0HzJ.mQR9b7.cvZVeELemfcuxrkliuiiD2AS', NULL, '2023-09-11 22:22:56', '2023-09-11 22:22:56', NULL, 5000, 'asss@g.com.jpg'),
-(12, 'newAccount', 'account@gmail.com', NULL, '$2y$10$4VCUH4DbEkpZI/6yw0IcHO.toQ2Y8i/5alCMMO5ODrGuF0tdxKQza', NULL, '2023-09-13 18:32:36', '2023-09-13 18:32:36', 'admin', 5000, 'account@gmail.com.jpg'),
-(13, 'Oranty', 'hieu@bui.com', NULL, '$2y$10$LjpKvnfwOYcT5f.3hCqMIusYsvP9PGng/.gXT3tQQRJzDKGWqRQ.y', NULL, '2023-09-13 19:01:48', '2023-09-13 19:01:48', 'client', 5000, 'hieu@bui.com.jpg'),
-(14, 'logg', 'log@s.com', NULL, '$2y$10$sxuUxwQVun519vBIV0dCjO2JHuRTno5jH36.JtUDtASm3Hlny8O9G', NULL, '2023-09-13 19:04:03', '2023-09-13 19:04:03', 'client', 5000, 'logg.jpg'),
-(15, 'john', 'john@gmail.com', NULL, '$2y$10$zTHxGH8q17FNs0bMLDinCOnlI3wDeIo2R0Luqt4EnMw.bup/fnJZK', NULL, '2023-09-22 19:14:24', '2023-09-22 19:14:24', 'client', 5000, 'avatars/h8byodfadgzk8QPIz7hCwPUhpgOxPB5EvvicNL9d.ico');
+INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`, `role`, `balance`, `avatar`, `phone`, `address`) VALUES
+(1, 'thinh', 'admin@demo.com', NULL, '$2y$10$C/wReFypegkHDIBM3GeJO.6a8Y97WhqG1JH4NWzl/wsHUf/jld9xG', NULL, '2023-09-02 11:25:55', '2023-09-02 11:25:55', '0', 10000, 'avatars/user.png', 3921432924, 'address'),
+(2, 'thinh', 'thinhnguyenphuc51@gmail.com', NULL, '$2y$10$dntXylK0MyE4bqof3bMPduwLqm/95OAz8q/BVAzWMmDeKbS3.gX2e', NULL, '2023-09-02 12:09:33', '2023-09-02 12:09:33', '0', 0, 'avatars/user.png', 3921432924, 'address'),
+(3, 'thinh', 'beta@beta.com', NULL, '$2y$10$5Ufdao65J20VJozYsClKkeT43QNNeO5XeOCv0vcC0LyocUKEcmM8e', NULL, '2023-09-02 12:20:33', '2023-09-02 12:20:33', '0', 0, 'avatars/user.png', 3921432924, 'address'),
+(4, 'Oranty', 'abc@beta.com', NULL, '$2y$10$9dfZE9cpipktV6K296.wFuVM5u41tLNlp4XmAPLYySGCDascwsDFq', NULL, '2023-09-03 00:05:25', '2023-09-06 09:25:35', '0', -60537471274298, 'avatars/user.png', 3921432924, 'address'),
+(5, 'Oranty', 'qw@hfsmlk.cpm', NULL, '$2y$10$YOos6bwX8TvPVcQkB/QdS.CyjweAgXKLc8i2e1yRTExicHliPtJMG', NULL, '2023-09-10 21:17:01', '2023-09-10 21:17:01', '0', 5000, 'avatars/user.png', 3921432924, 'address'),
+(6, 'beslinh', 'asbc@thas.asc', NULL, '$2y$10$Hdcynrc8NK0Zm66SqMO3PeE5/Vc9mxSVH51zFosbKpzpgY1qaZawO', NULL, '2023-09-11 00:54:09', '2023-09-11 00:54:09', '0', 5000, 'avatars/asbc@thas.asc.jpg', 3921432924, 'address'),
+(7, 'hao', 'hao@ha.m', NULL, '$2y$10$BXXJdihSO7sfA370pmaYcOE9orIopshYp53cjsHAKP1JNC2rZ0l2S', NULL, '2023-09-11 01:17:08', '2023-09-19 11:41:55', '0', -144826, 'avatars/hao.jpg', 3921432924, 'address'),
+(8, 'hoanh', 'ha@nh.ol', NULL, '$2y$10$GuCMZmyIVRJ65HixVVDrtuy06xCNY4zfZGqRRGQJDW6enF371egA2', NULL, '2023-09-11 01:19:19', '2023-09-11 01:19:19', '0', 5000, 'avatars/hoanh.jpg', 3921432924, 'address'),
+(9, 'ngu', 'ngu@game.choi', NULL, '$2y$10$Eq9AiHSeTptFtbQBhbkV7uCwG39c.e5Xt00bWB8BgexipqdTo3l16', NULL, '2023-09-11 10:53:00', '2023-09-11 10:53:00', '0', 5000, 'avatars/ngu@game.choi.jpg', 3921432924, 'address'),
+(10, 'napt', 'napt@h.com', NULL, '$2y$10$6AV4StguCvnLDX1/dzgoXe/3MhCXCfRvCjiHgGiE2ewGsB4fwJyR.', NULL, '2023-09-11 17:15:51', '2023-09-11 17:15:51', 'admin', 5000, 'avatars/napt@h.com.jpg', 3921432924, 'address'),
+(11, 'Oranty', 'asss@g.com', NULL, '$2y$10$v6SNbKM/Gf3fuh1VV0HzJ.mQR9b7.cvZVeELemfcuxrkliuiiD2AS', NULL, '2023-09-11 22:22:56', '2023-09-11 22:22:56', NULL, 5000, 'avatars/asss@g.com.jpg', 3921432924, 'address'),
+(12, 'newAccount', 'account@gmail.com', NULL, '$2y$10$4VCUH4DbEkpZI/6yw0IcHO.toQ2Y8i/5alCMMO5ODrGuF0tdxKQza', NULL, '2023-09-13 18:32:36', '2023-09-13 18:32:36', 'admin', 5000, 'avatars/account@gmail.com.jpg', 3921432924, 'address'),
+(13, 'Oranty', 'hieu@bui.com', NULL, '$2y$10$LjpKvnfwOYcT5f.3hCqMIusYsvP9PGng/.gXT3tQQRJzDKGWqRQ.y', NULL, '2023-09-13 19:01:48', '2023-09-13 19:01:48', 'client', 5000, 'avatars/hieu@bui.com.jpg', 3921432924, 'address'),
+(14, 'logg', 'log@s.com', NULL, '$2y$10$sxuUxwQVun519vBIV0dCjO2JHuRTno5jH36.JtUDtASm3Hlny8O9G', NULL, '2023-09-13 19:04:03', '2023-09-13 19:04:03', 'client', 5000, 'avatars/logg.jpg', 3921432924, 'address'),
+(15, 'john', 'john@gmail.com', NULL, '$2y$10$zTHxGH8q17FNs0bMLDinCOnlI3wDeIo2R0Luqt4EnMw.bup/fnJZK', NULL, '2023-09-22 19:14:24', '2023-09-22 19:14:24', 'client', 5000, 'avatars/user.png', 3921432924, 'address');
 
 --
 -- Chỉ mục cho các bảng đã đổ
