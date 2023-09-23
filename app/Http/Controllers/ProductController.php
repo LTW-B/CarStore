@@ -34,6 +34,8 @@ class ProductController extends Controller
 
     }
 
+   
+
     public function show($id)
     {
         $storeData = [];
@@ -44,6 +46,8 @@ class ProductController extends Controller
         $storeData['image'] = $storeItem->image;
         return view('Store.show')->with("storeData", $storeData);
     }
+
+
     public function showImage($filename)
     {
         $path = storage_path('app/ProductImages/' . $filename);

@@ -64,7 +64,7 @@
 
 
 
-    <div class="container border rounded-5 mb-2" style="background-color: gray">
+    <div class="container border rounded-5 mb-2 bg-dark-subtle" >
 
         <div class="row my-4">
             <h1 class="mb-5 d-flex justify-content-center">Các Sản Phẩm Mới Nhất</h1>

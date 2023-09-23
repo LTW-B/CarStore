@@ -287,8 +287,11 @@
         </div>
     </div>
 
-    <div class="container-fluid bg-dark-subtle">
+    
         <?php echo $__env->yieldContent('sect5'); ?>
+
+    <div class="container-fluid ">
+        <?php echo $__env->yieldContent('sect8'); ?>
     </div>
 
     <div class="container"> </div>

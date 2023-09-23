@@ -287,8 +287,11 @@
         </div>
     </div>
 
-    <div class="container-fluid bg-dark-subtle">
+    
         @yield('sect5')
+
+    <div class="container-fluid ">
+        @yield('sect8')
     </div>
 
     <div class="container"> </div>

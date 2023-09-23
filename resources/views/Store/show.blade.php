@@ -52,9 +52,9 @@
 
                         </div>
                     </div>
+                    
                     <form action="{{ route('cart.add', ['id' => $storeData['storeItem']->id]) }}" method="post">
                         @csrf
-
                         <div class="row pt-5">
                             <div class="col-4 col-lg-2">
                                 Số lượng
@@ -94,7 +94,6 @@
                             <div class="col">
                                 <button class="btn btn-secondary d-flex me-2" type="submit">
                                     Thêm vào giỏ hàng
-
                                 </button>
                             </div>
                         </div>

@@ -1,7 +1,7 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Auth;
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
 |
-*/
+ */
 
 Route::get('/abc', function () {
     return view('layouts.app');
@@ -20,7 +20,6 @@ Route::get('/abc', function () {
 Route::get('/d', function () {
     return view('layouts.backup');
 });
-
 
 Route::get('/', 'App\Http\Controllers\HomeController@home')
     ->name("home");
@@ -34,17 +33,21 @@ Route::get('/about', 'App\Http\Controllers\HomeController@about')
 // Route::post('/filter-stores', 'App\Http\Controllers\StoreController@filterStores')->name('filterStores');
 Route::get('/store/index', 'App\Http\Controllers\ProductController@index')
     ->name("store.index");
+
 Route::get('/store/show/{id}', 'App\Http\Controllers\ProductController@show')
     ->name("store.show");
+
+
+
 Route::post('/filter-stores', 'App\Http\Controllers\ProductController@filterStores')->name('filterStores');
 
 //get images
 Route::get('/store/showItem/{filename}', 'App\Http\Controllers\ProductController@showImage')
     ->name('store.showImage');
-//search 
+//search
 Route::get('search', [
     'as' => 'search',
-    'uses' => 'App\Http\Controllers\StoreController@getSearch'
+    'uses' => 'App\Http\Controllers\StoreController@getSearch',
 ]);
 //suggest
 Route::get('/suggest', 'App\Http\Controllers\StoreController@suggest_ajax')->name('suggest_ajax');
@@ -107,10 +110,9 @@ Route::get('/linhkien/upload/{filename}', 'App\Http\Controllers\LinhkienControll
 Auth::routes();
 Route::post('/register', 'App\Http\Controllers\Auth\RegisterController@register')->name('register');
 
-
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'home'])->name('home');
 
-//home controller chuyển trang  
+//home controller chuyển trang
 
 Route::get('/home/about', 'App\Http\Controllers\HomeController@about')->name('home.about');
 Route::get('/home/testimonial', 'App\Http\Controllers\HomeController@testimonial')->name('home.testimonial');
