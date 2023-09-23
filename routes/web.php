@@ -14,12 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
  */
 
-Route::get('/abc', function () {
-    return view('layouts.app');
-});
-Route::get('/d', function () {
-    return view('layouts.backup');
-});
 
 Route::get('/', 'App\Http\Controllers\HomeController@home')
     ->name("home");

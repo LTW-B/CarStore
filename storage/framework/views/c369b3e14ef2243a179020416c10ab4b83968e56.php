@@ -227,12 +227,7 @@
                                         Cài đặt
                                     </a>
                                 </li>
-                                <li>
-                                    <a class="dropdown-item" href="<?php echo e(route('cart.index')); ?>">
-                                        <i class="fa-solid fa-cart-shopping"></i>
-                                        Đơn hàng
-                                    </a>
-                                </li>
+                              
                                 <li>
                                     <a class="dropdown-item" href="<?php echo e(route('my-account.orders')); ?>">
                                         <i class="fa-solid fa-file-invoice-dollar"></i>
