@@ -14,30 +14,32 @@ use Illuminate\Support\Facades\Route;
 |
  */
 
-
 Route::get('/', 'App\Http\Controllers\HomeController@home')
     ->name("home");
 Route::get('/about', 'App\Http\Controllers\HomeController@about')
     ->name("home.AboutPage");
-//Store routes
-// Route::get('/store/index', 'App\Http\Controllers\StoreController@index')
-//     ->name("store.index");
-// Route::get('/store/show/{id}', 'App\Http\Controllers\StoreController@show')
-//     ->name("store.show");
-// Route::post('/filter-stores', 'App\Http\Controllers\StoreController@filterStores')->name('filterStores');
+
 Route::get('/store/index', 'App\Http\Controllers\ProductController@index')
     ->name("store.index");
 
 Route::get('/store/show/{id}', 'App\Http\Controllers\ProductController@show')
     ->name("store.show");
 
+Route::get('/carpart/show/{id}', 'App\Http\Controllers\ProductController@carpartshow')
+    ->name("carpart.show");
 
+Route::post('/filter-stores', 'App\Http\Controllers\ProductController@filterStores')
+    ->name('filterStores');
 
-Route::post('/filter-stores', 'App\Http\Controllers\ProductController@filterStores')->name('filterStores');
+Route::post('/filter-carparts', 'App\Http\Controllers\ProductController@filterCarparts')
+    ->name('filterCarparts');
 
 //get images
 Route::get('/store/showItem/{filename}', 'App\Http\Controllers\ProductController@showImage')
     ->name('store.showImage');
+    
+    Route::get('/carpart/showItem/{filename}', 'App\Http\Controllers\ProductController@carpartshowImage')
+    ->name('carpart.showImage');
 //search
 Route::get('search', [
     'as' => 'search',

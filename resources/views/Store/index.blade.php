@@ -1,6 +1,5 @@
 @extends('layouts.app')
 @section('title', $storeData['title'])
-
 @section('sect5')
     <div class="container-fluid bg-dark-subtle py-4 my-2 rounded-5 d-flex align-items-center ">
         <div class="container ">
@@ -123,21 +122,7 @@
             </div>
         </div>
 
-        {{-- <script>
-        document.getElementById('category').addEventListener('change', function() {
-            var selectedValue = this.value;
-            var currentUrl = window.location.href;
-            var newUrl;
-
-            if (currentUrl.includes('selectedCategory=')) {
-                newUrl = currentUrl.replace(/selectedCategory=([^&]*)/, 'selectedCategory=' + selectedValue);
-            } else {
-                newUrl = currentUrl + (currentUrl.includes('?') ? '&' : '?') + 'selectedCategory=' + selectedValue;
-            }
-
-            window.location.href = newUrl;
-        });
-    </script> --}}
+     
         <script>
             document.addEventListener("DOMContentLoaded", function() {
                 document.querySelector("#selectedCategory").addEventListener("change", function() {

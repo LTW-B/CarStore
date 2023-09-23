@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Sanpham;
 use Illuminate\Http\Request;
 use App\Models\Product;
 
@@ -16,6 +16,7 @@ class ProductController extends Controller
 
         return view('Store.index')->with('storeData', $storeData);
     }
+
 
     public function filterStores(Request $request)
     {
@@ -33,6 +34,22 @@ class ProductController extends Controller
 
     }
 
+    public function filterCarparts(Request $request)
+    {
+         $linhkienData = [];
+         $linhkienData['title'] = 'Store/index';
+         $linhkienData['stores'] = Sanpham::get()->sortBy('Name')->all();
+        $selectedCategory = $request->input('selectedCategory');
+
+        if ($selectedCategory && $selectedCategory !== '0') {
+         $linhkienData['selectedResults'] = Sanpham::where('category', array($selectedCategory))->get();
+        }else {
+             $linhkienData['selectedResults'] = Sanpham::all();
+        }
+        return view('home.linhkien')->with('linhkienData',  $linhkienData);
+
+    }
+
    
 
     public function show($id)
@@ -46,6 +63,17 @@ class ProductController extends Controller
         return view('Store.show')->with("storeData", $storeData);
     }
 
+    public function carpartshow($id)
+    {
+        $linhkienData = [];
+        $storeItem = Sanpham::findOrFail($id);
+        $linhkienData["title"] = $storeItem->name;
+        $linhkienData["subtitle"] = $storeItem->name . " information";
+        $linhkienData["storeItem"] = $storeItem;
+        $linhkienData['image'] = $storeItem->image;
+        return view('home.carpartshow')->with("storeData", $linhkienData);
+    }
+
 
     public function showImage($filename)
     {
@@ -53,6 +81,11 @@ class ProductController extends Controller
         return response()->file($path);
     }
 
+    public function carpartshowImage($filename)
+    {
+        $path = storage_path('app/Linhkienimg/' . $filename);
+        return response()->file($path);
+    }
     public function getSearch(Request $request)
     {
         $searchValue = $request->input('SearchValue');

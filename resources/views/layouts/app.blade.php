@@ -93,7 +93,7 @@
                         </ul>
                     </li>
 
-                 
+
 
                     <li class="nav-item">
                         <a class="nav-link active" href="{{ route('home.about') }}">
@@ -147,15 +147,16 @@
 
                         <form action="{{ route('search') }}" method="GET" class="nav-link search">
                             @csrf
-              
-                                <input type="text" name="SearchValue" id="SearchInput" autocomplete="off"
-                                    class="input rounded form-control-sm" style="background-color: white" placeholder="Search...">
-                                <ul id="searchResult" class="List-group position-absolute bg-light text-dark"
-                                    style="display: block; z-index:100; padding:0; width:189px"></ul>
-                                <button type="submit" class="bg-transparent border-0">
-                                    <i class="fa-solid fa-magnifying-glass" style="color: #ffffff;"></i>
-                                </button>
-                       
+
+                            <input type="text" name="SearchValue" id="SearchInput" autocomplete="off"
+                                class="input rounded form-control-sm" style="background-color: white"
+                                placeholder="Search...">
+                            <ul id="searchResult" class="List-group position-absolute bg-light text-dark"
+                                style="display: block; z-index:100; padding:0; width:189px"></ul>
+                            <button type="submit" class="bg-transparent border-0">
+                                <i class="fa-solid fa-magnifying-glass" style="color: #ffffff;"></i>
+                            </button>
+
 
                             <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
                             <script type="text/javascript">
@@ -227,7 +228,7 @@
                                         Cài đặt
                                     </a>
                                 </li>
-                              
+
                                 <li>
                                     <a class="dropdown-item" href="{{ route('my-account.orders') }}">
                                         <i class="fa-solid fa-file-invoice-dollar"></i>
@@ -276,14 +277,12 @@
         @yield('sect3')
     </div>
 
-    <div class="container" style="margin-top: 80px">
-        <div class="row">
-            @yield('sect4')
-        </div>
-    </div>
 
-    
-        @yield('sect5')
+    @yield('sect4')
+
+
+
+    @yield('sect5')
 
     <div class="container-fluid ">
         @yield('sect8')
