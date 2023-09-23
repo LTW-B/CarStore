@@ -21,12 +21,12 @@ class CartController extends Controller
             $total = Product::sumCarsByQuantity($CarsInCart, $CarsInSession);
         }
         $showCart = [];
-        $showCart['title'] = 'Cart';
-        $showCart['subtitle'] = 'Shopping Cart';
+        $showCart['title'] = 'Shopping Cart';
         $showCart['total'] = $total;
         $showCart['stores'] = $CarsInCart;
         return view('cart.index')->with('showCart', $showCart);
     }
+    
     public function add(Request $request, $id)
     {
         $stores = $request->session()->get("stores");

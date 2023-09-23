@@ -10,7 +10,7 @@ class LinhkienController extends Controller
     public function index()
     {
         $linhkienData = [];
-        $linhkienData['title'] = 'Trang Shop';
+        $linhkienData['title'] = 'Car Parts';
         $linhkienData['products'] = Sanpham::all();
         return view('home.linhkien')->with('linhkienData', $linhkienData);
     }

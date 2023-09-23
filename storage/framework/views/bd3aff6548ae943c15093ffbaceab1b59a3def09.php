@@ -1,4 +1,5 @@
 
+<?php $__env->startSection('title', $storeData['title']); ?>
 
 <?php $__env->startSection('sect5'); ?>
     <div class="container-fluid bg-dark-subtle py-4 my-2 rounded-5 d-flex align-items-center ">
@@ -72,19 +73,29 @@
                                             <div class="col" style="color: #d03809">
                                                 <?php echo e($store->price); ?>$
                                             </div>
-
-                                            <div class="col text-muted">
-                                                <del><?php echo e($store->sale_price); ?>$</del>
-                                            </div>
                                         </div>
                                     </span>
                                 </div>
                                 <div class="row-cols card-footer">
-                                    <a href="" class="btn btn-warning my-2 mx-2 text-white">
-                                        Thêm vào giỏ hàng
+                                    <a class="btn btn-warning my-2 mx-2 text-white">
+                                        <form action="<?php echo e(route('cart.addNew', ['id' => $store->id])); ?>" method="post" style="margin: 0">
+                                            <?php echo csrf_field(); ?>
+                                            <input type="number" name="quantity" min="1" max="20" id="quantity"
+                                            class="d-none" value="1" style="width: 50px">
+                                            <button type="submit" style="border: none; padding:0; margin:0;" class=" bg-warning text-uppercase text-white fw-bold">
+                                                Thêm vào giỏ hàng
+                                            </button>
+                                        </form>
                                     </a>
                                     <a href="" class="btn btn-primary my-2 mx-2">
-                                        Mua ngay
+                                        <form action="<?php echo e(route('cart.add', ['id' => $store->id])); ?>" method="post" style="margin: 0">
+                                            <?php echo csrf_field(); ?>
+                                            <input type="number" name="quantity" min="1" max="20" id="quantity"
+                                            class="d-none" value="1" style="width: 50px">
+                                            <button type="submit" style="border: none; padding:0; margin:0;" class=" bg-primary text-uppercase text-white fw-bold">
+                                                Mua ngay
+                                            </button>
+                                        </form>
                                     </a>
                                     <a href="<?php echo e(route('store.show', ['id' => $store->id])); ?>" class="text-capitalize col">
                                         <div class="card-button" type="submit">

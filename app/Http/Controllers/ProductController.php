@@ -10,18 +10,17 @@ class ProductController extends Controller
     public function index()
     {
         $storeData = [];
-        $storeData['title'] = 'Store/index';
-        $storeData['subtitle'] = 'List of stores';
+        $storeData['title'] = 'Car Shop';
         $storeData['stores'] = Product::get()->sortBy('Name')->all();
         $storeData['selectedResults'] = Product::all();
 
         return view('Store.index')->with('storeData', $storeData);
     }
+
     public function filterStores(Request $request)
     {
         $storeData = [];
         $storeData['title'] = 'Store/index';
-        $storeData['subtitle'] = 'List of stores';
         $storeData['stores'] = Product::get()->sortBy('Name')->all();
         $selectedCategory = $request->input('selectedCategory');
 

@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('title',  $showCart['title'])
 @section('sect8')
 
         <div class="card ">

@@ -1,4 +1,5 @@
 
+<?php $__env->startSection('title',  $showCart['title']); ?>
 <?php $__env->startSection('sect8'); ?>
 
         <div class="card ">
