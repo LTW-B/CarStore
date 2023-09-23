@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th9 23, 2023 lúc 05:38 AM
+-- Thời gian đã tạo: Th9 23, 2023 lúc 06:01 PM
 -- Phiên bản máy phục vụ: 10.4.28-MariaDB
--- Phiên bản PHP: 8.0.28
+-- Phiên bản PHP: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -52,6 +52,13 @@ CREATE TABLE `items` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `items`
+--
+
+INSERT INTO `items` (`id`, `quantity`, `price`, `order_id`, `product_id`, `created_at`, `updated_at`) VALUES
+(1, 1, 105000, 1, 2, '2023-09-22 22:28:15', '2023-09-22 22:28:15');
 
 -- --------------------------------------------------------
 
@@ -102,6 +109,13 @@ CREATE TABLE `orders` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `orders`
+--
+
+INSERT INTO `orders` (`id`, `total`, `user_id`, `created_at`, `updated_at`) VALUES
+(1, 105000, 15, '2023-09-22 22:28:15', '2023-09-22 22:28:15');
 
 -- --------------------------------------------------------
 
@@ -187,19 +201,24 @@ CREATE TABLE `sanphams` (
   `description` varchar(20) NOT NULL,
   `quantity` int(11) DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
-  `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `category` varchar(255) DEFAULT NULL,
+  `condition` varchar(255) DEFAULT NULL,
+  `sale_price` decimal(10,2) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf16 COLLATE=utf16_bin;
 
 --
 -- Đang đổ dữ liệu cho bảng `sanphams`
 --
 
-INSERT INTO `sanphams` (`id`, `name`, `image`, `price`, `description`, `quantity`, `created_at`, `updated_at`) VALUES
-(1, 'Bánh Xe', '1.jpg', 500.00, 'Linh kiện', 0, '2023-09-02 13:49:22', '2023-09-02 16:47:32'),
-(2, 'Dầu Nhớt 1', '2.jpg', 20.00, 'Dầu Nhớt', 0, '2023-09-02 13:49:22', '2023-09-02 16:45:30'),
-(3, 'Dầu Nhớt 2', '3.jpg', 22.00, 'Dầu Nhớt', 0, '2023-09-02 13:49:22', '2023-09-02 16:47:55'),
-(4, 'Linh kiện 1', '4.jpg', 15.00, 'Linh kiện', 0, '2023-09-02 13:49:22', '2023-09-02 16:48:09'),
-(5, 'Linh kiện 2', '5.jpg', 18.00, 'Linh kiện', 0, '2023-09-02 13:49:22', '2023-09-02 16:45:53');
+INSERT INTO `sanphams` (`id`, `name`, `image`, `price`, `description`, `quantity`, `created_at`, `updated_at`, `category`, `condition`, `sale_price`) VALUES
+(1, 'Bánh Xe', 'carpart-1.png', 500.00, 'Linh Kiện', 0, '2023-09-02 13:49:22', '2023-09-23 15:55:30', 'Linh Kiện', 'New 2023', 600.00),
+(2, 'Dầu Nhớt Motul 800 ', 'carpart-2.png', 20.00, 'Dầu Nhớt', 0, '2023-09-02 13:49:22', '2023-09-23 15:54:34', 'Dầu Nhớt', 'Hot', NULL),
+(3, 'Dầu Nhớt Shell Helix ', 'carpart-3.png', 22.00, 'Dầu Nhớt', 0, '2023-09-02 13:49:22', '2023-09-23 15:54:45', 'Dầu Nhớt', 'Hot', NULL),
+(4, 'Ghế nội thất - Black', 'carpart-4.png', 15.00, 'Linh kiện', 0, '2023-09-02 13:49:22', '2023-09-23 15:54:53', 'Nội Thất', 'New', NULL),
+(5, 'Ghế nội thất - White', 'carpart-5.png', 18.00, 'Linh kiện', 0, '2023-09-02 13:49:22', '2023-09-23 15:54:57', 'Nội Thất', 'New', NULL),
+(6, 'Vô lăng - Black', 'carpart-6.png', 500.00, 'Linh Kiện', 0, '2023-09-02 13:49:22', '2023-09-23 15:58:28', 'Nội Thất', 'New 2023', 600.00),
+(7, 'Vô lăng - Gray ', 'carpart-7.png', 500.00, 'Linh Kiện', 0, '2023-09-02 13:49:22', '2023-09-23 15:58:34', 'Nội Thất', 'New 2023', 600.00);
 
 -- --------------------------------------------------------
 
@@ -242,7 +261,7 @@ INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `re
 (12, 'newAccount', 'account@gmail.com', NULL, '$2y$10$4VCUH4DbEkpZI/6yw0IcHO.toQ2Y8i/5alCMMO5ODrGuF0tdxKQza', NULL, '2023-09-13 18:32:36', '2023-09-13 18:32:36', 'admin', 5000, 'avatars/account@gmail.com.jpg', 3921432924, 'address'),
 (13, 'Oranty', 'hieu@bui.com', NULL, '$2y$10$LjpKvnfwOYcT5f.3hCqMIusYsvP9PGng/.gXT3tQQRJzDKGWqRQ.y', NULL, '2023-09-13 19:01:48', '2023-09-13 19:01:48', 'client', 5000, 'avatars/hieu@bui.com.jpg', 3921432924, 'address'),
 (14, 'logg', 'log@s.com', NULL, '$2y$10$sxuUxwQVun519vBIV0dCjO2JHuRTno5jH36.JtUDtASm3Hlny8O9G', NULL, '2023-09-13 19:04:03', '2023-09-13 19:04:03', 'client', 5000, 'avatars/logg.jpg', 3921432924, 'address'),
-(15, 'john', 'john@gmail.com', NULL, '$2y$10$zTHxGH8q17FNs0bMLDinCOnlI3wDeIo2R0Luqt4EnMw.bup/fnJZK', NULL, '2023-09-22 19:14:24', '2023-09-22 19:14:24', 'client', 5000, 'avatars/user.png', 3921432924, 'address');
+(15, 'john', 'john@gmail.com', NULL, '$2y$10$zTHxGH8q17FNs0bMLDinCOnlI3wDeIo2R0Luqt4EnMw.bup/fnJZK', NULL, '2023-09-22 19:14:24', '2023-09-22 22:28:15', 'client', -100000, 'avatars/user.png', 3921432924, 'address');
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -323,7 +342,7 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT cho bảng `items`
 --
 ALTER TABLE `items`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT cho bảng `migrations`
@@ -335,7 +354,7 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT cho bảng `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT cho bảng `personal_access_tokens`
@@ -353,7 +372,7 @@ ALTER TABLE `products`
 -- AUTO_INCREMENT cho bảng `sanphams`
 --
 ALTER TABLE `sanphams`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT cho bảng `users`
