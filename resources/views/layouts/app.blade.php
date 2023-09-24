@@ -80,9 +80,14 @@
                                     <i class="fa-solid fa-car me-2"></i>Xe oto
                                 </a>
                             </li>
-                            <li>
+                            {{-- <li>
                                 <a class="dropdown-item " href="{{ route('home.linhkien') }}">
                                     <i class="fa-solid fa-screwdriver-wrench me-2"></i>Linh Kiện
+                                </a>
+                            </li> --}}
+                            <li>
+                                <a class="dropdown-item" href="{{ route('home.service') }}">
+                                    <i class="fa-brands fa-servicestack  me-2"></i>Dịch vụ
                                 </a>
                             </li>
                             <li>
@@ -125,11 +130,7 @@
                             <i class="fa-regular fa-bookmark me-2"></i>Thư viện
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
-                            <li>
-                                <a class="dropdown-item" href="{{ route('home.service') }}">
-                                    <i class="fa-brands fa-servicestack  me-2"></i>Dịch vụ
-                                </a>
-                            </li>
+                            
                             <li>
                                 <a class="dropdown-item" href="{{ route('home.team') }}">
                                     <i class="fa-solid fa-users  me-2"></i>Đội ngũ

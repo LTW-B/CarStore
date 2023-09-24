@@ -54,7 +54,7 @@
                     </li>
                    
                     <li class="nav-item">
-                        <a class="nav-link" href="">Tùy chỉnh linh kiện <i class="fa-solid fa-gear"></i></a>
+                        <a class="nav-link" href="{{route('admin.managerservice')}}">Quản lí dịch vụ <i class="fa-solid fa-gear"></i></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('admin.user') }}">tùy chỉnh Người dùng  <i class="fa-solid fa-gear"></i></a>

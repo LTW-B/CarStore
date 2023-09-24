@@ -34,21 +34,7 @@ class ProductController extends Controller
 
     }
 
-    public function filterCarparts(Request $request)
-    {
-         $linhkienData = [];
-         $linhkienData['title'] = 'Store/index';
-         $linhkienData['stores'] = Sanpham::get()->sortBy('Name')->all();
-        $selectedCategory = $request->input('selectedCategory');
-
-        if ($selectedCategory && $selectedCategory !== '0') {
-         $linhkienData['selectedResults'] = Sanpham::where('category', array($selectedCategory))->get();
-        }else {
-             $linhkienData['selectedResults'] = Sanpham::all();
-        }
-        return view('home.linhkien')->with('linhkienData',  $linhkienData);
-
-    }
+   
 
    
 
