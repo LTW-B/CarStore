@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th9 23, 2023 lúc 06:01 PM
+-- Thời gian đã tạo: Th9 24, 2023 lúc 11:50 PM
 -- Phiên bản máy phục vụ: 10.4.28-MariaDB
 -- Phiên bản PHP: 8.2.4
 
@@ -58,7 +58,21 @@ CREATE TABLE `items` (
 --
 
 INSERT INTO `items` (`id`, `quantity`, `price`, `order_id`, `product_id`, `created_at`, `updated_at`) VALUES
-(1, 1, 105000, 1, 2, '2023-09-22 22:28:15', '2023-09-22 22:28:15');
+(1, 1, 105000, 1, 2, '2023-09-22 22:28:15', '2023-09-22 22:28:15'),
+(2, 1, 112950, 2, 1, '2023-09-24 09:28:26', '2023-09-24 09:28:26'),
+(3, 1, 105000, 2, 2, '2023-09-24 09:28:26', '2023-09-24 09:28:26'),
+(4, 2, 112950, 3, 1, '2023-09-24 13:44:32', '2023-09-24 13:44:32'),
+(5, 2, 112950, 4, 1, '2023-09-24 13:45:41', '2023-09-24 13:45:41'),
+(6, 2, 112950, 5, 1, '2023-09-24 14:00:22', '2023-09-24 14:00:22'),
+(7, 4, 105000, 5, 2, '2023-09-24 14:00:22', '2023-09-24 14:00:22'),
+(8, 2, 112950, 6, 1, '2023-09-24 14:02:50', '2023-09-24 14:02:50'),
+(9, 1, 105000, 6, 2, '2023-09-24 14:02:50', '2023-09-24 14:02:50'),
+(10, 2, 112950, 7, 1, '2023-09-24 14:04:36', '2023-09-24 14:04:36'),
+(11, 1, 105000, 7, 2, '2023-09-24 14:04:36', '2023-09-24 14:04:36'),
+(12, 1, 112950, 8, 1, '2023-09-24 14:08:07', '2023-09-24 14:08:07'),
+(13, 1, 112950, 9, 1, '2023-09-24 14:08:16', '2023-09-24 14:08:16'),
+(14, 1, 112950, 10, 1, '2023-09-24 14:10:59', '2023-09-24 14:10:59'),
+(15, 1, 112950, 11, 1, '2023-09-24 14:49:09', '2023-09-24 14:49:09');
 
 -- --------------------------------------------------------
 
@@ -115,7 +129,17 @@ CREATE TABLE `orders` (
 --
 
 INSERT INTO `orders` (`id`, `total`, `user_id`, `created_at`, `updated_at`) VALUES
-(1, 105000, 15, '2023-09-22 22:28:15', '2023-09-22 22:28:15');
+(1, 105000, 15, '2023-09-22 22:28:15', '2023-09-22 22:28:15'),
+(2, 217950, 15, '2023-09-24 09:28:26', '2023-09-24 09:28:26'),
+(3, 225900, 15, '2023-09-24 13:44:32', '2023-09-24 13:44:32'),
+(4, 225900, 15, '2023-09-24 13:45:41', '2023-09-24 13:45:41'),
+(5, 645900, 15, '2023-09-24 14:00:22', '2023-09-24 14:00:22'),
+(6, 330900, 15, '2023-09-24 14:02:50', '2023-09-24 14:02:50'),
+(7, 330900, 15, '2023-09-24 14:04:36', '2023-09-24 14:04:36'),
+(8, 112950, 15, '2023-09-24 14:08:07', '2023-09-24 14:08:07'),
+(9, 112950, 15, '2023-09-24 14:08:16', '2023-09-24 14:08:16'),
+(10, 112950, 15, '2023-09-24 14:10:59', '2023-09-24 14:10:59'),
+(11, 112950, 15, '2023-09-24 14:49:09', '2023-09-24 14:49:09');
 
 -- --------------------------------------------------------
 
@@ -183,9 +207,13 @@ CREATE TABLE `products` (
 INSERT INTO `products` (`id`, `name`, `description`, `image`, `price`, `quantity`, `category`, `condition`, `created_at`, `updated_at`, `sale_price`) VALUES
 (1, 'Mercedes-AMG S63E', '', 'store-1.png', 112950, 10, 'Mercedes', 'NEW 2023', '2023-09-19 22:40:50', '2023-09-19 23:55:17', 135000.00),
 (2, 'Mercedes AMG GT Black Series', '', 'store-2.png', 105000, 10, 'Mercedes', 'HOT', '2023-09-19 23:21:47', '2023-09-19 23:21:47', 125000.00),
-(3, 'Aston Martin V12', '', 'store-3.png', 144000, 1456, 'Aston Martin', 'NEW 2023', '2023-09-19 23:26:24', '2023-09-19 23:26:25', 164000.00),
+(3, 'Aston Martin V12', 'Aston Martin V12', 'store-3.png', 144000, 10, 'Aston Martin', 'NEW 2023', '2023-09-19 23:26:24', '2023-09-23 09:42:50', 164000.00),
 (4, 'Aston Martin Superleggera', '', 'store-4.png', 213000, 15, 'Aston Martin', 'LIÊN HỆ', '2023-09-19 23:24:47', '2023-09-19 23:24:47', 255000.00),
-(5, 'Ferrari 430 Scuderia', '', 'store-5.png', 226000, 14, 'Ferrari', 'LIÊN HỆ', '2023-09-19 23:46:14', '2023-09-19 23:46:14', 240000.00);
+(5, 'Ferrari 430 Scuderia', '', 'store-5.png', 226000, 14, 'Ferrari', 'LIÊN HỆ', '2023-09-19 23:46:14', '2023-09-19 23:46:14', 240000.00),
+(6, 'Audi RS Q8 Vorsprung', 'The Audi RS Q8 is the flagship SUV from Audi, brimmed with top-of the line technology. The exterior styling of the RS Q8 features an imposing front grille, giving it supreme road presence. Coupled with the sport oriented exterior styling, the RS Q8 outclasses everything in its price range with eye catching aesthetics and performance that isn’t usually possible from an SUV.', 'store-6.png', 99950, 15, 'Audi', 'Hot', NULL, NULL, NULL),
+(7, 'Bentley Continental Supersports', 'With 700 bhp and 750 lb ft of torque, this Supersports is one of the fastest GT cars money can buy. Building on the previous generations example the Supersports is 40 kg lighter than the standard car thanks largely to the carbon ceramic brakes and the optional titanium exhaust used on the GT3-R. Other noticeable differences include the carbon fibre trim, new front bumper which includes a carbon fibre splitter and the rear aerodynamic diffuser. Brightware has turned to gloss black and features on the front grille, rear bumper, door handles and window surrounds, while the headlamps and rear lights are dark tinted. Side sill extension and bonnet vents are finished in', 'store-7.png', 86000, 0, 'Bentley', 'Hot', NULL, NULL, NULL),
+(8, 'Bentley Bentayga W12', 'Bentley describes the Bentayga as, \"The most luxurious, hand-built, all-terrain vehicle on Earth, it is a car in which technology, speed and power have come together to offer an extraodinary driving experience.\" With 600 bhp and 664 lb ft of torque, the Bentayga accelerates from 0-62 mph in just 4.1 seconds and reaches a staggering top speed of 187 mph. Built in Crewe, all of this performance is thanks to an all-new twin-turbocharged 6.0 litre W12 engine. The mighty 12-cylinder unit combines efficiency and refinement with ultra-luxurious levels of power and torque. With bundles of technology and equipment the Bentayga represents a class-leading alternative to the Range Rover and can be considered the most prestigious of all SUVs on the market today.', 'store-8.png', 0, 0, 'Bentley', 'Offer', NULL, NULL, NULL),
+(9, 'McLaren 720S Spider', 'The Evo Car of the Year 2017 was the McLaren 720S which has taken the supercar world by storm. With its radical looks inspired by aerodynamics, the 720S is one of the fastest road cars money can buy. It is the successor to the 650S and 12C and has an updated body design made from aluminium and carbon fibre. Highlight design features include the striking signature headlamp air intakes and the double skin dihedral hinged doors that all help channel', 'store-9.png', 77000, 5, 'McLaren', 'Offer', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -223,6 +251,30 @@ INSERT INTO `sanphams` (`id`, `name`, `image`, `price`, `description`, `quantity
 -- --------------------------------------------------------
 
 --
+-- Cấu trúc bảng cho bảng `services`
+--
+
+CREATE TABLE `services` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `phone` varchar(15) DEFAULT NULL,
+  `service` varchar(255) DEFAULT NULL,
+  `date` varchar(10) DEFAULT NULL,
+  `description` text DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf16 COLLATE=utf16_bin;
+
+--
+-- Đang đổ dữ liệu cho bảng `services`
+--
+
+INSERT INTO `services` (`id`, `name`, `phone`, `service`, `date`, `description`, `created_at`, `updated_at`) VALUES
+(7, 'sas', '0563759199', 'Kiểm tra chuẩn đoán', '2023-09-25', 'NTHONG', '2023-09-24 12:45:07', '2023-09-24 12:45:07');
+
+-- --------------------------------------------------------
+
+--
 -- Cấu trúc bảng cho bảng `users`
 --
 
@@ -247,21 +299,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`, `role`, `balance`, `avatar`, `phone`, `address`) VALUES
-(1, 'thinh', 'admin@demo.com', NULL, '$2y$10$C/wReFypegkHDIBM3GeJO.6a8Y97WhqG1JH4NWzl/wsHUf/jld9xG', NULL, '2023-09-02 11:25:55', '2023-09-02 11:25:55', '0', 10000, 'avatars/user.png', 3921432924, 'address'),
-(2, 'thinh', 'thinhnguyenphuc51@gmail.com', NULL, '$2y$10$dntXylK0MyE4bqof3bMPduwLqm/95OAz8q/BVAzWMmDeKbS3.gX2e', NULL, '2023-09-02 12:09:33', '2023-09-02 12:09:33', '0', 0, 'avatars/user.png', 3921432924, 'address'),
-(3, 'thinh', 'beta@beta.com', NULL, '$2y$10$5Ufdao65J20VJozYsClKkeT43QNNeO5XeOCv0vcC0LyocUKEcmM8e', NULL, '2023-09-02 12:20:33', '2023-09-02 12:20:33', '0', 0, 'avatars/user.png', 3921432924, 'address'),
-(4, 'Oranty', 'abc@beta.com', NULL, '$2y$10$9dfZE9cpipktV6K296.wFuVM5u41tLNlp4XmAPLYySGCDascwsDFq', NULL, '2023-09-03 00:05:25', '2023-09-06 09:25:35', '0', -60537471274298, 'avatars/user.png', 3921432924, 'address'),
-(5, 'Oranty', 'qw@hfsmlk.cpm', NULL, '$2y$10$YOos6bwX8TvPVcQkB/QdS.CyjweAgXKLc8i2e1yRTExicHliPtJMG', NULL, '2023-09-10 21:17:01', '2023-09-10 21:17:01', '0', 5000, 'avatars/user.png', 3921432924, 'address'),
-(6, 'beslinh', 'asbc@thas.asc', NULL, '$2y$10$Hdcynrc8NK0Zm66SqMO3PeE5/Vc9mxSVH51zFosbKpzpgY1qaZawO', NULL, '2023-09-11 00:54:09', '2023-09-11 00:54:09', '0', 5000, 'avatars/asbc@thas.asc.jpg', 3921432924, 'address'),
-(7, 'hao', 'hao@ha.m', NULL, '$2y$10$BXXJdihSO7sfA370pmaYcOE9orIopshYp53cjsHAKP1JNC2rZ0l2S', NULL, '2023-09-11 01:17:08', '2023-09-19 11:41:55', '0', -144826, 'avatars/hao.jpg', 3921432924, 'address'),
-(8, 'hoanh', 'ha@nh.ol', NULL, '$2y$10$GuCMZmyIVRJ65HixVVDrtuy06xCNY4zfZGqRRGQJDW6enF371egA2', NULL, '2023-09-11 01:19:19', '2023-09-11 01:19:19', '0', 5000, 'avatars/hoanh.jpg', 3921432924, 'address'),
-(9, 'ngu', 'ngu@game.choi', NULL, '$2y$10$Eq9AiHSeTptFtbQBhbkV7uCwG39c.e5Xt00bWB8BgexipqdTo3l16', NULL, '2023-09-11 10:53:00', '2023-09-11 10:53:00', '0', 5000, 'avatars/ngu@game.choi.jpg', 3921432924, 'address'),
-(10, 'napt', 'napt@h.com', NULL, '$2y$10$6AV4StguCvnLDX1/dzgoXe/3MhCXCfRvCjiHgGiE2ewGsB4fwJyR.', NULL, '2023-09-11 17:15:51', '2023-09-11 17:15:51', 'admin', 5000, 'avatars/napt@h.com.jpg', 3921432924, 'address'),
-(11, 'Oranty', 'asss@g.com', NULL, '$2y$10$v6SNbKM/Gf3fuh1VV0HzJ.mQR9b7.cvZVeELemfcuxrkliuiiD2AS', NULL, '2023-09-11 22:22:56', '2023-09-11 22:22:56', NULL, 5000, 'avatars/asss@g.com.jpg', 3921432924, 'address'),
-(12, 'newAccount', 'account@gmail.com', NULL, '$2y$10$4VCUH4DbEkpZI/6yw0IcHO.toQ2Y8i/5alCMMO5ODrGuF0tdxKQza', NULL, '2023-09-13 18:32:36', '2023-09-13 18:32:36', 'admin', 5000, 'avatars/account@gmail.com.jpg', 3921432924, 'address'),
-(13, 'Oranty', 'hieu@bui.com', NULL, '$2y$10$LjpKvnfwOYcT5f.3hCqMIusYsvP9PGng/.gXT3tQQRJzDKGWqRQ.y', NULL, '2023-09-13 19:01:48', '2023-09-13 19:01:48', 'client', 5000, 'avatars/hieu@bui.com.jpg', 3921432924, 'address'),
-(14, 'logg', 'log@s.com', NULL, '$2y$10$sxuUxwQVun519vBIV0dCjO2JHuRTno5jH36.JtUDtASm3Hlny8O9G', NULL, '2023-09-13 19:04:03', '2023-09-13 19:04:03', 'client', 5000, 'avatars/logg.jpg', 3921432924, 'address'),
-(15, 'john', 'john@gmail.com', NULL, '$2y$10$zTHxGH8q17FNs0bMLDinCOnlI3wDeIo2R0Luqt4EnMw.bup/fnJZK', NULL, '2023-09-22 19:14:24', '2023-09-22 22:28:15', 'client', -100000, 'avatars/user.png', 3921432924, 'address');
+(15, 'john', 'john@gmail.com', NULL, '$2y$10$zTHxGH8q17FNs0bMLDinCOnlI3wDeIo2R0Luqt4EnMw.bup/fnJZK', 'Umkr3RwTDX8saXo6K6AESVcaH92UtlLqTJ91LWHvOs9BpEUCIQesdmvo1yNv', '2023-09-22 19:14:24', '2023-09-24 14:49:09', 'admin', -2529250, 'avatars/user.png', 3921432924, 'address');
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -322,6 +360,12 @@ ALTER TABLE `sanphams`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Chỉ mục cho bảng `services`
+--
+ALTER TABLE `services`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Chỉ mục cho bảng `users`
 --
 ALTER TABLE `users`
@@ -342,7 +386,7 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT cho bảng `items`
 --
 ALTER TABLE `items`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT cho bảng `migrations`
@@ -354,7 +398,7 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT cho bảng `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT cho bảng `personal_access_tokens`
@@ -366,12 +410,18 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT cho bảng `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT cho bảng `sanphams`
 --
 ALTER TABLE `sanphams`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT cho bảng `services`
+--
+ALTER TABLE `services`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
