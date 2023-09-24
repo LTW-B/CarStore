@@ -14,10 +14,9 @@ use Illuminate\Support\Facades\Route;
 |
  */
 
-Route::get('/home', 'App\Http\Controllers\HomeController@home')
+Route::get('/', 'App\Http\Controllers\HomeController@home')
     ->name("home");
-Route::get('/', 'App\Http\Controllers\HomeController@income')
-    ->name("income");
+
 Route::get('/about', 'App\Http\Controllers\HomeController@about')
     ->name("home.AboutPage");
 
