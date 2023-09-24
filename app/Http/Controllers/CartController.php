@@ -1,18 +1,18 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\Sanpham;
-use Illuminate\Support\Facades\Auth;
-use App\Models\Product;
-use App\Models\Order;
+
 use App\Models\Item;
+use App\Models\Order;
+use App\Models\Product;
 use App\Models\User;
-use Illuminate\Console\View\Components\Alert;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class CartController extends Controller
 {
-    public function index(Request $request){
+    public function index(Request $request)
+    {
         $total = 0;
         $CarsInCart = [];
         $CarsInSession = $request->session()->get('stores');
@@ -26,7 +26,7 @@ class CartController extends Controller
         $showCart['stores'] = $CarsInCart;
         return view('cart.index')->with('showCart', $showCart);
     }
-    
+
     public function add(Request $request, $id)
     {
         $stores = $request->session()->get("stores");
@@ -54,7 +54,6 @@ class CartController extends Controller
     //     $request->session()->put("stores", $stores);
     //     return redirect()->back();
     // }
-
 
     public function delete(Request $request)
     {
@@ -89,7 +88,7 @@ class CartController extends Controller
             $newBalance = Auth::user()->getBalance() - $total;
             Auth::user()->setBalance($newBalance);
             Auth::user()->save();
-            $request->session()->forget('s$showCart');
+            $request->session()->forget('stores'); // Xóa giỏ hàng sau khi thanh toán
             $viewPurchase = [];
             $viewPurchase["title"] = "Purchase - Online Store";
             $viewPurchase["subtitle"] = "Purchase Status";
@@ -99,4 +98,5 @@ class CartController extends Controller
             return redirect()->route('cart.index');
         }
     }
+
 }
