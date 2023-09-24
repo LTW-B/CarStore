@@ -14,8 +14,10 @@ use Illuminate\Support\Facades\Route;
 |
  */
 
-Route::get('/', 'App\Http\Controllers\HomeController@home')
+Route::get('/home', 'App\Http\Controllers\HomeController@home')
     ->name("home");
+Route::get('/', 'App\Http\Controllers\HomeController@income')
+    ->name("income");
 Route::get('/about', 'App\Http\Controllers\HomeController@about')
     ->name("home.AboutPage");
 
@@ -102,11 +104,7 @@ Route::middleware('admin')->group(function () {
         ->name("userProfile.update");
 });
 
-// Route::get('/linhkien', 'App\Http\Controllers\LinhkienController@index')
-//     ->name("home.linhkien");
 
-// Route::get('/linhkien/upload/{filename}', 'App\Http\Controllers\LinhkienController@showImage')
-//     ->name("upload.show");
 
 Auth::routes();
 Route::post('/register', 'App\Http\Controllers\Auth\RegisterController@register')->name('register');

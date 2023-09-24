@@ -11,40 +11,32 @@ class AdminStorePageController extends Controller
 {
     public function index()
     {
-        $viewAdminData = [];
-        $viewAdminData['title'] = 'Admin Store pages';
-        $viewAdminData['stores'] = Product::all();
-        return view('Admin.Store.index')->with('viewAdminData', $viewAdminData);
+        $Data = [];
+        $Data['title'] = 'Admin Store pages';
+        $Data['stores'] = Product::all();
+        return view('Admin.Store.index')->with('Data', $Data);
     }
     public function createNewStore(Request $request)
     {
+
         $request->validate([
             'name' => 'required|max:255',
             'description' => 'required',
             'price' => 'required|numeric|gt:0',
-            'quantity' => 'required|numeric|gt:0',
-            'image' => 'image',
+            'quantity' => 'gt:0',
+            'file_path' => 'image',
         ]);
-
-        $newStore = new Product();
-        $newStore->name = $request->input('name');
-        $newStore->description = $request->input('description');
-        $newStore->price = $request->input('price');
-        $newStore->quantity = $request->input('quantity');
-        $newStore->category = $request->input('category');
-        $newStore->condition = $request->input('condition');
-        $newStore->image = 'store.png';
-        $newStore->save();
-
-        if ($request->hasFile('image')) {
-            $imageName = $newStore->name. '.' . $request->file('image')->extension();
-            Storage::disk('ProductImages')->put(
-                $imageName,
-                file_get_contents($request->file('image')->getRealPath())
-            );
-            $newStore->image = $imageName;
-            $newStore->save();
-        }
+        $product = new Product;
+        $product->name = $request->input('name');
+        $product->file_path = $request->file('file_path')->store('products');
+        $product->quantity = $request->input('quantity');
+        $product->description = $request->input('description');
+        $product->price = $request->input('price');
+        $product->category = $request->input('category');
+        $product->color = $request->input('color');
+        $product->brand = $request->input('brand');
+        $product->size = $request->input('size');
+        $product->save();
 
         return back();
     }
@@ -67,27 +59,23 @@ class AdminStorePageController extends Controller
             'description' => 'required',
             'price' => 'required|numeric|gt:0',
             'quantity' => 'gt:0',
-            'image' => 'image',
+            'file_path' => 'image',
         ]);
 
-        $updateStore = Product::findOrFail($id);
-        $updateStore->name = $request->input('name');
-        $updateStore->description = $request->input('description');
-        $updateStore->price = $request->input('price');
-        $updateStore->category = $request->input('category');
-        $updateStore->condition = $request->input('condition');
-        $updateStore->quantity = $request->input('quantity');
+        $product = Product::findOrFail($id);
+        $product->name = $request->input('name');
+        $product->file_path = $request->file('file_path')->store('products');
+        $product->quantity = $request->input('quantity');
+        $product->description = $request->input('description');
+        $product->price = $request->input('price');
+        $product->category = $request->input('category');
+        $product->color = $request->input('color');
+        $product->brand = $request->input('brand');
+        $product->size = $request->input('size');
 
-        if ($request->hasFile('image')) {
-            $imageName = $updateStore->id . '.' . $request->file('image')->extension();
-            Storage::disk('ProductImages')->put(
-                $imageName,
-                file_get_contents($request->file('image')->getRealPath())
-            );
-            $updateStore->image = $imageName;
-        }
 
-        $updateStore->save();
+
+        $product->save();
 
         return redirect()->route('admin.store.index');
     }

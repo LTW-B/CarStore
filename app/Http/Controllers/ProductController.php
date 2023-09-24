@@ -34,22 +34,7 @@ class ProductController extends Controller
 
     }
 
-    public function filterCarparts(Request $request)
-    {
-         $linhkienData = [];
-         $linhkienData['title'] = 'Store/index';
-         $linhkienData['stores'] = Sanpham::get()->sortBy('Name')->all();
-        $selectedCategory = $request->input('selectedCategory');
-
-        if ($selectedCategory && $selectedCategory !== '0') {
-         $linhkienData['selectedResults'] = Sanpham::where('category', array($selectedCategory))->get();
-        }else {
-             $linhkienData['selectedResults'] = Sanpham::all();
-        }
-        return view('home.linhkien')->with('linhkienData',  $linhkienData);
-
-    }
-
+   
    
 
     public function show($id)
@@ -63,16 +48,7 @@ class ProductController extends Controller
         return view('Store.show')->with("storeData", $storeData);
     }
 
-    public function carpartshow($id)
-    {
-        $linhkienData = [];
-        $storeItem = Sanpham::findOrFail($id);
-        $linhkienData["title"] = $storeItem->name;
-        $linhkienData["subtitle"] = $storeItem->name . " information";
-        $linhkienData["storeItem"] = $storeItem;
-        $linhkienData['image'] = $storeItem->image;
-        return view('home.carpartshow')->with("storeData", $linhkienData);
-    }
+   
 
 
     public function showImage($filename)
@@ -81,11 +57,7 @@ class ProductController extends Controller
         return response()->file($path);
     }
 
-    public function carpartshowImage($filename)
-    {
-        $path = storage_path('app/Linhkienimg/' . $filename);
-        return response()->file($path);
-    }
+  
     public function getSearch(Request $request)
     {
         $searchValue = $request->input('SearchValue');
@@ -119,5 +91,27 @@ class ProductController extends Controller
             }
             return $output;
         }
+    }
+    public  function addProduct(Request $request)
+    {
+        $request->validate([
+            'name' => 'required|max:255',
+            'description' => 'required',
+            'price' => 'required|numeric|gt:0',
+            'quantity' => 'gt:0',
+            'file_path' => 'file_path',
+        ]);
+        $product = new Product;
+        $product->name = $request->input('name');
+        $product->file_path = $request->file('file')->store('products');
+        $product->quantity = $request->input('quantity');
+        $product->description = $request->input('description');
+        $product->price = $request->input('price');
+        $product->category = $request->input('category');
+        $product->color = $request->input('color');
+        $product->brand = $request->input('brand');
+        $product->size = $request->input('size');
+        $product->save();
+        return $product;
     }
 }

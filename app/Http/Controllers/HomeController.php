@@ -17,6 +17,12 @@ class HomeController extends Controller
         $homeData['title'] = 'Official LexuZ Website';
         return view('welcome')->with('homeData', $homeData);
     }
+    public function income()
+    {
+        $homeData =[] ;
+        $homeData['title'] = 'Official LexuZ Website';
+        return view('auth.login')->with('homeData', $homeData);
+    }
 
     public function about(){
         return view('home.about');

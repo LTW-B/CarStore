@@ -68,12 +68,6 @@ return [
             'url' => env('APP_URL').'/storage',
             'visibility' => 'public',
         ],
-        'ProductImages' => [
-            'driver' => 'local',
-            'root' => storage_path('app/ProductImages'), // Thay đổi đường dẫn tùy theo nhu cầu
-            'url' => env('APP_URL').'/storage',
-            'visibility' => 'public',
-        ],
     ],
 
     /*
@@ -88,7 +82,7 @@ return [
     */
 
     'links' => [
-        public_path('ProductImages') => storage_path('app/ProductImages'),
+        public_path('products') => storage_path('app/products'),
     ],
 
 ];

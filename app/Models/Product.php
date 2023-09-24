@@ -8,16 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
     use HasFactory;
-    protected $fillable = [
-        'id',
-        'name',
-        'description',
-        'image',
-        'price',
-        'quantity',
-        'category',
-        'condition',
-    ];
+    protected $fillable = ['name','file_path','quantity', 'description', 'price', 'category', 'color', 'brand', 'size'];
     public static function sumCarsByQuantity($stores, $CarsInSession)
     {
         $total = 0;
