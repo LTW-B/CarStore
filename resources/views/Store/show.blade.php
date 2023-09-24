@@ -57,15 +57,13 @@
                         </div>
                         <div class="col-2">
                             <div class="input-group">
-                             
                                 <input type="number" name="quantity" min="1" max="20" id="quantity"
                                     class="form-control quantity-input text-center" value="1">
-                               
                             </div>
                         </div>
                         <div class="col">
-                            <button class="btn btn-secondary" type="submit">
-                                Thêm vào giỏ hàng
+                            <button class="btn btn-success" type="submit">
+                                Thêm vào giỏ hàng <i class="fa-solid fa-cart-plus"></i>
                             </button>
                         </div>
                     </div>
@@ -75,4 +73,3 @@
     </div>
 </div>
 @endsection
-

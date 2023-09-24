@@ -31,11 +31,18 @@
                                         <th scope="col">Tên sản phẩm</th>
                                         <th scope="col">Giá</th>
                                         <th scope="col">Số lượng</th>
-                                        <th scope="col">Tổng tiền </th>
+                                        <th scope="col">Tổng tiền</th>
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    @php
+                                        $orderTotal = 0;
+                                    @endphp
                                     @foreach ($order->getItems() as $item)
+                                        @php
+                                            $subtotal = $item->price * $item->quantity;
+                                            $orderTotal += $subtotal;
+                                        @endphp
                                         <tr>
                                             <td>{{ $item->getId() }}</td>
                                             <td>
@@ -46,9 +53,13 @@
                                             </td>
                                             <td>${{ $item->price }}</td>
                                             <td>{{ $item->quantity }}</td>
-                                            <td>${{ $item->price * $item->quantity }}</td>
+                                            <td>${{ $subtotal }}</td>
                                         </tr>
                                     @endforeach
+                                    <tr>
+                                        <td colspan="4" class="text-end"><strong>Tổng cộng:</strong></td>
+                                        <td>${{ $orderTotal }}</td>
+                                    </tr>
                                 </tbody>
                             </table>
                         </div>
