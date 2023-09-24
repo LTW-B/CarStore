@@ -39,13 +39,7 @@
                         <td>{{$serviceData->service }}</td>
                         <td>{{$serviceData->description }}</td>
                         <td>{{$serviceData->date }}</td>
-                        
-                        {{-- <td>
-                            <a class="btn btn-primary"
-                                href="{{ route('admin.store.edit', ['id' =>$serviceData->id]) }}">
-                                <i class="bi-pencil"></i>
-                            </a>
-                        </td> --}}
+                      
                         <td>
                             <a class="btn btn-primary" >
                                 <i class="fa-solid fa-print"></i>
