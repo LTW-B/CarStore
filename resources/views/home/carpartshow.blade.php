@@ -93,7 +93,7 @@
                             </script>
                             <div class="col">
                                 <button class="btn btn-secondary d-flex me-2" type="submit">
-                                    Thêm vào giỏ hàng
+                                    Thêm vào giỏ hàng 
                                 </button>
                             </div>
                         </div>

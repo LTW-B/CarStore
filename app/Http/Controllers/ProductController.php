@@ -69,7 +69,7 @@ class ProductController extends Controller
 
     public function carpartshowImage($filename)
     {
-        $path = storage_path('app/Linhkienimg/' . $filename);
+        $path = storage_path('app/ProductImages/' . $filename);
         return response()->file($path);
     }
     public function getSearch(Request $request)

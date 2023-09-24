@@ -6,7 +6,7 @@
             <div class="col-12 mb-2">
                 <div class="d-flex row-cols align-items-canter">
                     <label class="mt-2">Bộ lọc <i class="fa-solid fa-filter"></i>:</label>
-                    <form action="{{ route('filterCarparts') }}" method="POST" id="myForm">
+                    <form action="" method="POST" id="myForm">
                         @csrf
                         <select name="selectedCategory" id="selectedCategory" class="form-select ms-3">
                             <option value="0">Lọc theo sản phẩm</option>
@@ -46,7 +46,6 @@
                         <div class="col-md-4 col-lg-4 col-sm-12 mb-2 d-flex row">
                             <div class="card">
                                 <div class="image-container" style="height: 350px; overflow: hidden; margin-top: 10px;">
-
                                     <a href="{{ route('carpart.show', ['id' => $store->id]) }}">
                                         <img src="{{ route('carpart.showImage', ['filename' => $store['image']]) }}"
                                             alt="image" class="card-img-top img-card">
