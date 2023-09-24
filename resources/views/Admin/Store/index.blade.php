@@ -122,11 +122,20 @@
                                     <i class="bi-pencil"></i>
                                 </a>
                             </td>
-                            <td>
+                            {{-- <td>
                                 <form action="{{ route('admin.store.delete', $store->id) }}" method="post">
                                     @csrf
                                     @method('DELETE')
                                     <button class="btn btn-danger">
+                                        <i class="bi-trash"></i>
+                                    </button>
+                                </form>
+                            </td> --}}
+                            <td>
+                                <form action="{{ route('admin.store.delete', $store->id) }}" method="post">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button class="btn btn-danger" onclick="return confirm('Bạn có chắc chắn muốn xóa?');">
                                         <i class="bi-trash"></i>
                                     </button>
                                 </form>
