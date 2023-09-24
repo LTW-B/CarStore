@@ -118,8 +118,46 @@
                 </ul>
                 <!-- /nav left -->
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="fa-regular fa-comments"></i></a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link active dropdown-toggle" href="#" id="UserDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fa-regular fa-user"></i>
+                        </a>
+
+                        @guest
+                            <ul class="dropdown-menu" aria-labelledby="UserDropdown">
+                                <li>
+                                    <a class="dropdown-item" href="{{ route('login') }}"><i
+                                            class="fa-solid fa-user-gear"></i>
+                                        Đăng nhập</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="{{ route('register') }}"><i
+                                            class="fa-solid fa-right-from-bracket"></i>Tạo tài khoản</a>
+                                </li>
+                            </ul>
+                        @else
+                            <ul class="dropdown-menu" aria-labelledby="UserDropdown">
+                                <li>
+                                    <a class="dropdown-item" href="{{ route('myProfile') }}">
+                                        <i class="fa-solid fa-user-gear"></i>
+                                        Cài đặt
+                                    </a>
+                                </li>
+
+                                <li>
+                                <li>
+                                    <form id="logout" action="{{ route('logout') }}" method="POST">
+                                        <a class="dropdown-item" role="button"
+                                            onclick="document.getElementById('logout').submit();">
+                                            <i class="fa-solid fa-right-from-bracket"></i> Đăng xuất
+                                        </a>
+                                        @csrf
+                                    </form>
+                                </li>
+                            </ul>
+                        @endguest
+
                     </li>
 
                     {{-- <li class="nav-item">
