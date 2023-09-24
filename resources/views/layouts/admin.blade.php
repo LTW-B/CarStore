@@ -96,6 +96,9 @@
                 <!-- Nav right -->
                 <ul class="navbar-nav me-auto text-uppercase ">
                     <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="{{ route('admin.home.index') }}">Admin <i class="fa-solid fa-screwdriver-wrench"></i></a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="{{ route('admin.store.index') }}">Tùy chỉnh sản phẩm <i
                                 class="fa-solid fa-gear"></i></a>
                     </li>
