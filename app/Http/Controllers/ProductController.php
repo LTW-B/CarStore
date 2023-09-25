@@ -35,6 +35,7 @@ class ProductController extends Controller
     }
 
    
+
    
 
     public function show($id)
@@ -57,7 +58,11 @@ class ProductController extends Controller
         return response()->file($path);
     }
 
-  
+    public function carpartshowImage($filename)
+    {
+        $path = storage_path('app/ProductImages/' . $filename);
+        return response()->file($path);
+    }
     public function getSearch(Request $request)
     {
         $searchValue = $request->input('SearchValue');

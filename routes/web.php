@@ -3,6 +3,14 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
+Route::post('/home/service/sucess', 'App\Http\Controllers\ServiceController\AddService@serviceAdd')->name('Serviceadd');
+
+Route::get('/admin/service', 'App\Http\Controllers\ServiceController\AddService@managerservice')
+    ->name("admin.managerservice");
+
+Route::delete('/admin/service/delete/{id}', 'App\Http\Controllers\ServiceController\AddService@deleteService')
+->name('admin.service.delete');
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -31,9 +39,6 @@ Route::get('/carpart/show/{id}', 'App\Http\Controllers\ProductController@carpart
 
 Route::post('/filter-stores', 'App\Http\Controllers\ProductController@filterStores')
     ->name('filterStores');
-
-// Route::post('/filter-carparts', 'App\Http\Controllers\ProductController@filterCarparts')
-//     ->name('filterCarparts');
 
 //get images
 Route::get('/store/showItem/{filename}', 'App\Http\Controllers\ProductController@showImage')

@@ -146,11 +146,20 @@
                                 </form>
                             </td>
 
-                            <td>
+                            {{-- <td>
                                 <form action="{{ route('admin.user.delete', $user->id) }}" method="post">
                                     @csrf
                                     @method('DELETE')
                                     <button class="btn btn-danger">
+                                        <i class="bi-trash"></i>
+                                    </button>
+                                </form>
+                            </td> --}}
+                            <td>
+                                <form action="{{ route('admin.user.delete', $user->id) }}" method="post">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button class="btn btn-danger" onclick="return confirm('Bạn có chắc chắn muốn xóa?');">
                                         <i class="bi-trash"></i>
                                     </button>
                                 </form>
