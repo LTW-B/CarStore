@@ -1,4 +1,4 @@
-@extends('layouts.backup')
+@extends('layouts.app')
 @section('title', $data['title'])
 @section('sect5')
     <div class="card mb-4">
@@ -50,14 +50,18 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col">
-                        <div class="mb-3 row">
-                            <label class="col-lg-2 col-md-6 col-sm-12 col-form-label">Số dư</label>
-                            <div class="col-lg-10 col-md-6 col-sm-12">
-                                <input name="balance" value="{{ $data['info']->balance }}" type="number" class="form-control">
+                    @if (auth()->check() &&
+                            auth()->user()->isAdmin())
+                        <div class="col">
+                            <div class="mb-3 row">
+                                <label class="col-lg-2 col-md-6 col-sm-12 col-form-label">Số dư</label>
+                                <div class="col-lg-10 col-md-6 col-sm-12">
+                                    <input name="balance" value="{{ $data['info']->balance }}" type="number" class="form-control">
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    @endif
+                    
                     <div class="col">
                         <div class="mb-3 row">
                             <label class="col-lg-2 col-md-6 col-sm-12 col-form-label">Số điện thoại</label>
