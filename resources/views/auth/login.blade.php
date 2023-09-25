@@ -84,10 +84,42 @@
     <section class="py-5 d-flex justify-content-center">
         <div class="container-fluid h-custom">
             <div class="row d-flex justify-content-center align-items-center h-100">
+                <!-- Thêm container cho carousel -->
                 <div class="col-md-9 col-lg-6 col-xl-5">
-                    <img src=" {{ asset('./img/loginimg.jpg' ) }}"
-                        class="img-fluid" alt="Sample image">
+                    <div id="carCarousel" class="carousel slide" data-bs-ride="carousel">
+                        <!-- Hình ảnh xe hơi -->
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="{{ asset('./img/store-5.png') }}" class="d-block w-100" alt="Car 1">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="{{ asset('./img/store-7.png') }}" class="d-block w-100" alt="Car 2">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="{{ asset('./img/store-9.png') }}" class="d-block w-100" alt="Car 3">
+                            </div>
+                        </div>
+
+                        <!-- Nút chuyển trang -->
+                        <a class="carousel-control-prev" href="#carCarousel" role="button" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carCarousel" role="button" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </a>
+                    </div>
                 </div>
+                <script>
+                    $(document).ready(function () {
+                        // Kích hoạt Carousel và thiết lập thời gian trượt tự động
+                        $('#carCarousel').carousel({
+                            interval: 1700 // Đặt thời gian trượt tự động (3 giây trong ví dụ này)
+                        });
+                    });
+                </script>
+
                 <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
                     <form action="{{ route('login') }}" method="POST">
                         @csrf
