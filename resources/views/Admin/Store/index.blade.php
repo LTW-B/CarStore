@@ -111,7 +111,7 @@
                     @php
                         $counter = 1;
                     @endphp
-                    @foreach ($viewAdminData['stores'] as $store)
+                    @foreach ($Data['stores'] as $store)
                         <tr>
                             <td>{{ $counter }}</td>
                             <td>
@@ -155,64 +155,6 @@
                 </tbody>
             </table>
         </div>
-    </div>
-    <div class="card-body">
-        <table class="table table-borderd table-striped">
-            <thead>
-                <tr>
-                    <th scope="col">STT</th>
-                    <th scope="col">ID</th>
-                    <th scope="col">Tên</th>
-                    <th scope="col">Hình ảnh</th>
-                    <th scope="col">Loại</th>
-                    <th scope="col">Số lượng</th>
-                    <th scope="col">Thương hiệu</th>
-                    <th scope="col">Sửa</th>
-                    <th scope="col">Xóa</th>
-                </tr>
-            </thead>
-            <tbody>
-                @php
-                    $counter = 1;
-                @endphp
-                @foreach ($Data['stores'] as $store)
-                    <tr>
-                        <td>{{ $counter }}</td>
-                        <td>
-                            {{-- <a href="{{ route('store.show', ['id' => $store->id]) }}" class="text-capitalize text-decoration-none">
-                                
-                            </a> --}}
-                            {{ $store->id }}
-                        </td>
-                        <td>{{ $store->name }}</td>
-                        <td>
-                            <img src={{asset('app/'.$store->file_path)}} alt="image">
-                        </td>
-                        <td>{{ $store->category }}</td>
-                        <td>{{ $store->quantity }}</td>
-                        <td>{{ $store->brand}}</td>
-                        <td>
-                            <a class="btn btn-primary"
-                                href="{{ route('admin.store.edit', ['id' => $store->id]) }}">
-                                <i class="bi-pencil"></i>
-                            </a>
-                        </td>
-                        <td>
-                            <form action="{{ route('admin.store.delete', $store->id) }}" method="post">
-                                @csrf
-                                @method('DELETE')
-                                <button class="btn btn-danger">
-                                    <i class="bi-trash"></i>
-                                </button>
-                            </form>
-                        </td>
-                    </tr>
-                    @php
-                        $counter++;
-                    @endphp
-                @endforeach
-            </tbody>
-        </table>
     </div>
 </div>
 @endsection
